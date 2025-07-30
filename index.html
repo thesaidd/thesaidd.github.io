@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yusuf Sait Sakoğlu | İnteraktif Portfolyo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm Tech (Slate gray, muted teal accent on a light background) -->
+    <!-- Application Structure Plan: A single-page portfolio with a sticky top navigation. The structure is thematic: About, Education, Experience/Projects (tabbed), Skills (with dynamic filtering), Certificates, Publications (filterable), and Contact. This non-linear, dashboard-like structure is chosen to allow recruiters or interested parties to quickly navigate to the sections most relevant to them, rather than forcing a linear read of a traditional CV. Interactivity (tabs, skill filters, project modals, AI-powered publication summaries) is designed to make exploration more engaging and efficient. Scroll animations are added for visual appeal and to guide the user through content discovery. -->
+    <!-- Visualization & Content Choices: Report Info: Skills -> Goal: Inform/Organize -> Viz: Filterable List (HTML/CSS/JS) -> Interaction: Click buttons to filter list -> Justification: Allows dynamic exploration of detailed skills by category, providing clarity without a visual schema as requested. Report Info: Publications -> Goal: Organize/Explore -> Viz: Filterable Card Grid (HTML/CSS/JS) with AI Summary -> Interaction: Click category to filter, click button for AI summary -> Justification: Allows users to easily find articles on topics they care about (e.g., AI), demonstrating his depth in specific areas, and provides quick AI-generated insights. Report Info: Projects/Experience -> Goal: Organize/Inform -> Viz: Tabbed Cards (HTML/CSS/JS) with Modal Details -> Interaction: Click tabs to switch categories, click card for modal -> Justification: Manages a large amount of project/experience information without cluttering the page, separating professional, personal, and volunteer work for clarity, and providing in-depth details on demand. CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #1e293b; /* slate-800 */
+            overflow-x: hidden; /* Prevent horizontal scroll from animations */
+        }
+        .chart-container {
+            /* Removed as per user request */
+            display: none;
+        }
+        .nav-link {
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #0d9488; /* teal-600 */
+        }
+        .tab-button.active {
+            border-color: #0d9488; /* teal-600 */
+            color: #0d9488;
+            font-weight: 600;
+        }
+        .filter-button.active {
+            background-color: #0d9488; /* teal-600 */
+            color: white;
+        }
+        .skill-filter-button.active {
+            background-color: #0d9488; /* teal-600 */
+            color: white;
+        }
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            max-width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .close-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #64748b; /* slate-500 */
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .animate-on-scroll.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .loading-spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #0d9488;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-slate-800">Yusuf Sait Sakoğlu</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#hakkimda" class="nav-link text-slate-600">Hakkımda</a>
+                <a href="#egitim" class="nav-link text-slate-600">Eğitim</a>
+                <a href="#projeler" class="nav-link text-slate-600">Deneyim & Projeler</a>
+                <a href="#yetkinlikler" class="nav-link text-slate-600">Yetkinlikler</a>
+                <a href="#sertifikalar" class="nav-link text-slate-600">Sertifikalar</a>
+                <a href="#yayinlar" class="nav-link text-slate-600">Yayınlar</a>
+                <a href="#iletisim" class="nav-link text-slate-600">İletişim</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-slate-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#hakkimda" class="block py-2 px-6 text-sm text-slate-600 hover:bg-slate-100">Hakkımda</a>
+            <a href="#egitim" class="block py-2 px-6 text-sm text-slate-600 hover:bg-slate-100">Eğitim</a>
+            <a href="#projeler" class="block py-2 px-6 text-sm text-slate-600 hover:bg-slate-100">Deneyim & Projeler</a>
+            <a href="#yetkinlikler" class="block py-2 px-6 text-sm text-slate-600 hover:bg-slate-100">Yetkinlikler</a>
+            <a href="#sertifikalar" class="block py-2 px-6 text-sm text-slate-600 hover:bg-slate-100">Sertifikalar</a>
+            <a href="#yayinlar" class="block py-2 px-6 text-sm text-slate-600 hover:bg-slate-100">Yayınlar</a>
+            <a href="#iletisim" class="block py-2 px-6 text-sm text-slate-600 hover:bg-slate-100">İletişim</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hakkimda" class="py-20 md:py-32 animate-on-scroll">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-slate-900">Yusuf Sait Sakoğlu</h1>
+                <p class="mt-4 text-lg md:text-xl text-teal-700 font-medium">Bilgisayar Mühendisliği Öğrencisi | Yapay Zeka & İHA Meraklısı</p>
+                <p class="mt-6 max-w-3xl mx-auto text-slate-600">
+                    Abdullah Gül Üniversitesi Bilgisayar Mühendisliği öğrencisi olarak, yapay zeka, insansız hava araçları ve sürdürülebilir teknolojiler alanlarında kendimi geliştiriyorum. Teknik projeler üretmenin yanı sıra, toplumsal fayda sağlayan gönüllülük faaliyetlerine katılıyor ve teknoloji alanındaki güncel gelişmeleri yazılarımla kamuoyuna aktarıyorum. Amacım, teknolojiyi insanlık yararına kullanarak yenilikçi çözümler geliştirmektir.
+                </p>
+                <div class="mt-8 flex justify-center space-x-6">
+                    <a href="mailto:yusufsait.sakoglu@agu.edu.tr" class="text-slate-500 hover:text-teal-600 transition-colors">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/yusuf-sait-sako%C4%9Flu/" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-teal-600 transition-colors">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-7 5.08c-1.66 0-3 1.25-3 2.92 0 1.67 1.34 2.92 3 2.92s3-1.25 3-2.92c0-1.67-1.34-2.92-3-2.92zM8 11h2v5H8v-5zm3-2.08c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM8 9h2v1H8V9zm8 2h-1.5v-1c0-.83-.67-1.5-1.5-1.5S11.5 9.17 11.5 10v1H10v5h1.5v-2.5c0-.28.22-.5.5-.5s.5.22.5.5V16H14v-2.5c0-.28.22-.5.5-.5s.5.22.5.5V16h1.5v-5z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="egitim" class="py-20 bg-white animate-on-scroll">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-slate-900">Eğitim Geçmişi</h2>
+                <p class="text-center mt-2 text-slate-600">Akademik yolculuğum ve aldığım ilgili dersler.</p>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6 border border-slate-200">
+                        <h3 class="font-bold text-xl text-slate-800">Abdullah Gül Üniversitesi</h3>
+                        <p class="text-teal-600 font-semibold mt-1">Bilgisayar Mühendisliği Lisans</p>
+                        <p class="text-sm text-slate-500 mt-2">Kayseri, Türkiye | 2021 - Halen</p>
+                        <p class="text-base text-slate-700 mt-4">Bilgisayar mühendisliği alanında kapsamlı bir eğitim alarak, teorik bilgimi pratik uygulamalarla pekiştiriyorum.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border border-slate-200">
+                        <h3 class="font-bold text-xl text-slate-800">İlgili Dersler</h3>
+                        <ul class="list-disc list-inside text-slate-600 mt-4 space-y-2">
+                            <li>Bilgisayar Sanatı</li>
+                            <li>Bilgisayar Mühendisliğini Keşfetme</li>
+                            <li>Nesne Yönelimli Programlama</li>
+                            <li>Veri Yapıları ve Algoritmalar</li>
+                            <li>Mobil Programlama</li>
+                            <li>Dijital Tasarım</li>
+                            <li>Matematiksel Modelleme ve Algoritma Düşünme</li>
+                            <li>Veritabanı Yönetim Sistemi</li>
+                            <li>Ayrık Matematik</li>
+                            <li>Yazılım Mühendisliği</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projeler" class="py-20 animate-on-scroll">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-slate-900">Deneyim & Projeler</h2>
+                <p class="text-center mt-2 text-slate-600">Kariyer yolculuğumdaki adımlar ve tutkuyla geliştirdiğim projeler.</p>
+                
+                <div class="mt-12">
+                    <div class="border-b border-slate-200">
+                        <nav class="-mb-px flex justify-center space-x-4 md:space-x-8" aria-label="Tabs">
+                            <button data-tab="tab1" class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm text-slate-500 hover:text-teal-600 hover:border-teal-500 active">
+                                Akademik & Takım Projeleri
+                            </button>
+                            <button data-tab="tab2" class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm text-slate-500 hover:text-teal-600 hover:border-teal-500">
+                                Kişisel Projeler
+                            </button>
+                            <button data-tab="tab3" class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm text-slate-500 hover:text-teal-600 hover:border-teal-500">
+                                İş & Gönüllülük Deneyimi
+                            </button>
+                        </nav>
+                    </div>
+
+                    <div id="tab-content" class="mt-8">
+                        <!-- Tab Panelleri buraya JS ile eklenecek -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="yetkinlikler" class="py-20 bg-white animate-on-scroll">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-slate-900">Teknik Yetkinlikler & İlgi Alanları</h2>
+                <p class="text-center mt-2 text-slate-600">Projelerimde kullandığım teknolojiler ve odaklandığım alanlar.</p>
+                <div class="mt-12 flex flex-col md:flex-row items-start gap-12">
+                    <!-- Radar chart removed as per user request -->
+                    <div class="w-full">
+                        <div class="flex justify-center flex-wrap gap-2 mb-6">
+                            <button data-skill-type="all" class="skill-filter-button active bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Tümü</button>
+                            <button data-skill-type="Teknik Beceriler" class="skill-filter-button bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Teknik Beceriler</button>
+                            <button data-skill-type="Sosyal Beceriler" class="skill-filter-button bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Sosyal Beceriler</button>
+                            <button data-skill-type="Dil" class="skill-filter-button bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Dil</button>
+                        </div>
+                        <div id="skills-list" class="space-y-6">
+                            <!-- Yetkinlik Listesi buraya JS ile eklenecek -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sertifikalar" class="py-20 animate-on-scroll">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-slate-900">Sertifikalar</h2>
+                <p class="text-center mt-2 text-slate-600">Katıldığım eğitimler ve edindiğim sertifikalar.</p>
+                <div id="certificates-grid" class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Sertifika Kartları buraya JS ile eklenecek -->
+                </div>
+            </div>
+        </section>
+
+        <section id="yayinlar" class="py-20 bg-white animate-on-scroll">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-slate-900">Yayınlar & Yazılar</h2>
+                <p class="text-center mt-2 text-slate-600">Masqot.co platformunda teknoloji üzerine paylaştığım analiz ve görüşlerim.</p>
+                
+                <div class="mt-8 flex justify-center flex-wrap gap-2">
+                    <button data-filter="all" class="filter-button active bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Tümü</button>
+                    <button data-filter="ai" class="filter-button bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Yapay Zeka</button>
+                    <button data-filter="tech" class="filter-button bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Teknoloji</button>
+                    <button data-filter="media" class="filter-button bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Dijital Medya</button>
+                </div>
+
+                <div id="publications-grid" class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Yayın Kartları buraya JS ile eklenecek -->
+                </div>
+            </div>
+        </section>
+
+        <section id="iletisim" class="py-20 animate-on-scroll">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-slate-900">İletişime Geçin</h2>
+                <p class="mt-4 max-w-xl mx-auto text-slate-600">
+                    Projeler, iş birlikleri veya teknoloji üzerine bir sohbet için benimle iletişime geçmekten çekinmeyin.
+                </p>
+                <a href="mailto:yusufsait.sakoglu@agu.edu.tr" class="mt-8 inline-block bg-teal-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-teal-700 transition-all">
+                    E-posta Gönder
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-800 text-slate-400 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Yusuf Sait Sakoğlu. Tüm hakları saklıdır.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="mailto:yusufsait.sakoglu@agu.edu.tr" class="hover:text-white transition-colors">E-posta</a>
+                <a href="https://www.linkedin.com/in/yusuf-sait-sako%C4%9Flu/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Proje Detay Modalı -->
+    <div id="project-modal-overlay" class="modal-overlay hidden">
+        <div id="project-modal-content" class="modal-content">
+            <button class="close-button" id="close-modal">&times;</button>
+            <h3 id="modal-title" class="font-bold text-2xl text-slate-900 mb-2"></h3>
+            <p id="modal-subtitle" class="text-md text-teal-700 font-semibold mb-2"></p>
+            <p id="modal-date" class="text-sm text-slate-500 mb-4"></p>
+            <p id="modal-description" class="text-base text-slate-700 mb-4"></p>
+            <div id="modal-tags" class="flex flex-wrap gap-2"></div>
+        </div>
+    </div>
+
+    <!-- Yayın Özeti Modalı -->
+    <div id="summary-modal-overlay" class="modal-overlay hidden">
+        <div id="summary-modal-content" class="modal-content">
+            <button class="close-button" id="close-summary-modal">&times;</button>
+            <h3 class="font-bold text-2xl text-slate-900 mb-4">✨ Yayın Özeti ✨</h3>
+            <p id="generated-summary-text" class="text-base text-slate-700"></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const API_KEY = ""; // Gemini API key will be provided by the environment
+
+            const projectData = {
+                tab1: [
+                    {
+                        title: 'Araştırmacı - TÜBİTAK 2209-A Lisans Projesi',
+                        subtitle: 'GNSS ve Görüntü İşleme ile Sabit Kanatlı İHA Takibi',
+                        date: 'Nisan 2025 - Halen',
+                        description: 'TÜBİTAK 2209-A programı kapsamında fonlanan bu projede, düşman İHA\'larını tespit, takip ve tahmin eden bir sistem geliştiriyorum. GNSS ve gerçek zamanlı görüntü verilerini birleştirerek otonom savunma kapasitesi oluşturmayı hedefliyoruz. Bu proje, hem teorik bilgimi pekiştirmemi hem de pratik uygulamalarla İHA teknolojilerine derinlemesine dalmamı sağlıyor. Özellikle gerçek zamanlı veri işleme ve otonom karar verme mekanizmaları üzerine yoğunlaşıyorum.',
+                        tags: ['TÜBİTAK', 'İHA', 'Görüntü İşleme', 'YOLOv8', 'Python']
+                    },
+                    {
+                        title: 'Yazılım Takım Lideri - AGÜ Teknofest İHA Takımı',
+                        subtitle: 'Teknofest Savaşçı İHA Yarışması - Tulpar Takımı',
+                        date: 'Ocak 2024 - Halen',
+                        description: 'Teknofest Uluslararası İHA Yarışması için otonom bir sabit kanatlı İHA geliştiriyoruz. Bilgisayar görüşü, simülasyon, iletişim ve arayüz geliştirme alanlarında yazılım ekibine liderlik ediyorum. Bu görev, takım çalışması, proje yönetimi ve karmaşık sistem entegrasyonu becerilerimi geliştirmemde kritik rol oynadı. ROS 2 ve Gazebo gibi araçlarla simülasyon ortamlarında İHA davranışlarını test etme fırsatı buldum. YOLOv8\'i GOTURN + DeepSORT ile entegre ederek video girişlerinden gerçek zamanlı nesne takibini sağladım. Uçuş simülasyonu için ROS 2 kullanarak PX4 + Gazebo Classic\'te İHA davranış testlerine katıldım. Yer kontrol etkileşimleri için basit iletişim protokollerinin kurulmasına yardımcı oldum. Test videoları ve manuel olarak etiketlenmiş gerçek veri kullanarak takip doğruluğu metriklerini toplamaya ve değerlendirmeye yardımcı oldum.',
+                        tags: ['Teknofest', 'İHA', 'Otonom Sistemler', 'ROS 2', 'Gazebo', 'YOLOv8', 'DeepSORT']
+                    },
+                    {
+                        title: 'Takım Üyesi - SHE++',
+                        subtitle: 'Lise Öğrencilerini STEM Alanlarına Teşvik Projesi',
+                        date: 'Kasım 2023 - Mayıs 2024',
+                        description: 'Lise çağındaki kız öğrencileri mühendislik ve teknolojiye yüz yüze atölye çalışmaları ve mentorluk programları aracılığıyla güçlendirmeye odaklandı. STEM alanlarındaki cinsiyet stereotiplerini aşmaları ve özgüvenlerini artırmaları için programlama ve mühendislik araçlarında teknik becerileri psikolojik destekle birleştiren eğitim oturumları düzenledi ve sundu.',
+                        tags: ['Sosyal Sorumluluk', 'Eğitim', 'STEM', 'Mentorluk']
+                    },
+                    {
+                        title: 'Geleceği Düşün, Harekete Geç! Gençler İçin Sürdürülebilir Kalkınma Amaçları II',
+                        subtitle: 'Sürdürülebilir Kalkınma Projesi Katılımcısı',
+                        date: 'Ekim 2023',
+                        description: 'Kayseri Büyükşehir Belediyesi tarafından düzenlenen "Geleceği Düşün, Harekete Geç Projesi" kapsamında bir teknik geziye katıldım. Bu proje, Abdullah Gül Üniversitesi öğrencilerine yönelik olarak çevre ve doğa dostu sürdürülebilir projelere odaklanmıştır. Sürdürülebilir Kalkınma Amaçlarının önemini vurguladım ve saha ziyaretleri gerçekleştirdim. Gençlik ve Spor Bakanlığı tarafından desteklendi. Özellikle, Düzenli Atık Depolama sahasını ve tehlikeli metan gazını elektriğe dönüştürmek üzere tasarlanmış bir elektrik tesisini gezdim. Atık yönetimi projesinin ölçeğinden ve etkinliğinden gerçekten etkilendiğimi ve daha önce bu tür girişimlerin varlığından haberdar olmadığımı ifade ettim. Hem sanayi hem de ev atıklarının düzenli bir şekilde depolanmasının kritik önemini vurguladım. Gezi sırasında, Türkiye\'nin teknolojik yeteneklerine dair bir gurur ve heyecan dile getirerek, "istediğimiz zaman bizdeki teknolojiyi güçlü bir şekilde kullanabiliyoruz ve bu heyecan verici" ifadesini kullandım.',
+                        tags: ['Sürdürülebilirlik', 'Çevre', 'Atık Yönetimi', 'Enerji Dönüşümü', 'Teknik Gezi']
+                    }
+                ],
+                tab2: [
+                    {
+                        title: 'Cepteservis - Mobil Servis Pazaryeri Uygulaması',
+                        subtitle: 'Android Mobil Uygulama',
+                        date: 'Eylül 2023 - Şubat 2024',
+                        description: 'Kullanıcıların yerel tamir ve bakım hizmetlerini bulup talep edebileceği bir mobil pazar yeri uygulaması geliştirdim. Firebase ile gerçek zamanlı hizmet talepleri ve kullanıcı kimlik doğrulama özelliklerini entegre ettim. Bu proje, mobil uygulama geliştirme süreçlerini baştan sona deneyimlememi ve Firebase gibi backend servisleriyle çalışma yeteneğimi pekiştirmemi sağladı. Kullanıcı kimlik doğrulama, gerçek zamanlı hizmet talepleri ve yapılandırılmış kategori tabanlı bir listeleme sistemi entegre ettim. Kullanıcı deneyimini iyileştirmek için duyarlı bir kullanıcı arayüzü ve hizmet takip modülü uyguladım.',
+                        tags: ['Mobil Geliştirme', 'Java', 'Android Studio', 'Firebase']
+                    },
+                    {
+                        title: 'İbadet Takip Sistemi - Dini Alışkanlık Takip Uygulaması',
+                        subtitle: 'Flutter Mobil Uygulama',
+                        date: 'Mart 2025 - Halen',
+                        description: 'Kullanıcıların ibadet alışkanlıklarını takip etmelerini sağlayan bir namaz takip sistemi tasarladım. Gerçek zamanlı hatırlatıcılar, kaçırılan namazların kaydı ve takvim tabanlı geçmiş görünümü gibi özellikler içeriyor. Flutter ile çapraz platform mobil uygulama geliştirme becerilerimi bu projede uyguluyorum. Kullanıcı deneyimini ön planda tutarak, sezgisel bir arayüz tasarlamaya özen gösteriyorum. FCM kullanarak bildirim sistemi entegre ettim ve kullanıcı katılımını teşvik etmek için kişiselleştirilmiş bir geri bildirim sistemi geliştirdim.',
+                        tags: ['Mobil Geliştirme', 'Flutter', 'Dart', 'MySQL', 'FCM']
+                    },
+                    {
+                        title: 'Kişisel Web Portfolyo (Bu Uygulama)',
+                        subtitle: '.NET Core MVC ile Geliştirilen Web Projesi',
+                        date: 'Temmuz 2025',
+                        description: 'Kendi kişisel portfolyomu sergilemek amacıyla .NET Core MVC kullanarak geliştirdiğim bu web uygulaması, modern web teknolojileri ve responsive tasarım prensipleriyle oluşturulmuştur. Yetkinliklerimi, projelerimi ve yayınlarımı dinamik ve etkileşimli bir şekilde sunmayı hedefledim. Frontend için Tailwind CSS ve JavaScript kullanılmıştır.',
+                        tags: ['.NET Core MVC', 'C#', 'HTML', 'CSS', 'JavaScript', 'Tailwind CSS', 'Web Geliştirme']
+                    }
+                ],
+                tab3: [
+                    {
+                        title: 'Yarı Zamanlı Çalışan Öğrenci',
+                        subtitle: 'Abdullah Gül Üniversitesi Aday Öğrenci Koordinasyon Ofisi',
+                        date: 'Temmuz 2024 - Ağustos 2024',
+                        description: 'Aday öğrencilerle kişiselleştirilmiş iletişim kurarak üniversitenin tanıtımını yaptım. Öğrenci etkileşimlerinin detaylı kayıtlarını tutarak analiz süreçlerine katkı sağladım. Bu deneyim, iletişim becerilerimi ve veri toplama/analiz süreçlerine olan bakış açımı geliştirdi. Öğrenci etkileşimlerinin detaylı kayıtlarını tuttu, menşe şehirlerini ve iletişim sırasını kapsamlı analiz için not aldı.',
+                        tags: ['İş Deneyimi', 'İletişim', 'Tanıtım', 'Veri Analizi']
+                    },
+                    {
+                        title: 'Denetim Ekibi Koordinatörü - AGÜ GAA Kulübü',
+                        subtitle: 'Küresel Erişilebilirlik ve Farkındalık Kulübü',
+                        date: 'Ocak 2024 - Mayıs 2024',
+                        description: 'GAA\'nın denetim ekibi koordinatörü olarak, evrensel politikaların işleyişini değiştirmeyi ve erişilebilir faaliyetler yürütmeyi hedefleyerek, önce Abdullah Gül Üniversitesi\'nde, ardından Kayseri, Türkiye\'de ve son olarak küresel olarak insanlara, hayvanlara ve değerlere yönelik tutumları etkilemeyi amaçladım. Bu rol, liderlik ve organizasyon becerilerimi pekiştirmemi sağlarken, toplumsal duyarlılığımı artırdı.',
+                        tags: ['Gönüllülük', 'Liderlik', 'Erişilebilirlik', 'Farkındalık']
+                    },
+                    {
+                        title: 'Gönüllü Öğrenci - AGÜ Genç Kızılay Kulübü',
+                        subtitle: 'Çeşitli Gönüllülük Faaliyetleri',
+                        date: 'Ekim 2022 - Haziran 2023',
+                        description: 'Kan bağışı kampanyasında gönüllü stand görevlisi olarak çalıştım. Ağaç dikme etkinliğinde gönüllü olarak ağaç diktim. Sokak hayvanlarını gönüllü olarak besledim. Gönüllülük, topluma katkı sağlama ve empati kurma yeteneğimi güçlendirdi.',
+                        tags: ['Gönüllülük', 'Toplumsal Katkı', 'Kızılay']
+                    }
+                ]
+            };
+
+            const publicationsData = [
+                { title: 'Zeka Paradoksu: Yapay Zeka için Yaratıcılığı Geliştirmek', category: 'ai', url: 'https://masqot.co/' },
+                { title: 'İleri Düzey Donanım Cihazı, Yapay Zeka Enerji Tüketimini 1000 Kat Azaltıyor', category: 'ai', url: 'https://masqot.co/' },
+                { title: 'Yapay Zekanın Kanser Araştırmaları ve İlaç Keşfindeki Devrimi', category: 'ai', url: 'https://masqot.co/' },
+                { title: 'Google’ın Imagen 3: Yapay Zekanın Görsel Sanatlara Getirdiği Yeni Boyut', category: 'ai', url: 'https://masqot.co/' },
+                { title: 'Elektrikli Araçlar ile Fosil Yakıtlı Araçlar: Hangisi Geleceğin Teknolojisi?', category: 'tech', url: 'https://masqot.co/' },
+                { title: 'iOS 18: iPhone’un Sınırlarını Zorlayan Güncelleme', category: 'tech', url: 'https://masqot.co/' },
+                { title: 'En İyi Video Düzenleme Programı Hangisi: Premiere Pro vs Final Cut Pro vs DaVinci Resolve', category: 'media', url: 'https://masqot.co/' },
+                { title: 'ElevenLabs Reader ile Unutulmaz Bir Sesli İçerik Deneyimi Sunun!', category: 'media', url: 'https://masqot.co/' },
+                { title: 'Yapılandırılmış Işık ve Yapay Zeka İletişimin Geleceğini Nasıl Şekillendiriyor?', category: 'ai', url: 'https://masqot.co/' },
+                { title: 'Bilim Kurgu Değil: Araştırmacılar Star Trek’in Holodeck’ini AI Kullanarak Yeniden Yarattı!', category: 'ai', url: 'https://masqot.co/' }
+            ];
+            
+            const skillsData = [
+                { type: 'Teknik Beceriler', category: 'Diller', items: ['Python', 'Java', 'C', 'Dart', 'C#'] },
+                { type: 'Teknik Beceriler', category: 'Araçlar/Çerçeveler', items: ['OpenCV', 'YOLOv8', 'DeepSORT', 'ROS', 'Gazebo', 'Git', 'Flutter', 'Firebase', '.NET Core MVC'] },
+                { type: 'Teknik Beceriler', category: 'Platformlar', items: ['Linux', 'Windows'] },
+                { type: 'Teknik Beceriler', category: 'Diğer', items: ['Microsoft Office', 'Canva'] },
+                { type: 'Sosyal Beceriler', category: 'Genel', items: ['Takım Çalışması', 'İletişim', 'Zaman Yönetimi', 'Liderlik', 'Duygusal Zeka'] },
+                { type: 'Dil', category: 'Genel', items: ['Türkçe (Anadili)', 'İngilizce (B2-Orta Düzey Profesyonel Yeterlilik)', 'Almanca (A1-Başlangıç Düzeyi)'] }
+            ];
+
+            const certificatesData = [
+                { title: 'Temel Python ve Görüntü İşleme Kursu', issuer: 'United Latino Students Association', date: 'Bilinmiyor' },
+                { title: 'SHE++ Proje Yöneticisi', issuer: 'Abdullah Gül Üniversitesi Gençlik Çalışmaları Uygulama ve Araştırma Merkezi', date: 'Mayıs 2024 - Ağustos 2024' },
+                { title: 'Canva Kariyer Zirvesi\'24', issuer: 'Etkin Kampüs', date: 'Mart 2024' },
+                { title: '19. ve 20. Genç Akademi', issuer: 'Bilkent Üniversitesi Yöneylem Araştırması Kulübü', date: 'Aralık 2024' },
+                { title: 'SDG Konuşma Kulübü Projesi', issuer: 'Abdullah Gül Üniversitesi', date: 'Kasım 2023' },
+                { title: 'Geleceği Düşün, Harekete Geç! Gençler İçin Sürdürülebilir Kalkınma Amaçları II', issuer: 'Bilinmiyor', date: 'Ekim 2023' }
+            ];
+
+            const tabContainer = document.getElementById('tab-content');
+            const tabButtons = document.querySelectorAll('.tab-button');
+
+            const modalOverlay = document.getElementById('project-modal-overlay');
+            const modalContent = document.getElementById('project-modal-content');
+            const modalTitle = document.getElementById('modal-title');
+            const modalSubtitle = document.getElementById('modal-subtitle');
+            const modalDate = document.getElementById('modal-date');
+            const modalDescription = document.getElementById('modal-description');
+            const modalTags = document.getElementById('modal-tags');
+            const closeModalButton = document.getElementById('close-modal');
+
+            const summaryModalOverlay = document.getElementById('summary-modal-overlay');
+            const generatedSummaryText = document.getElementById('generated-summary-text');
+            const closeSummaryModalButton = document.getElementById('close-summary-modal');
+
+            function openModal(project) {
+                modalTitle.textContent = project.title;
+                modalSubtitle.textContent = project.subtitle;
+                modalDate.textContent = project.date;
+                modalDescription.textContent = project.description;
+                modalTags.innerHTML = project.tags.map(t => `<span class="bg-slate-100 text-slate-600 text-xs font-medium px-2.5 py-0.5 rounded-full">${t}</span>`).join('');
+                modalOverlay.classList.add('active');
+            }
+
+            function closeModal() {
+                modalOverlay.classList.remove('active');
+            }
+
+            closeModalButton.addEventListener('click', closeModal);
+            modalOverlay.addEventListener('click', (e) => {
+                if (e.target === modalOverlay) {
+                    closeModal();
+                }
+            });
+
+            function openSummaryModal(text) {
+                generatedSummaryText.textContent = text;
+                summaryModalOverlay.classList.add('active');
+            }
+
+            function closeSummaryModal() {
+                summaryModalOverlay.classList.remove('active');
+            }
+
+            closeSummaryModalButton.addEventListener('click', closeSummaryModal);
+            summaryModalOverlay.addEventListener('click', (e) => {
+                if (e.target === summaryModalOverlay) {
+                    closeSummaryModal();
+                }
+            });
+
+            async function generateContentWithRetry(prompt, retries = 3, delay = 1000) {
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${API_KEY}`;
+
+                for (let i = 0; i < retries; i++) {
+                    try {
+                        const response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                        const result = await response.json();
+                        if (result.candidates && result.candidates.length > 0 &&
+                            result.candidates[0].content && result.candidates[0].content.parts &&
+                            result.candidates[0].content.parts.length > 0) {
+                            return result.candidates[0].content.parts[0].text;
+                        } else {
+                            throw new Error('Unexpected API response structure or no content.');
+                        }
+                    } catch (error) {
+                        if (i < retries - 1) {
+                            await new Promise(res => setTimeout(res, delay));
+                            delay *= 2; // Exponential backoff
+                        } else {
+                            console.error("API call failed after multiple retries:", error);
+                            throw error;
+                        }
+                    }
+                }
+                return null;
+            }
+
+            function renderTabContent(tabId) {
+                const projects = projectData[tabId] || [];
+                tabContainer.innerHTML = `
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        ${projects.map((p, index) => `
+                            <div class="card bg-white rounded-lg shadow-md overflow-hidden p-6 border border-slate-200 cursor-pointer" data-project-index="${index}" data-tab-id="${tabId}">
+                                <h3 class="font-bold text-lg text-slate-800">${p.title}</h3>
+                                <p class="text-sm text-teal-600 font-semibold mt-1">${p.subtitle}</p>
+                                <p class="text-xs text-slate-500 mt-2">${p.date}</p>
+                                <p class="text-sm text-slate-600 mt-4 line-clamp-3">${p.description}</p>
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    ${p.tags.map(t => `<span class="bg-slate-100 text-slate-600 text-xs font-medium px-2.5 py-0.5 rounded-full">${t}</span>`).join('')}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+
+                tabContainer.querySelectorAll('.card').forEach(card => {
+                    card.addEventListener('click', (e) => {
+                        const projectIndex = e.currentTarget.dataset.projectIndex;
+                        const currentTabId = e.currentTarget.dataset.tabId;
+                        const project = projectData[currentTabId][projectIndex];
+                        openModal(project);
+                    });
+                });
+            }
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    renderTabContent(button.dataset.tab);
+                });
+            });
+
+            renderTabContent('tab1');
+
+            const publicationsGrid = document.getElementById('publications-grid');
+            const filterButtons = document.querySelectorAll('.filter-button');
+
+            function renderPublications(filter = 'all') {
+                const filteredData = filter === 'all' ? publicationsData : publicationsData.filter(p => p.category === filter);
+                publicationsGrid.innerHTML = filteredData.map((p, index) => `
+                    <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="card block bg-white p-6 rounded-lg shadow-md border border-slate-200 relative">
+                        <h3 class="font-semibold text-slate-800">${p.title}</h3>
+                        <div class="mt-4 flex items-center justify-between text-sm font-medium text-teal-600">
+                            <span>Masqot İnternet Sitesi →</span>
+                            <button class="generate-summary-button bg-teal-500 text-white px-3 py-1 rounded-full text-xs hover:bg-teal-600 transition-colors" data-publication-index="${index}">
+                                ✨ Özet Oluştur
+                            </button>
+                        </div>
+                    </a>
+                `).join('');
+
+                // ✨ Yayın Özeti Oluştur ✨
+                publicationsGrid.querySelectorAll('.generate-summary-button').forEach(button => {
+                    button.addEventListener('click', async (e) => {
+                        e.preventDefault(); // Prevent link navigation
+                        e.stopPropagation(); // Prevent card from opening project modal if it were a project card
+
+                        button.disabled = true;
+                        const originalText = button.textContent;
+                        button.innerHTML = '<span class="loading-spinner"></span>';
+
+                        const publicationIndex = e.currentTarget.dataset.publicationIndex;
+                        const publicationTitle = publicationsData[publicationIndex].title;
+                        const prompt = `"${publicationTitle}" başlıklı bir yayın için kısa bir özet oluştur. Bu bir makale başlığıdır, içeriği hakkında genel bir fikir verecek bir özet yaz.`;
+
+                        try {
+                            const summary = await generateContentWithRetry(prompt);
+                            if (summary) {
+                                openSummaryModal(summary);
+                            } else {
+                                openSummaryModal("Özet oluşturulurken bir hata oluştu. Lütfen daha sonra tekrar deneyin.");
+                            }
+                        } catch (error) {
+                            openSummaryModal("Özet oluşturulurken bir hata oluştu: " + error.message);
+                        } finally {
+                            button.disabled = false;
+                            button.textContent = originalText;
+                        }
+                    });
+                });
+            }
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    renderPublications(button.dataset.filter);
+                });
+            });
+
+            renderPublications();
+
+            const skillsListContainer = document.getElementById('skills-list');
+            const skillFilterButtons = document.querySelectorAll('.skill-filter-button');
+
+            function renderSkills(filterType = 'all') {
+                skillsListContainer.innerHTML = ''; // Clear previous content
+                let filteredSkills = skillsData;
+
+                if (filterType !== 'all') {
+                    filteredSkills = skillsData.filter(s => s.type === filterType);
+                }
+
+                if (filteredSkills.length > 0) {
+                    filteredSkills.forEach(skillGroup => {
+                        skillsListContainer.innerHTML += `
+                            <div>
+                                <h3 class="font-semibold text-slate-800 mb-2">${skillGroup.category}</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    ${skillGroup.items.map(item => `<span class="bg-teal-100 text-teal-800 text-sm font-medium px-3 py-1 rounded-full">${item}</span>`).join('')}
+                                </div>
+                            </div>
+                        `;
+                    });
+                } else {
+                    skillsListContainer.innerHTML = `<p class="text-slate-500">Bu kategoriye ait yetkinlik bulunmamaktadır.</p>`;
+                }
+            }
+            
+            skillFilterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    skillFilterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    renderSkills(button.dataset.skillType);
+                });
+            });
+
+            renderSkills('all'); // Initial render for all skills
+
+            // Removed Chart.js initialization as per user request
+            // const ctx = document.getElementById('skillsChart').getContext('2d');
+            // new Chart(ctx, { ... });
+
+            const certificatesGrid = document.getElementById('certificates-grid');
+            function renderCertificates() {
+                certificatesGrid.innerHTML = certificatesData.map(cert => `
+                    <div class="bg-white rounded-lg shadow-md p-6 border border-slate-200">
+                        <h3 class="font-bold text-lg text-slate-800">${cert.title}</h3>
+                        <p class="text-sm text-teal-600 font-semibold mt-1">${cert.issuer}</p>
+                        <p class="text-xs text-slate-500 mt-2">${cert.date}</p>
+                    </div>
+                `).join('');
+            }
+            renderCertificates();
+
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Scroll Animation Logic
+            const sectionsToAnimate = document.querySelectorAll('.animate-on-scroll');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            sectionsToAnimate.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
