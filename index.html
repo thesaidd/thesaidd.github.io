@@ -10,11 +10,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --accent-color: #0d9488;
+            --border-color: #e2e8f0;
+            --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --accent-color: #14b8a6;
+            --border-color: #334155;
+            --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* slate-50 */
-            color: #1e293b; /* slate-800 */
-            overflow-x: hidden; /* Prevent horizontal scroll from animations */
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         .chart-container {
             display: none;
@@ -23,23 +44,26 @@
             transition: color 0.3s;
         }
         .nav-link:hover {
-            color: #0d9488; /* teal-600 */
+            color: var(--accent-color);
         }
         .tab-button.active {
-            border-color: #0d9488; /* teal-600 */
-            color: #0d9488;
+            border-color: var(--accent-color);
+            color: var(--accent-color);
             font-weight: 600;
         }
         .filter-button.active, .skill-filter-button.active {
-            background-color: #0d9488; /* teal-600 */
+            background-color: var(--accent-color);
             color: white;
         }
         .card {
             transition: transform 0.3s, box-shadow 0.3s;
+            background-color: var(--bg-secondary);
+            border-color: var(--border-color);
+            box-shadow: var(--card-shadow);
         }
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.2), 0 4px 6px -4px rgb(0 0 0 / 0.1);
         }
         .modal-overlay {
             position: fixed;
@@ -61,10 +85,10 @@
             visibility: visible;
         }
         .modal-content {
-            background-color: white;
+            background-color: var(--bg-secondary);
             padding: 2rem;
             border-radius: 0.75rem;
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            box-shadow: var(--card-shadow);
             max-width: 90%;
             max-height: 90vh;
             overflow-y: auto;
@@ -98,7 +122,7 @@
         }
         .loading-spinner {
             border: 4px solid rgba(0, 0, 0, 0.1);
-            border-left-color: #0d9488;
+            border-left-color: var(--accent-color);
             border-radius: 50%;
             width: 24px;
             height: 24px;
@@ -106,6 +130,145 @@
             display: inline-block;
             vertical-align: middle;
             margin-left: 8px;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-color), #14b8a6);
+            z-index: 9999;
+            transition: width 0.3s ease;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Skill Progress Bars */
+        .skill-progress {
+            margin-top: 1rem;
+        }
+
+        .skill-item {
+            margin-bottom: 1rem;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .skill-percentage {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 8px;
+            background-color: var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-color), #14b8a6);
+            border-radius: 4px;
+            transition: width 1.5s ease-in-out;
+            transform: translateX(-100%);
+        }
+
+        .skill-fill.animate {
+            transform: translateX(0);
+        }
+
+        /* Timeline Animation */
+        .timeline-item {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.6s ease;
+        }
+
+        .timeline-item.in-view {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--border-color);
+        }
+
+        /* Enhanced Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in-up.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.6s ease;
+        }
+
+        .scale-in.in-view {
+            opacity: 1;
+            transform: scale(1);
         }
         @keyframes spin {
             0% { transform: rotate(0deg); }
@@ -115,7 +278,10 @@
 </head>
 <body class="antialiased">
 
-    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progress-bar"></div>
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm dark:bg-slate-900/80">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-xl font-bold text-slate-800">Yusuf Sait Sakoğlu</a>
             <div class="hidden md:flex space-x-6 items-center">
@@ -130,6 +296,14 @@
             <div class="flex items-center space-x-2">
                 <button id="lang-tr" class="font-semibold py-1 px-3 rounded-full text-sm bg-teal-600 text-white hover:bg-teal-700 transition-colors">TR</button>
                 <button id="lang-en" class="font-semibold py-1 px-3 rounded-full text-sm bg-slate-200 text-slate-800 hover:bg-slate-300 transition-colors">EN</button>
+                <button id="theme-toggle" class="theme-toggle" title="Toggle Dark Mode">
+                    <svg id="sun-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m6.01-6.01l.707-.707m12.728 12.728l.707.707M6.01 6.01L5.303 5.303m12.728-12.728l.707.707M6.01 17.99l.707.707M16.01 6.01l.707-.707M16.01 17.99l.707.707M12 7a5 5 0 11-10 0 5 5 0 0110 0z"></path>
+                    </svg>
+                    <svg id="moon-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                </button>
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-slate-800 focus:outline-none">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -149,7 +323,7 @@
     </header>
 
     <main>
-        <section id="hakkimda" class="py-20 md:py-32 animate-on-scroll">
+        <section id="hakkimda" class="py-20 md:py-32 fade-in-up">
             <div class="container mx-auto px-6 text-center">
                 <div class="mb-8">
                     <img src="https://media.licdn.com/dms/image/v2/D4D03AQH-9_p77Mp_nw/profile-displayphoto-shrink_200_200/B4DZPLZvGAGoAg-/0/1734284350224?e=1756944000&v=beta&t=3mVoFf9LRPB4O5diws4j6cW4ebInOPmj6IGyc2MQ92Y" 
@@ -172,20 +346,20 @@
             </div>
         </section>
 
-        <section id="egitim" class="py-20 bg-white animate-on-scroll">
+        <section id="egitim" class="py-20 bg-white scale-in">
             <div class="container mx-auto px-6">
                 <h2 id="education-heading" class="text-3xl font-bold text-center text-slate-900">Eğitim Geçmişi</h2>
                 <p id="education-subheading" class="text-center mt-2 text-slate-600">Akademik yolculuğum ve aldığım ilgili dersler.</p>
                 <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-lg shadow-md p-6 border border-slate-200">
-                        <h3 id="university-title" class="font-bold text-xl text-slate-800">Abdullah Gül Üniversitesi</h3>
+                    <div class="bg-white rounded-lg shadow-md p-6 border border-slate-200 dark:bg-slate-800 dark:border-slate-700">
+                        <h3 id="university-title" class="font-bold text-xl text-slate-800 dark:text-slate-200">Abdullah Gül Üniversitesi</h3>
                         <p id="degree-title" class="text-teal-600 font-semibold mt-1">Bilgisayar Mühendisliği Lisans</p>
-                        <p id="university-date" class="text-sm text-slate-500 mt-2">Kayseri, Türkiye | 2021 - Halen</p>
-                        <p id="university-description" class="text-base text-slate-700 mt-4">Bilgisayar mühendisliği alanında kapsamlı bir eğitim alarak, teorik bilgimi pratik uygulamalarla pekiştiriyorum.</p>
+                        <p id="university-date" class="text-sm text-slate-500 dark:text-slate-400 mt-2">Kayseri, Türkiye | 2021 - Halen</p>
+                        <p id="university-description" class="text-base text-slate-700 dark:text-slate-300 mt-4">Bilgisayar mühendisliği alanında kapsamlı bir eğitim alarak, teorik bilgimi pratik uygulamalarla pekiştiriyorum.</p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md p-6 border border-slate-200">
-                        <h3 id="courses-heading" class="font-bold text-xl text-slate-800">İlgili Dersler</h3>
-                        <ul id="courses-list" class="list-disc list-inside text-slate-600 mt-4 space-y-2">
+                    <div class="bg-white rounded-lg shadow-md p-6 border border-slate-200 dark:bg-slate-800 dark:border-slate-700">
+                        <h3 id="courses-heading" class="font-bold text-xl text-slate-800 dark:text-slate-200">İlgili Dersler</h3>
+                        <ul id="courses-list" class="list-disc list-inside text-slate-600 dark:text-slate-300 mt-4 space-y-2">
                             <!-- İlgili Dersler JS ile eklenecek -->
                         </ul>
                     </div>
@@ -193,7 +367,7 @@
             </div>
         </section>
 
-        <section id="projeler" class="py-20 animate-on-scroll">
+        <section id="projeler" class="py-20 timeline-item">
             <div class="container mx-auto px-6">
                 <h2 id="projects-heading" class="text-3xl font-bold text-center text-slate-900">Deneyim & Projeler</h2>
                 <p id="projects-subheading" class="text-center mt-2 text-slate-600">Kariyer yolculuğumdaki adımlar ve tutkuyla geliştirdiğim projeler.</p>
@@ -220,7 +394,7 @@
             </div>
         </section>
 
-        <section id="yetkinlikler" class="py-20 bg-white animate-on-scroll">
+        <section id="yetkinlikler" class="py-20 bg-white fade-in-up">
             <div class="container mx-auto px-6">
                 <h2 id="skills-heading" class="text-3xl font-bold text-center text-slate-900">Teknik Yetkinlikler & İlgi Alanları</h2>
                 <p id="skills-subheading" class="text-center mt-2 text-slate-600">Projelerimde kullandığım teknolojiler ve odaklandığım alanlar.</p>
@@ -240,7 +414,7 @@
             </div>
         </section>
 
-        <section id="sertifikalar" class="py-20 animate-on-scroll">
+        <section id="sertifikalar" class="py-20 scale-in">
             <div class="container mx-auto px-6">
                 <h2 id="certificates-heading" class="text-3xl font-bold text-center text-slate-900">Sertifikalar</h2>
                 <p id="certificates-subheading" class="text-center mt-2 text-slate-600">Katıldığım eğitimler ve edindiğim sertifikalar.</p>
@@ -250,7 +424,7 @@
             </div>
         </section>
 
-        <section id="yayinlar" class="py-20 bg-white animate-on-scroll">
+        <section id="yayinlar" class="py-20 bg-white timeline-item">
             <div class="container mx-auto px-6">
                 <h2 id="publications-heading" class="text-3xl font-bold text-center text-slate-900">Yayınlar & Yazılar</h2>
                 <p id="publications-subheading" class="text-center mt-2 text-slate-600">Masqot.co platformunda teknoloji üzerine paylaştığım analiz ve görüşlerim.</p>
@@ -268,7 +442,7 @@
             </div>
         </section>
 
-        <section id="iletisim" class="py-20 animate-on-scroll">
+        <section id="iletisim" class="py-20 fade-in-up">
             <div class="container mx-auto px-6 text-center">
                 <h2 id="contact-heading" class="text-3xl font-bold text-slate-900">İletişime Geçin</h2>
                 <p id="contact-text" class="mt-4 max-w-xl mx-auto text-slate-600">
@@ -290,6 +464,13 @@
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" title="Back to Top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
 
     <!-- Proje Detay Modalı -->
     <div id="project-modal-overlay" class="modal-overlay hidden">
@@ -665,6 +846,86 @@
                 }
             };
 
+            // Theme management
+            const initTheme = () => {
+                const savedTheme = localStorage.getItem('portfolioTheme') || 'light';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                updateThemeIcon(savedTheme);
+            };
+
+            const toggleTheme = () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('portfolioTheme', newTheme);
+                updateThemeIcon(newTheme);
+            };
+
+            const updateThemeIcon = (theme) => {
+                const sunIcon = document.getElementById('sun-icon');
+                const moonIcon = document.getElementById('moon-icon');
+                if (theme === 'dark') {
+                    sunIcon.classList.add('hidden');
+                    moonIcon.classList.remove('hidden');
+                } else {
+                    sunIcon.classList.remove('hidden');
+                    moonIcon.classList.add('hidden');
+                }
+            };
+
+            // Progress bar functionality
+            const initProgressBar = () => {
+                const progressBar = document.getElementById('progress-bar');
+                window.addEventListener('scroll', () => {
+                    const scrollTop = window.pageYOffset;
+                    const docHeight = document.body.offsetHeight - window.innerHeight;
+                    const scrollPercent = (scrollTop / docHeight) * 100;
+                    progressBar.style.width = scrollPercent + '%';
+                });
+            };
+
+            // Back to top functionality
+            const initBackToTop = () => {
+                const backToTopBtn = document.getElementById('back-to-top');
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        backToTopBtn.classList.add('visible');
+                    } else {
+                        backToTopBtn.classList.remove('visible');
+                    }
+                });
+
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            };
+
+            // Enhanced animations
+            const initEnhancedAnimations = () => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-view');
+                            
+                            // Animate skill bars
+                            const skillFills = entry.target.querySelectorAll('.skill-fill');
+                            skillFills.forEach(fill => {
+                                setTimeout(() => {
+                                    fill.classList.add('animate');
+                                }, 200);
+                            });
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                document.querySelectorAll('.animate-on-scroll, .fade-in-up, .scale-in, .timeline-item').forEach(el => {
+                    observer.observe(el);
+                });
+            };
+
             // Sayfa yüklendiğinde çalışacak ana fonksiyon
             const init = () => {
                 // DOM elemanlarını seçme ve id'lerini belirleme
@@ -758,12 +1019,57 @@
                     const div = document.createElement('div');
                     div.classList.add('skill-category');
                     div.dataset.skillType = category.type;
-                    div.innerHTML = `
-                        <h4 class="font-semibold text-lg text-slate-800 mb-2">${category.category}</h4>
-                        <div class="flex flex-wrap gap-2">
+                    
+                    // Skill progress data
+                    const skillProgress = {
+                        'Python': 90,
+                        'Java': 85,
+                        'C': 80,
+                        'Dart': 75,
+                        'C#': 70,
+                        'OpenCV': 85,
+                        'YOLOv8': 80,
+                        'DeepSORT': 75,
+                        'ROS': 70,
+                        'Gazebo': 65,
+                        'Git': 90,
+                        'Flutter': 80,
+                        'Firebase': 75,
+                        'Android Studio': 85,
+                        'MySQL': 80,
+                        '.NET Core MVC': 75,
+                        'Tailwind CSS': 85,
+                        'HTML': 90,
+                        'CSS': 85,
+                        'JavaScript': 80
+                    };
+                    
+                    let content = `<h4 class="font-semibold text-lg text-slate-800 mb-2">${category.category}</h4>`;
+                    
+                    if (category.type === 'Teknik Beceriler' || category.type === 'Technical Skills') {
+                        content += '<div class="skill-progress">';
+                        category.items.forEach(item => {
+                            const percentage = skillProgress[item] || 70;
+                            content += `
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">${item}</span>
+                                        <span class="skill-percentage">${percentage}%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-fill" style="width: ${percentage}%"></div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        content += '</div>';
+                    } else {
+                        content += `<div class="flex flex-wrap gap-2">
                             ${category.items.map(item => `<span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-full text-sm font-medium">${item}</span>`).join('')}
-                        </div>
-                    `;
+                        </div>`;
+                    }
+                    
+                    div.innerHTML = content;
                     return div;
                 };
                 
@@ -1065,6 +1371,15 @@
                     observer.observe(section);
                 });
             };
+
+            // Initialize all new features
+            initTheme();
+            initProgressBar();
+            initBackToTop();
+            initEnhancedAnimations();
+
+            // Theme toggle event listener
+            document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
 
             init();
         });
