@@ -42,6 +42,8 @@
         }
         .nav-link {
             transition: color 0.3s;
+            font-weight: 600;
+            color: var(--text-primary);
         }
         .nav-link:hover {
             color: var(--accent-color);
@@ -176,49 +178,10 @@
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
         }
 
-        /* Skill Progress Bars */
-        .skill-progress {
-            margin-top: 1rem;
-        }
-
-        .skill-item {
-            margin-bottom: 1rem;
-        }
-
-        .skill-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-
-        .skill-name {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .skill-percentage {
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-        }
-
-        .skill-bar {
-            width: 100%;
-            height: 8px;
-            background-color: var(--border-color);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .skill-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--accent-color), #14b8a6);
-            border-radius: 4px;
-            transition: width 1.5s ease-in-out;
-            transform: translateX(-100%);
-        }
-
-        .skill-fill.animate {
-            transform: translateX(0);
+        /* Hero Name Fix for Dark Mode */
+        .hero-name {
+            color: var(--text-primary) !important;
+            font-weight: 700;
         }
 
         /* Timeline Animation */
@@ -285,13 +248,13 @@
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-xl font-bold text-slate-800">Yusuf Sait Sakoğlu</a>
             <div class="hidden md:flex space-x-6 items-center">
-                <a href="#hakkimda" id="nav-about" class="nav-link text-slate-600">Hakkımda</a>
-                <a href="#egitim" id="nav-education" class="nav-link text-slate-600">Eğitim</a>
-                <a href="#projeler" id="nav-projects" class="nav-link text-slate-600">Deneyim & Projeler</a>
-                <a href="#yetkinlikler" id="nav-skills" class="nav-link text-slate-600">Yetkinlikler</a>
-                <a href="#sertifikalar" id="nav-certificates" class="nav-link text-slate-600">Sertifikalar</a>
-                <a href="#yayinlar" id="nav-publications" class="nav-link text-slate-600">Yayınlar</a>
-                <a href="#iletisim" id="nav-contact" class="nav-link text-slate-600">İletişim</a>
+                <a href="#hakkimda" id="nav-about" class="nav-link">Hakkımda</a>
+                <a href="#egitim" id="nav-education" class="nav-link">Eğitim</a>
+                <a href="#projeler" id="nav-projects" class="nav-link">Deneyim & Projeler</a>
+                <a href="#yetkinlikler" id="nav-skills" class="nav-link">Yetkinlikler</a>
+                <a href="#sertifikalar" id="nav-certificates" class="nav-link">Sertifikalar</a>
+                <a href="#yayinlar" id="nav-publications" class="nav-link">Yayınlar</a>
+                <a href="#iletisim" id="nav-contact" class="nav-link">İletişim</a>
             </div>
             <div class="flex items-center space-x-2">
                 <button id="lang-tr" class="font-semibold py-1 px-3 rounded-full text-sm bg-teal-600 text-white hover:bg-teal-700 transition-colors">TR</button>
@@ -326,11 +289,11 @@
         <section id="hakkimda" class="py-20 md:py-32 fade-in-up">
             <div class="container mx-auto px-6 text-center">
                 <div class="mb-8">
-                    <img src="https://instagram.fyei6-3.fna.fbcdn.net/v/t51.2885-19/539359741_18059711396608472_3877444968099550379_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fyei6-3.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2QHOKEFMooKZaewqA7lqkeKamGIMmHVl0k64-kgx8rMJEZB4FqkwvEBDrrTUscU6ykU&_nc_ohc=Ih7mCjR72OQQ7kNvwFwErPC&_nc_gid=zJPlq7gNUj2nfoGxjKq55A&edm=AE-LrgUBAAAA&ccb=7-5&oh=00_AfY8mxJFGRP0R06qHCGCvbuIk80zu-eGkJivIWjnmpt30g&oe=68D03248&_nc_sid=8353fa" 
+                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQH-9_p77Mp_nw/profile-displayphoto-shrink_200_200/B4DZPLZvGAGoAg-/0/1734284350224?e=1761177600&v=beta&t=1nv-N6u5vE0oT0SanxBRU1jvAtENeYVDX_k1zDhy5hU" 
                          alt="Yusuf Sait Sakoğlu" 
                          class="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto object-cover shadow-lg border-4 border-white">
                 </div>
-                <h1 id="hero-name" class="text-4xl md:text-6xl font-bold text-slate-900">Yusuf Sait Sakoğlu</h1>
+                <h1 id="hero-name" class="text-4xl md:text-6xl font-bold hero-name">Yusuf Sait Sakoğlu</h1>
                 <p id="hero-title" class="mt-4 text-lg md:text-xl text-teal-700 font-medium">Bilgisayar Mühendisliği Öğrencisi | Yapay Zeka & İHA Meraklısı</p>
                 <p id="hero-about" class="mt-6 max-w-3xl mx-auto text-slate-600">
                     <!-- Hakkımda yazısı JS ile eklenecek -->
@@ -425,20 +388,14 @@
         </section>
 
         <section id="yayinlar" class="py-20 bg-white timeline-item">
-            <div class="container mx-auto px-6">
-                <h2 id="publications-heading" class="text-3xl font-bold text-center text-slate-900">Yayınlar & Yazılar</h2>
-                <p id="publications-subheading" class="text-center mt-2 text-slate-600">Masqot.co platformunda teknoloji üzerine paylaştığım analiz ve görüşlerim.</p>
-                
-                <div class="mt-8 flex justify-center flex-wrap gap-2">
-                    <button data-filter="all" class="filter-button active bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Tümü</button>
-                    <button id="pub-ai-btn" data-filter="ai" class="filter-button bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Yapay Zeka</button>
-                    <button id="pub-tech-btn" data-filter="tech" class="filter-button bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Teknoloji</button>
-                    <button id="pub-media-btn" data-filter="media" class="filter-button bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-medium transition-colors">Dijital Medya</button>
-                </div>
-
-                <div id="publications-grid" class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Yayın Kartları buraya JS ile eklenecek -->
-                </div>
+            <div class="container mx-auto px-6 text-center">
+                <h2 id="publications-heading" class="text-3xl font-bold text-slate-900">Yayınlar & Yazılar</h2>
+                <p id="publications-subheading" class="mt-4 max-w-xl mx-auto text-slate-600">
+                    Masqot.co platformunda teknoloji üzerine paylaştığım analiz ve görüşlerimi keşfedin.
+                </p>
+                <a href="https://masqot.co/" target="_blank" rel="noopener noreferrer" id="publications-button" class="mt-8 inline-block bg-teal-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-teal-700 transition-all">
+                    Yazılarıma Göz Atın
+                </a>
             </div>
         </section>
 
@@ -484,18 +441,8 @@
         </div>
     </div>
 
-    <!-- Yayın Özeti Modalı -->
-    <div id="summary-modal-overlay" class="modal-overlay hidden">
-        <div id="summary-modal-content" class="modal-content">
-            <button class="close-button" id="close-summary-modal">&times;</button>
-            <h3 id="generated-summary-heading" class="font-bold text-2xl text-slate-900 mb-4">✨ Yayın Özeti ✨</h3>
-            <p id="generated-summary-text" class="text-base text-slate-700"></p>
-        </div>
-    </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const API_KEY = "AIzaSyCquUomOfVXXiSGXnVDjfNdROjZBlG3GTQ"; // Gemini API key will be provided by the environment
 
             // Tüm statik metinler ve veriler tek bir nesnede toplanmıştır.
             // Yeni bir dil eklemek için, bu nesneye yeni bir anahtar (örn. 'de') eklemeniz yeterlidir.
@@ -590,6 +537,13 @@
                             ],
                             tab3: [
                                 {
+                                    title: 'Stajyer',
+                                    subtitle: 'B&B Bilişim',
+                                    date: 'Haziran 2025 - Ağustos 2025',
+                                    description: 'Bilgisayar görüşü projeleri ve görüntü işleme görevlerine katkıda bulundum. C# ve HTML konularında yeterliliğimi geliştirdim. ASP.NET Core MVC geliştirme deneyimi kazandım. Bir yazılım geliştirme ekibiyle işbirliği yaparak takım çalışması ve problem çözme becerilerimi güçlendirdim.',
+                                    tags: ['Staj', 'Bilgisayar Görüşü', 'ASP.NET Core MVC', 'C#', 'HTML']
+                                },
+                                {
                                     title: 'Yarı Zamanlı Çalışan Öğrenci',
                                     subtitle: 'Abdullah Gül Üniversitesi Aday Öğrenci Koordinasyon Ofisi',
                                     date: 'Temmuz 2024 - Ağustos 2024',
@@ -623,8 +577,8 @@
                             language: 'Dil'
                         },
                         list: [
-                            { type: 'Teknik Beceriler', category: 'Diller', items: ['Python', 'Java', 'C', 'Dart', 'C#'] },
-                            { type: 'Teknik Beceriler', category: 'Araçlar/Çerçeveler', items: ['OpenCV', 'YOLOv8', 'DeepSORT', 'ROS', 'Gazebo', 'Git', 'Flutter', 'Firebase', 'Android Studio', 'MySQL', '.NET Core MVC', 'Tailwind CSS', 'HTML', 'CSS', 'JavaScript'] },
+                            { type: 'Teknik Beceriler', category: 'Programlama Dilleri', items: ['Python', 'Java', 'C', 'Dart', 'C#'] },
+                            { type: 'Teknik Beceriler', category: 'Araçlar & Çerçeveler', items: ['OpenCV', 'YOLOv8', 'DeepSORT', 'ROS', 'Gazebo', 'Git', 'Flutter', 'Firebase', 'Android Studio', 'MySQL', '.NET Core MVC', 'Tailwind CSS', 'HTML', 'CSS', 'JavaScript'] },
                             { type: 'Sosyal Beceriler', category: 'Sosyal Beceriler', items: ['Takım Çalışması', 'Proje Yönetimi', 'Liderlik', 'İletişim', 'Yenilikçilik', 'Sürdürülebilirlik Bilinci'] },
                             { type: 'Dil', category: 'Dil', items: ['Türkçe (Ana Dil)', 'İngilizce (İleri)'] }
                         ]
@@ -633,44 +587,24 @@
                         heading: 'Sertifikalar',
                         subheading: 'Katıldığım eğitimler ve edindiğim sertifikalar.',
                         list: [
-                             { title: 'Front-End Development Libraries', provider: 'freeCodeCamp', date: 'Ocak 2024', url: '#' },
-                             { title: 'JavaScript Algorithms and Data Structures', provider: 'freeCodeCamp', date: 'Ekim 2023', url: '#' },
-                             { title: 'Responsive Web Design', provider: 'freeCodeCamp', date: 'Ağustos 2023', url: '#' },
-                             { title: 'The Complete 2023 Web Development Bootcamp', provider: 'Udemy', date: 'Temmuz 2023', url: '#' },
-                             { title: 'C Programming for Engineers', provider: 'freeCodeCamp', date: 'Haziran 2023', url: '#' }
+                             { title: 'Front-End Development Libraries', provider: 'freeCodeCamp', date: 'Ocak 2024', url: 'https://www.freecodecamp.org/certification/yusufsaitsakoglu/front-end-development-libraries' },
+                             { title: 'JavaScript Algorithms and Data Structures', provider: 'freeCodeCamp', date: 'Ekim 2023', url: 'https://www.freecodecamp.org/certification/yusufsaitsakoglu/javascript-algorithms-and-data-structures' },
+                             { title: 'Responsive Web Design', provider: 'freeCodeCamp', date: 'Ağustos 2023', url: 'https://www.freecodecamp.org/certification/yusufsaitsakoglu/responsive-web-design' },
+                             { title: 'The Complete 2023 Web Development Bootcamp', provider: 'Udemy', date: 'Temmuz 2023', url: 'https://www.udemy.com/certificate/UC-example-link/' },
+                             { title: 'C Programming for Engineers', provider: 'freeCodeCamp', date: 'Haziran 2023', url: 'https://www.freecodecamp.org/certification/yusufsaitsakoglu/c-programming-for-engineers' }
                         ]
                     },
                     publications: {
                         heading: 'Yayınlar & Yazılar',
-                        subheading: 'Masqot.co platformunda teknoloji üzerine paylaştığım analiz ve görüşlerim.',
-                        filterButtons: {
-                            all: 'Tümü',
-                            ai: 'Yapay Zeka',
-                            tech: 'Teknoloji',
-                            media: 'Dijital Medya'
-                        },
-                        list: [
-                            { title: 'Zeka Paradoksu: Yapay Zeka için Yaratıcılığı Geliştirmek', category: 'ai', url: 'https://masqot.co/' },
-                            { title: 'İleri Düzey Donanım Cihazı, Yapay Zeka Enerji Tüketimini 1000 Kat Azaltıyor', category: 'ai', url: 'https://masqot.co/' },
-                            { title: 'Yapay Zekanın Kanser Araştırmaları ve İlaç Keşfindeki Devrimi', category: 'ai', url: 'https://masqot.co/' },
-                            { title: 'Google’ın Imagen 3: Yapay Zekanın Görsel Sanatlara Getirdiği Yeni Boyut', category: 'ai', url: 'https://masqot.co/' },
-                            { title: 'Elektrikli Araçlar ile Fosil Yakıtlı Araçlar: Hangisi Geleceğin Teknolojisi?', category: 'tech', url: 'https://masqot.co/' },
-                            { title: 'iOS 18: iPhone’un Sınırlarını Zorlayan Güncelleme', category: 'tech', url: 'https://masqot.co/' },
-                            { title: 'En İyi Video Düzenleme Programı Hangisi: Premiere Pro vs Final Cut Pro vs DaVinci Resolve', category: 'media', url: 'https://masqot.co/' },
-                            { title: 'ElevenLabs Reader ile Unutulmaz Bir Sesli İçerik Deneyimi Sunun!', category: 'media', url: 'https://masqot.co/' },
-                            { title: 'Yapılandırılmış Işık ve Yapay Zeka İletişimin Geleceğini Nasıl Şekillendiriyor?', category: 'ai', url: 'https://masqot.co/' },
-                            { title: 'Bilim Kurgu Değil: Araştırmacılar Star Trek’in Holodeck’ini AI Kullanarak Yeniden Yarattı!', category: 'ai', url: 'https://masqot.co/' }
-                        ]
+                        subheading: 'Masqot.co platformunda teknoloji üzerine paylaştığım analiz ve görüşlerimi keşfedin.',
+                        button: 'Yazılarıma Göz Atın'
                     },
                     contact: {
                         heading: 'İletişime Geçin',
                         text: 'Projeler, iş birlikleri veya teknoloji üzerine bir sohbet için benimle iletişime geçmekten çekinmeyin.',
                         button: 'E-posta Gönder'
                     },
-                    footer: '© 2025 Yusuf Sait Sakoğlu. Tüm hakları saklıdır.',
-                    modal: {
-                        summaryHeading: '✨ Yayın Özeti ✨'
-                    }
+                    footer: '© 2025 Yusuf Sait Sakoğlu. Tüm hakları saklıdır.'
                 },
                 'en': {
                     title: 'Yusuf Sait Sakoğlu | Interactive Portfolio',
@@ -713,14 +647,14 @@
                                     subtitle: 'Fixed-Wing UAV Tracking with GNSS and Image Processing',
                                     date: 'April 2025 - Present',
                                     description: 'In this project, funded under the TÜBİTAK 2209-A program, I am developing a system that detects, tracks, and predicts enemy UAVs. We aim to create an autonomous defense capability by combining GNSS and real-time image data. This project allows me to deepen my knowledge of UAV technologies with hands-on applications, focusing on real-time data processing and autonomous decision-making mechanisms.',
-                                    tags: ['TÜBİTAK', 'İHA', 'Görüntü İşleme', 'YOLOv8', 'Python']
+                                    tags: ['TÜBİTAK', 'UAV', 'Image Processing', 'YOLOv8', 'Python']
                                 },
                                 {
                                     title: 'Software Team Leader - AGU Teknofest UAV Team',
                                     subtitle: 'Teknofest Warrior UAV Competition - Tulpar Team',
                                     date: 'January 2024 - Present',
                                     description: 'We are developing an autonomous fixed-wing UAV for the Teknofest International UAV Competition. I am leading the software team in computer vision, simulation, communication, and interface development. This role has been crucial in developing my skills in teamwork, project management, and complex system integration. I have had the opportunity to test UAV behaviors in simulation environments with tools like ROS 2 and Gazebo. I integrated YOLOv8 with GOTURN + DeepSORT to enable real-time object tracking from video inputs. I assisted in establishing simple communication protocols for ground control interactions. I helped collect and evaluate tracking accuracy metrics using test videos and manually labeled real data.',
-                                    tags: ['Teknofest', 'İHA', 'Otonom Sistemler', 'ROS 2', 'Gazebo', 'YOLOv8', 'DeepSORT']
+                                    tags: ['Teknofest', 'UAV', 'Autonomous Systems', 'ROS 2', 'Gazebo', 'YOLOv8', 'DeepSORT']
                                 },
                                 {
                                     title: 'Team Member - SHE++',
@@ -748,7 +682,7 @@
                                 {
                                     title: 'Prayer Tracker - Religious Habit Tracking App',
                                     subtitle: 'Flutter Mobile App',
-                                    date: 'March 2025 - Halen',
+                                    date: 'March 2025 - Present',
                                     description: 'I designed a prayer tracking system that allows users to monitor their prayer habits. It includes features like real-time reminders, logging missed prayers, and a calendar-based history view. I am applying my cross-platform mobile development skills with Flutter in this project. I am paying close attention to designing an intuitive interface with a focus on user experience. I integrated a notification system using FCM and developed a personalized feedback system to encourage user engagement.',
                                     tags: ['Mobile Development', 'Flutter', 'Dart', 'MySQL', 'FCM']
                                 },
@@ -762,6 +696,13 @@
                             ],
                             tab3: [
                                 {
+                                    title: 'Intern',
+                                    subtitle: 'B&B Bilişim',
+                                    date: 'June 2025 - August 2025',
+                                    description: 'Contributed to computer vision projects and image processing tasks. Improved proficiency in C# and HTML. Gained experience in ASP.NET Core MVC development. Collaborated with a software development team, enhancing teamwork and problem-solving skills.',
+                                    tags: ['Internship', 'Computer Vision', 'ASP.NET Core MVC', 'C#', 'HTML']
+                                },
+                                {
                                     title: 'Part-Time Student Employee',
                                     subtitle: 'Abdullah Gül University Prospective Student Coordination Office',
                                     date: 'July 2024 - August 2024',
@@ -773,14 +714,14 @@
                                     subtitle: 'Global Accessibility and Awareness Club',
                                     date: 'January 2024 - May 2024',
                                     description: 'As the audit team coordinator for GAA, my goal was to change the functioning of universal policies and run accessible activities, first at Abdullah Gül University, then in Kayseri, Turkey, and finally globally, to influence attitudes towards people, animals, and values. This role enhanced my leadership and organizational skills while increasing my social awareness.',
-                                    tags: ['Gönüllülük', 'Liderlik', 'Erişilebilirlik', 'Farkındalık']
+                                    tags: ['Volunteer Work', 'Leadership', 'Accessibility', 'Awareness']
                                 },
                                 {
                                     title: 'Student Volunteer - AGU Young Red Crescent Club',
                                     subtitle: 'Various Volunteer Activities',
                                     date: 'October 2022 - June 2023',
                                     description: 'I worked as a volunteer stand officer at a blood donation campaign. I planted trees as a volunteer at a tree-planting event. I fed stray animals as a volunteer. Volunteering strengthened my ability to contribute to society and empathize.',
-                                    tags: ['Gönüllülük', 'Toplumsal Katkı', 'Red Crescent']
+                                    tags: ['Volunteer Work', 'Community Service', 'Red Crescent']
                                 }
                             ]
                         }
@@ -795,8 +736,8 @@
                             language: 'Language'
                         },
                         list: [
-                            { type: 'Technical Skills', category: 'Languages', items: ['Python', 'Java', 'C', 'Dart', 'C#'] },
-                            { type: 'Technical Skills', category: 'Tools/Frameworks', items: ['OpenCV', 'YOLOv8', 'DeepSORT', 'ROS', 'Gazebo', 'Git', 'Flutter', 'Firebase', 'Android Studio', 'MySQL', '.NET Core MVC', 'Tailwind CSS', 'HTML', 'CSS', 'JavaScript'] },
+                            { type: 'Technical Skills', category: 'Programming Languages', items: ['Python', 'Java', 'C', 'Dart', 'C#'] },
+                            { type: 'Technical Skills', category: 'Tools & Frameworks', items: ['OpenCV', 'YOLOv8', 'DeepSORT', 'ROS', 'Gazebo', 'Git', 'Flutter', 'Firebase', 'Android Studio', 'MySQL', '.NET Core MVC', 'Tailwind CSS', 'HTML', 'CSS', 'JavaScript'] },
                             { type: 'Social Skills', category: 'Social Skills', items: ['Teamwork', 'Project Management', 'Leadership', 'Communication', 'Innovation', 'Sustainability Awareness'] },
                             { type: 'Language', category: 'Language', items: ['Turkish (Native)', 'English (Advanced)'] }
                         ]
@@ -805,44 +746,24 @@
                         heading: 'Certificates',
                         subheading: 'Training and certificates I have acquired.',
                         list: [
-                             { title: 'Front-End Development Libraries', provider: 'freeCodeCamp', date: 'January 2024', url: '#' },
-                             { title: 'JavaScript Algorithms and Data Structures', provider: 'freeCodeCamp', date: 'October 2023', url: '#' },
-                             { title: 'Responsive Web Design', provider: 'freeCodeCamp', date: 'August 2023', url: '#' },
-                             { title: 'The Complete 2023 Web Development Bootcamp', provider: 'Udemy', date: 'July 2023', url: '#' },
-                             { title: 'C Programming for Engineers', provider: 'freeCodeCamp', date: 'June 2023', url: '#' }
+                             { title: 'Front-End Development Libraries', provider: 'freeCodeCamp', date: 'January 2024', url: 'https://www.freecodecamp.org/certification/yusufsaitsakoglu/front-end-development-libraries' },
+                             { title: 'JavaScript Algorithms and Data Structures', provider: 'freeCodeCamp', date: 'October 2023', url: 'https://www.freecodecamp.org/certification/yusufsaitsakoglu/javascript-algorithms-and-data-structures' },
+                             { title: 'Responsive Web Design', provider: 'freeCodeCamp', date: 'August 2023', url: 'https://www.freecodecamp.org/certification/yusufsaitsakoglu/responsive-web-design' },
+                             { title: 'The Complete 2023 Web Development Bootcamp', provider: 'Udemy', date: 'July 2023', url: 'https://www.udemy.com/certificate/UC-example-link/' },
+                             { title: 'C Programming for Engineers', provider: 'freeCodeCamp', date: 'June 2023', url: 'https://www.freecodecamp.org/certification/yusufsaitsakoglu/c-programming-for-engineers' }
                         ]
                     },
                     publications: {
                         heading: 'Publications & Articles',
-                        subheading: 'My analysis and opinions on technology shared on the Masqot.co platform.',
-                        filterButtons: {
-                            all: 'All',
-                            ai: 'Artificial Intelligence',
-                            tech: 'Technology',
-                            media: 'Digital Media'
-                        },
-                        list: [
-                            { title: 'The Paradox of Intelligence: Enhancing Creativity for AI', category: 'ai', url: 'https://masqot.co/' },
-                            { title: 'Advanced Hardware Device Reduces AI Energy Consumption by 1000x', category: 'ai', url: 'https://masqot.co/' },
-                            { title: 'The Revolution of AI in Cancer Research and Drug Discovery', category: 'ai', url: 'https://masqot.co/' },
-                            { title: 'Google’s Imagen 3: The New Dimension AI Brings to Visual Arts', category: 'ai', url: 'https://masqot.co/' },
-                            { title: 'Electric Cars vs. Fossil Fuel Cars: Which is the Technology of the Future?', category: 'tech', url: 'https://masqot.co/' },
-                            { title: 'iOS 18: The Update That Pushes the Limits of the iPhone', category: 'tech', url: 'https://masqot.co/' },
-                            { title: 'Which is the Best Video Editing Software: Premiere Pro vs Final Cut Pro vs DaVinci Resolve', category: 'media', url: 'https://masqot.co/' },
-                            { title: 'Offer an Unforgettable Audio Content Experience with ElevenLabs Reader!', category: 'media', url: 'https://masqot.co/' },
-                            { title: 'How Structured Light and AI are Shaping the Future of Communication', category: 'ai', url: 'https://masqot.co/' },
-                            { title: 'Not Science Fiction: Researchers Recreated Star Trek’s Holodeck Using AI!', category: 'ai', url: 'https://masqot.co/' }
-                        ]
+                        subheading: 'Discover my analysis and opinions on technology shared on the Masqot.co platform.',
+                        button: 'Check Out My Articles'
                     },
                     contact: {
                         heading: 'Get in Touch',
                         text: 'Feel free to contact me for projects, collaborations, or a chat about technology.',
                         button: 'Send Email'
                     },
-                    footer: '© 2025 Yusuf Sait Sakoğlu. All rights reserved.',
-                    modal: {
-                        summaryHeading: '✨ Publication Summary ✨'
-                    }
+                    footer: '© 2025 Yusuf Sait Sakoğlu. All rights reserved.'
                 }
             };
 
@@ -909,14 +830,6 @@
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             entry.target.classList.add('in-view');
-                            
-                            // Animate skill bars
-                            const skillFills = entry.target.querySelectorAll('.skill-fill');
-                            skillFills.forEach(fill => {
-                                setTimeout(() => {
-                                    fill.classList.add('animate');
-                                }, 200);
-                            });
                         }
                     });
                 }, { threshold: 0.1 });
@@ -979,14 +892,11 @@
                     certificatesSubheading: document.getElementById('certificates-subheading'),
                     publicationsHeading: document.getElementById('publications-heading'),
                     publicationsSubheading: document.getElementById('publications-subheading'),
-                    pubAiBtn: document.getElementById('pub-ai-btn'),
-                    pubTechBtn: document.getElementById('pub-tech-btn'),
-                    pubMediaBtn: document.getElementById('pub-media-btn'),
+                    publicationsButton: document.getElementById('publications-button'),
                     contactHeading: document.getElementById('contact-heading'),
                     contactText: document.getElementById('contact-text'),
                     contactButton: document.getElementById('contact-button'),
-                    footerText: document.getElementById('footer-text'),
-                    summaryModalHeading: document.getElementById('generated-summary-heading')
+                    footerText: document.getElementById('footer-text')
                 };
 
                 // Helper function to create a project card element
@@ -1020,54 +930,10 @@
                     div.classList.add('skill-category');
                     div.dataset.skillType = category.type;
                     
-                    // Skill progress data
-                    const skillProgress = {
-                        'Python': 90,
-                        'Java': 85,
-                        'C': 80,
-                        'Dart': 75,
-                        'C#': 70,
-                        'OpenCV': 85,
-                        'YOLOv8': 80,
-                        'DeepSORT': 75,
-                        'ROS': 70,
-                        'Gazebo': 65,
-                        'Git': 90,
-                        'Flutter': 80,
-                        'Firebase': 75,
-                        'Android Studio': 85,
-                        'MySQL': 80,
-                        '.NET Core MVC': 75,
-                        'Tailwind CSS': 85,
-                        'HTML': 90,
-                        'CSS': 85,
-                        'JavaScript': 80
-                    };
-                    
-                    let content = `<h4 class="font-semibold text-lg text-slate-800 mb-2">${category.category}</h4>`;
-                    
-                    if (category.type === 'Teknik Beceriler' || category.type === 'Technical Skills') {
-                        content += '<div class="skill-progress">';
-                        category.items.forEach(item => {
-                            const percentage = skillProgress[item] || 70;
-                            content += `
-                                <div class="skill-item">
-                                    <div class="skill-header">
-                                        <span class="skill-name">${item}</span>
-                                        <span class="skill-percentage">${percentage}%</span>
-                                    </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-fill" style="width: ${percentage}%"></div>
-                                    </div>
-                                </div>
-                            `;
-                        });
-                        content += '</div>';
-                    } else {
-                        content += `<div class="flex flex-wrap gap-2">
-                            ${category.items.map(item => `<span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-full text-sm font-medium">${item}</span>`).join('')}
-                        </div>`;
-                    }
+                    let content = `<h4 class="font-semibold text-lg text-slate-800 mb-4">${category.category}</h4>`;
+                    content += `<div class="flex flex-wrap gap-2">
+                        ${category.items.map(item => `<span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-full text-sm font-medium">${item}</span>`).join('')}
+                    </div>`;
                     
                     div.innerHTML = content;
                     return div;
@@ -1088,30 +954,9 @@
                     return a;
                 };
 
-                // Helper function to create a publication card
-                const createPublicationCard = (publication) => {
-                    const div = document.createElement('div');
-                    div.classList.add('card', 'bg-white', 'p-6', 'rounded-lg', 'shadow-md', 'border', 'border-slate-200', 'publication-card');
-                    div.dataset.category = publication.category;
-                    div.innerHTML = `
-                        <h3 class="font-bold text-xl text-slate-800 mb-2">${publication.title}</h3>
-                        <p class="text-sm text-slate-500 mb-4 capitalize">${publication.category}</p>
-                        <div class="flex space-x-4">
-                            <a href="${publication.url}" target="_blank" rel="noopener noreferrer" class="text-teal-600 font-semibold hover:underline">
-                                ${translations[localStorage.getItem('portfolioLanguage') || 'tr'].nav.publications}
-                            </a>
-                            <button class="summarize-button text-slate-600 hover:text-teal-600 font-semibold" data-title="${publication.title}">
-                                ${localStorage.getItem('portfolioLanguage') === 'tr' ? 'Özet Al' : 'Get Summary'}
-                            </button>
-                        </div>
-                    `;
-                    return div;
-                };
-
                 // Function to update the entire UI based on the selected language
                 const updateUI = (lang) => {
                     const data = translations[lang];
-                    const currentLanguage = localStorage.getItem('portfolioLanguage') || 'tr';
 
                     // Update page title
                     elementsToUpdate.pageTitle.textContent = data.title;
@@ -1177,10 +1022,7 @@
                     // Update publications section
                     elementsToUpdate.publicationsHeading.textContent = data.publications.heading;
                     elementsToUpdate.publicationsSubheading.textContent = data.publications.subheading;
-                    elementsToUpdate.pubAiBtn.textContent = data.publications.filterButtons.ai;
-                    elementsToUpdate.pubTechBtn.textContent = data.publications.filterButtons.tech;
-                    elementsToUpdate.pubMediaBtn.textContent = data.publications.filterButtons.media;
-                    renderPublications('all', lang); // Re-render publications with initial filter
+                    elementsToUpdate.publicationsButton.textContent = data.publications.button;
 
                     // Update contact section
                     elementsToUpdate.contactHeading.textContent = data.contact.heading;
@@ -1189,9 +1031,6 @@
 
                     // Update footer
                     elementsToUpdate.footerText.textContent = data.footer;
-
-                    // Update modals
-                    elementsToUpdate.summaryModalHeading.textContent = data.modal.summaryHeading;
 
                     // Update language button styles
                     if (lang === 'tr') {
@@ -1240,15 +1079,6 @@
                     });
                 };
 
-                // Function to render publications with a given filter
-                const renderPublications = (filter, lang) => {
-                    const publicationsGridElement = document.getElementById('publications-grid');
-                    publicationsGridElement.innerHTML = '';
-                    translations[lang].publications.list.filter(p => filter === 'all' || p.category === filter).forEach(publication => {
-                        publicationsGridElement.appendChild(createPublicationCard(publication));
-                    });
-                };
-
                 // Set initial UI
                 const currentLanguage = localStorage.getItem('portfolioLanguage') || 'tr';
                 updateUI(currentLanguage);
@@ -1291,70 +1121,11 @@
                     });
                 });
 
-                // Publications filter buttons
-                document.querySelectorAll('.filter-button').forEach(button => {
-                    button.addEventListener('click', () => {
-                        const filterType = button.dataset.filter;
-                        document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
-                        button.classList.add('active');
-                        renderPublications(filterType, localStorage.getItem('portfolioLanguage') || 'tr');
-                    });
-                });
-
                 // Close project modal
                 document.getElementById('close-modal').addEventListener('click', () => {
                     const modalOverlay = document.getElementById('project-modal-overlay');
                     modalOverlay.classList.remove('active');
                     setTimeout(() => modalOverlay.classList.add('hidden'), 300);
-                });
-
-                // Close summary modal
-                document.getElementById('close-summary-modal').addEventListener('click', () => {
-                    const modalOverlay = document.getElementById('summary-modal-overlay');
-                    modalOverlay.classList.remove('active');
-                    setTimeout(() => modalOverlay.classList.add('hidden'), 300);
-                });
-
-                // Listen for clicks on publication cards to get a summary
-                document.getElementById('publications-grid').addEventListener('click', async (event) => {
-                    const button = event.target.closest('.summarize-button');
-                    if (button) {
-                        const title = button.dataset.title;
-                        const summaryTextElement = document.getElementById('generated-summary-text');
-                        const summaryModalOverlay = document.getElementById('summary-modal-overlay');
-                        const lang = localStorage.getItem('portfolioLanguage') || 'tr';
-                        
-                        summaryTextElement.innerHTML = `<span class="loading-spinner"></span> ${lang === 'tr' ? 'Özet oluşturuluyor...' : 'Generating summary...'}`;
-                        summaryModalOverlay.classList.remove('hidden');
-                        summaryModalOverlay.classList.add('active');
-
-                        try {
-                            const prompt = `Aşağıdaki başlığın kısa bir özetini 100 kelimeyi geçmeyecek şekilde Türkçe ve İngilizce olarak yap: "${title}". İngilizce özet için "Summary:", Türkçe özet için "Özet:" başlıklarını kullan.`;
-
-                            const chatHistory = [];
-                            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-                            const payload = { contents: chatHistory };
-                            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${API_KEY}`;
-                            const response = await fetch(apiUrl, {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify(payload)
-                            });
-                            
-                            const result = await response.json();
-                            if (result.candidates && result.candidates.length > 0 &&
-                                result.candidates[0].content && result.candidates[0].content.parts &&
-                                result.candidates[0].content.parts.length > 0) {
-                                const summary = result.candidates[0].content.parts[0].text;
-                                summaryTextElement.innerHTML = summary.replace(/\n/g, '<br>');
-                            } else {
-                                summaryTextElement.textContent = lang === 'tr' ? 'Özet oluşturulamadı. Lütfen daha sonra tekrar deneyin.' : 'Could not generate a summary. Please try again later.';
-                            }
-                        } catch (error) {
-                            console.error('API çağrısı sırasında hata oluştu:', error);
-                            summaryTextElement.textContent = lang === 'tr' ? 'Özet oluşturulurken bir hata oluştu. Lütfen konsolu kontrol edin.' : 'An error occurred while generating the summary. Please check the console.';
-                        }
-                    }
                 });
 
                 // Scroll animation observer
