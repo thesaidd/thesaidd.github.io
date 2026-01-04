@@ -7,14 +7,14 @@
     <meta name="description" content="Yusuf Sait Sakoğlu Portfolyo - Full Stack Developer & AI Enthusiast">
 
     <!-- Google Analytics (GA4) - Measurement ID'nizi G-XXXXXXXXXX yerine yazın -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQSVDL75HX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NJ5C9E2BN9"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
         // Anonimleştirme ayarlarıyla birlikte başlatma
-        gtag('config', 'G-ZQSVDL75HX', { 'anonymize_ip': true });
+        gtag('config', 'G-NJ5C9E2BN9', { 'anonymize_ip': true });
     </script>
     
     <!-- Tailwind CSS -->
@@ -181,11 +181,11 @@
                     <a href="#projects" class="px-8 py-4 bg-primary hover:bg-blue-600 text-white rounded-xl font-semibold transition shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2">
                         <i class="fas fa-code"></i> <span data-i18n="hero_btn_projects">Projelerimi Gör</span>
                     </a>
-                    <!-- CV İndirme Butonu -->
-                    <a href="cv.pdf" download="Yusuf_Sait_Sakoglu_CV.pdf" class="px-8 py-4 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-900 dark:text-white rounded-xl font-semibold transition flex items-center justify-center gap-2 border border-gray-300 dark:border-gray-700">
+                    <!-- CV İndirme Butonu (Analytics Event Eklendi) -->
+                    <a href="cv.pdf" download="Yusuf_Sait_Sakoglu_CV.pdf" onclick="gtag('event', 'download_cv', {'event_category': 'Engagement', 'event_label': 'Hero Section'})" class="px-8 py-4 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-900 dark:text-white rounded-xl font-semibold transition flex items-center justify-center gap-2 border border-gray-300 dark:border-gray-700">
                         <i class="fas fa-file-download"></i> <span data-i18n="hero_btn_cv">CV İndir</span>
                     </a>
-                    <a href="https://github.com/thesaidd" target="_blank" class="px-4 py-4 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition flex items-center justify-center text-3xl">
+                    <a href="https://github.com/thesaidd" target="_blank" onclick="gtag('event', 'click_social', {'event_category': 'Social', 'event_label': 'GitHub Hero'})" class="px-4 py-4 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition flex items-center justify-center text-3xl">
                         <i class="fab fa-github"></i>
                     </a>
                 </div>
@@ -381,7 +381,7 @@
             </div>
 
             <div class="text-center mt-12">
-                <a href="https://github.com/thesaidd?tab=repositories" target="_blank" class="inline-flex items-center gap-2 text-primary hover:underline font-semibold text-lg">
+                <a href="https://github.com/thesaidd?tab=repositories" target="_blank" onclick="gtag('event', 'view_all_projects', {'event_category': 'Engagement', 'event_label': 'Bottom Link'})" class="inline-flex items-center gap-2 text-primary hover:underline font-semibold text-lg">
                     <span data-i18n="projects_more">Tüm Projeleri GitHub'da Gör</span> <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -397,19 +397,19 @@
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <a href="mailto:contact@example.com" class="p-6 bg-gray-50 dark:bg-darker rounded-xl hover:bg-primary hover:text-white transition group border border-gray-200 dark:border-gray-800">
+                <a href="mailto:contact@example.com" onclick="gtag('event', 'click_social', {'event_category': 'Social', 'event_label': 'Email Link'})" class="p-6 bg-gray-50 dark:bg-darker rounded-xl hover:bg-primary hover:text-white transition group border border-gray-200 dark:border-gray-800">
                     <i class="fas fa-envelope text-3xl mb-4 text-primary group-hover:text-white"></i>
                     <h3 class="text-lg font-bold">Email</h3>
                     <p class="text-sm opacity-80" data-i18n="contact_email_desc">Bana mail gönder</p>
                 </a>
                 
-                <a href="https://github.com/thesaidd" target="_blank" class="p-6 bg-gray-50 dark:bg-darker rounded-xl hover:bg-gray-800 hover:text-white transition group border border-gray-200 dark:border-gray-800">
+                <a href="https://github.com/thesaidd" target="_blank" onclick="gtag('event', 'click_social', {'event_category': 'Social', 'event_label': 'GitHub Link'})" class="p-6 bg-gray-50 dark:bg-darker rounded-xl hover:bg-gray-800 hover:text-white transition group border border-gray-200 dark:border-gray-800">
                     <i class="fab fa-github text-3xl mb-4 text-gray-800 dark:text-white group-hover:text-white"></i>
                     <h3 class="text-lg font-bold">GitHub</h3>
                     <p class="text-sm opacity-80" data-i18n="contact_github_desc">Kodlarımı incele</p>
                 </a>
 
-                <a href="https://www.linkedin.com/in/yusuf-sait-sako%C4%9Flu/" target="_blank" class="p-6 bg-gray-50 dark:bg-darker rounded-xl hover:bg-blue-700 hover:text-white transition group border border-gray-200 dark:border-gray-800">
+                <a href="https://www.linkedin.com/in/yusuf-sait-sako%C4%9Flu/d" target="_blank" onclick="gtag('event', 'click_social', {'event_category': 'Social', 'event_label': 'LinkedIn Link'})" class="p-6 bg-gray-50 dark:bg-darker rounded-xl hover:bg-blue-700 hover:text-white transition group border border-gray-200 dark:border-gray-800">
                     <i class="fab fa-linkedin text-3xl mb-4 text-blue-600 group-hover:text-white"></i>
                     <h3 class="text-lg font-bold">LinkedIn</h3>
                     <p class="text-sm opacity-80" data-i18n="contact_linkedin_desc">Profesyonel ağım</p>
@@ -417,7 +417,7 @@
             </div>
 
             <!-- Feedback Button -->
-            <button id="open-feedback" class="px-8 py-3 bg-secondary hover:bg-green-600 text-white rounded-xl font-semibold transition flex items-center justify-center gap-2 mx-auto shadow-lg shadow-green-500/30">
+            <button id="open-feedback" onclick="gtag('event', 'open_feedback', {'event_category': 'Engagement', 'event_label': 'Feedback Modal'})" class="px-8 py-3 bg-secondary hover:bg-green-600 text-white rounded-xl font-semibold transition flex items-center justify-center gap-2 mx-auto shadow-lg shadow-green-500/30">
                 <i class="fas fa-comment-dots"></i> <span data-i18n="btn_feedback">Geri Bildirim Ver (Anonim)</span>
             </button>
         </div>
