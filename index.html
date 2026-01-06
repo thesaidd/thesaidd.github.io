@@ -6,14 +6,13 @@
     <title>Yusuf Sait Sakoğlu | Portfolio</title>
     <meta name="description" content="Yusuf Sait Sakoğlu Portfolyo - Full Stack Developer & AI Enthusiast">
 
-    <!-- Google Analytics (GA4) - Measurement ID'nizi G-XXXXXXXXXX yerine yazın -->
+    <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NJ5C9E2BN9"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        // Anonimleştirme ayarlarıyla birlikte başlatma
         gtag('config', 'G-NJ5C9E2BN9', { 'anonymize_ip': true });
     </script>
     
@@ -26,7 +25,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Tailwind Config for Custom Colors -->
+    <!-- Tailwind Config -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -48,22 +47,11 @@
     </script>
 
     <style>
-        /* Özel Kaydırma Çubuğu */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #3b82f6;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #2563eb;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
 
-        /* Animasyonlar */
         .blob {
             position: absolute;
             filter: blur(40px);
@@ -81,14 +69,12 @@
             box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.5);
         }
 
-        /* Lang Switcher Active State */
         .lang-btn.active {
             font-weight: bold;
-            color: #3b82f6; /* primary color */
+            color: #3b82f6;
             text-decoration: underline;
         }
 
-        /* Feedback Modal Animation */
         .modal {
             transition: opacity 0.3s ease-in-out;
             opacity: 0;
@@ -98,9 +84,7 @@
             opacity: 1;
             pointer-events: auto;
         }
-        .rating-star:hover, .rating-star.selected {
-            color: #fbbf24; /* yellow-400 */
-        }
+        .rating-star:hover, .rating-star.selected { color: #fbbf24; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900 dark:bg-darker dark:text-gray-100 transition-colors duration-300">
@@ -119,30 +103,25 @@
                 <a href="#projects" class="hover:text-primary transition" data-i18n="nav_projects">Projeler</a>
                 <a href="#contact" class="hover:text-primary transition" data-i18n="nav_contact">İletişim</a>
                 
-                <!-- Separator -->
                 <div class="h-4 w-px bg-gray-300 dark:bg-gray-700 mx-2"></div>
 
-                <!-- Language Switcher -->
                 <div class="flex space-x-3">
                     <button onclick="changeLanguage('tr')" class="lang-btn hover:text-primary transition text-xs font-semibold" id="lang-tr">TR</button>
                     <button onclick="changeLanguage('en')" class="lang-btn hover:text-primary transition text-xs font-semibold" id="lang-en">EN</button>
                     <button onclick="changeLanguage('de')" class="lang-btn hover:text-primary transition text-xs font-semibold" id="lang-de">DE</button>
                 </div>
 
-                <!-- Theme Toggle -->
                 <button id="theme-toggle" class="p-2 ml-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition">
                     <i class="fas fa-moon dark:hidden"></i>
                     <i class="fas fa-sun hidden dark:inline text-yellow-400"></i>
                 </button>
             </div>
 
-            <!-- Mobile Menu Button -->
             <button id="mobile-menu-btn" class="md:hidden text-2xl">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
         
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-card border-t dark:border-gray-800 absolute w-full">
             <div class="flex flex-col p-4 space-y-4 text-center">
                 <a href="#home" class="block hover:text-primary" data-i18n="nav_home">Ana Sayfa</a>
@@ -161,7 +140,6 @@
 
     <!-- Hero Bölümü -->
     <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-        <!-- Arkaplan Efektleri -->
         <div class="blob bg-blue-500 w-64 h-64 rounded-full top-20 left-20"></div>
         <div class="blob bg-teal-500 w-64 h-64 rounded-full bottom-20 right-20 animation-delay-2000"></div>
 
@@ -175,13 +153,12 @@
                     <span class="text-secondary">Yapay Zeka</span> Tutkunu
                 </h1>
                 <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl" data-i18n="hero_desc">
-                    Python, React ve Yapay Zeka teknolojilerini kullanarak modern web uygulamaları ve akıllı sistemler geliştiriyorum. Karmaşık problemleri basit ve etkili kodlara dönüştürmeyi seviyorum.
+                    Python, React, ROS ve Yapay Zeka teknolojilerini kullanarak otonom sistemler ve modern web uygulamaları geliştiriyorum.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                     <a href="#projects" class="px-8 py-4 bg-primary hover:bg-blue-600 text-white rounded-xl font-semibold transition shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2">
                         <i class="fas fa-code"></i> <span data-i18n="hero_btn_projects">Projelerimi Gör</span>
                     </a>
-                    <!-- CV İndirme Butonu (Analytics Event Eklendi) -->
                     <a href="cv.pdf" download="Yusuf_Sait_Sakoglu_CV.pdf" onclick="gtag('event', 'download_cv', {'event_category': 'Engagement', 'event_label': 'Hero Section'})" class="px-8 py-4 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-900 dark:text-white rounded-xl font-semibold transition flex items-center justify-center gap-2 border border-gray-300 dark:border-gray-700">
                         <i class="fas fa-file-download"></i> <span data-i18n="hero_btn_cv">CV İndir</span>
                     </a>
@@ -214,34 +191,44 @@
                 <!-- Sol Kolon: Eğitim & İş -->
                 <div>
                     <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-                        <i class="fas fa-graduation-cap text-secondary"></i> <span data-i18n="edu_work_title">Eğitim & İş Deneyimi</span>
+                        <i class="fas fa-briefcase text-secondary"></i> <span data-i18n="edu_work_title">Eğitim & İş Deneyimi</span>
                     </h3>
                     
                     <div class="relative border-l-2 border-gray-200 dark:border-gray-700 ml-3 space-y-10">
-                        <!-- Eğitim -->
+                        <!-- İş 1: Araştırmacı (En yeni) -->
                         <div class="ml-8 relative">
-                            <span class="absolute -left-[41px] flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900 ring-4 ring-white dark:ring-gray-900">
-                                <i class="fas fa-university text-blue-600 dark:text-blue-400 text-xs"></i>
+                            <span class="absolute -left-[41px] flex h-6 w-6 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-900 ring-4 ring-white dark:ring-gray-900">
+                                <i class="fas fa-robot text-purple-600 dark:text-purple-400 text-xs"></i>
                             </span>
-                            <h4 class="text-lg font-bold text-gray-900 dark:text-white" data-i18n="edu_1_title">Bilgisayar Mühendisliği (Lisans)</h4>
-                            <span class="text-sm text-primary font-medium" data-i18n="edu_1_date">2021 - Devam Ediyor</span>
-                            <p class="text-gray-600 dark:text-gray-400 mt-1" data-i18n="edu_1_school">Abdullah Gül Üniversitesi, Kayseri</p>
-                            <p class="text-sm text-gray-500 dark:text-gray-500 mt-2" data-i18n="edu_1_desc">
-                                İlgili Dersler: OOP, Veri Yapıları, Yazılım Müh, Mobil Programlama, Veritabanı Yönetimi.
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white" data-i18n="work_3_title">Araştırmacı - BAP Projesi</h4>
+                            <span class="text-sm text-purple-500 font-medium" data-i18n="work_3_date">Ocak 2025 - Devam Ediyor</span>
+                            <p class="text-gray-600 dark:text-gray-400 mt-1" data-i18n="work_3_company">Abdullah Gül Üniversitesi</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-500 mt-2" data-i18n="work_3_desc">
+                                AI ve IoT destekli Otonom İHA'lar üzerine araştırma ve geliştirme. ROS, Gazebo ve Görüntü İşleme.
                             </p>
                         </div>
 
-                        <!-- İş Deneyimi -->
+                        <!-- İş 2: Stajyer -->
                         <div class="ml-8 relative">
-                            <span class="absolute -left-[41px] flex h-6 w-6 items-center justify-center rounded-full bg-green-100 dark:bg-green-900 ring-4 ring-white dark:ring-gray-900">
-                                <i class="fas fa-briefcase text-green-600 dark:text-green-400 text-xs"></i>
+                            <span class="absolute -left-[41px] flex h-6 w-6 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900 ring-4 ring-white dark:ring-gray-900">
+                                <i class="fas fa-code text-orange-600 dark:text-orange-400 text-xs"></i>
                             </span>
-                            <h4 class="text-lg font-bold text-gray-900 dark:text-white" data-i18n="work_1_title">Part-time Çalışan Öğrenci</h4>
-                            <span class="text-sm text-secondary font-medium" data-i18n="work_1_date">Temmuz 2024 - Ağustos 2024</span>
-                            <p class="text-gray-600 dark:text-gray-400 mt-1" data-i18n="work_1_company">Prospective Student Coordination Office, AGU</p>
-                            <p class="text-sm text-gray-500 dark:text-gray-500 mt-2" data-i18n="work_1_desc">
-                                Aday öğrencilerle iletişim kurarak üniversite tanıtımı ve veri analizi süreçlerine katkı sağladım.
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white" data-i18n="work_2_title">Yazılım Stajyeri</h4>
+                            <span class="text-sm text-orange-500 font-medium" data-i18n="work_2_date">Haziran 2025 - Ağustos 2025</span>
+                            <p class="text-gray-600 dark:text-gray-400 mt-1" data-i18n="work_2_company">B&B Bilişim</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-500 mt-2" data-i18n="work_2_desc">
+                                Bilgisayarlı görü projeleri, C# ve ASP.NET Core MVC geliştirme süreçleri.
                             </p>
+                        </div>
+
+                         <!-- Eğitim -->
+                         <div class="ml-8 relative">
+                            <span class="absolute -left-[41px] flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900 ring-4 ring-white dark:ring-gray-900">
+                                <i class="fas fa-university text-blue-600 dark:text-blue-400 text-xs"></i>
+                            </span>
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white" data-i18n="edu_1_title">Bilgisayar Mühendisliği</h4>
+                            <span class="text-sm text-primary font-medium" data-i18n="edu_1_date">2021 - Devam Ediyor</span>
+                            <p class="text-gray-600 dark:text-gray-400 mt-1" data-i18n="edu_1_school">Abdullah Gül Üniversitesi</p>
                         </div>
                     </div>
                 </div>
@@ -258,8 +245,8 @@
                             <div class="text-2xl text-yellow-500 mt-1"><i class="fas fa-award"></i></div>
                             <div>
                                 <h4 class="font-bold">SHE++ Project Manager</h4>
-                                <p class="text-sm text-gray-600 dark:text-gray-400">AGU Youth Studies Center | Mayıs 2024</p>
-                                <p class="text-xs text-gray-500 mt-1" data-i18n="cert_1_desc">Kız öğrencilerin STEM alanlarına katılımını artırmak için atölyeler düzenledim.</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">AGU Youth Studies Center</p>
+                                <p class="text-xs text-gray-500 mt-1" data-i18n="cert_1_desc">STEM alanında kız öğrencilere yönelik atölye liderliği.</p>
                             </div>
                         </div>
 
@@ -267,27 +254,17 @@
                         <div class="p-4 bg-gray-50 dark:bg-darker rounded-xl border border-gray-200 dark:border-gray-800 hover:border-yellow-500 transition flex items-start gap-4">
                             <div class="text-2xl text-blue-500 mt-1"><i class="fas fa-laptop-code"></i></div>
                             <div>
-                                <h4 class="font-bold">Fundamental Python and Image Processing</h4>
+                                <h4 class="font-bold">Fundamental Python & Image Processing</h4>
                                 <p class="text-sm text-gray-600 dark:text-gray-400">United Latino Students Association</p>
-                                <p class="text-xs text-gray-500 mt-1" data-i18n="cert_2_desc">Python programlama ve görüntü işleme temelleri.</p>
                             </div>
                         </div>
 
-                        <!-- Sertifika 3 -->
-                        <div class="p-4 bg-gray-50 dark:bg-darker rounded-xl border border-gray-200 dark:border-gray-800 hover:border-yellow-500 transition flex items-start gap-4">
-                            <div class="text-2xl text-purple-500 mt-1"><i class="fas fa-users"></i></div>
-                            <div>
-                                <h4 class="font-bold">19th & 20th Young Academy</h4>
-                                <p class="text-sm text-gray-600 dark:text-gray-400">Bilkent University Operational Research Club | Aralık 2024</p>
-                            </div>
-                        </div>
-                        
-                         <!-- Sertifika 4 -->
+                         <!-- Sertifika 3 -->
                          <div class="p-4 bg-gray-50 dark:bg-darker rounded-xl border border-gray-200 dark:border-gray-800 hover:border-yellow-500 transition flex items-start gap-4">
                             <div class="text-2xl text-green-500 mt-1"><i class="fas fa-globe"></i></div>
                             <div>
                                 <h4 class="font-bold">SDG Speaking Club Project</h4>
-                                <p class="text-sm text-gray-600 dark:text-gray-400">Abdullah Gül University | Kasım 2023</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Abdullah Gül University</p>
                             </div>
                         </div>
                     </div>
@@ -305,22 +282,23 @@
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Frontend -->
-                <div class="p-6 bg-gray-50 dark:bg-darker rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-primary transition group">
-                    <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
-                        <i class="fas fa-desktop"></i>
+                <!-- AI & Robotics (Güncellendi) -->
+                <div class="p-6 bg-gray-50 dark:bg-darker rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-purple-500 transition group">
+                    <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Frontend</h3>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="skills_ai">Otonom Sistemler & AI</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">HTML5/CSS3</span>
-                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">JavaScript</span>
-                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">React.js</span>
-                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Tailwind CSS</span>
-                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Next.js</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">ROS</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Gazebo</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">YOLO/RT-DETR</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">DeepSORT</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">OpenCV</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">PyTorch</span>
                     </div>
                 </div>
 
-                <!-- Backend -->
+                <!-- Backend (Güncellendi) -->
                 <div class="p-6 bg-gray-50 dark:bg-darker rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-secondary transition group">
                     <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
                         <i class="fas fa-server"></i>
@@ -328,25 +306,24 @@
                     <h3 class="text-xl font-bold mb-4">Backend</h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Python</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">C#</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">ASP.NET Core</span>
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">FastAPI</span>
-                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Node.js</span>
-                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">SQL/PostgreSQL</span>
-                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">REST API</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">PostgreSQL</span>
                     </div>
                 </div>
 
-                <!-- AI & Data -->
-                <div class="p-6 bg-gray-50 dark:bg-darker rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-purple-500 transition group">
-                    <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
-                        <i class="fas fa-brain"></i>
+                <!-- Frontend -->
+                <div class="p-6 bg-gray-50 dark:bg-darker rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-primary transition group">
+                    <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                        <i class="fas fa-desktop"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4" data-i18n="skills_ai">Yapay Zeka</h3>
+                    <h3 class="text-xl font-bold mb-4">Frontend</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">OpenCV</span>
-                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">PyTorch</span>
-                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">YOLO/RT-DETR</span>
-                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">NLP</span>
-                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Computer Vision</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">React.js</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Next.js</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Tailwind CSS</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">JavaScript</span>
                     </div>
                 </div>
 
@@ -359,8 +336,8 @@
                     <div class="flex flex-wrap gap-2">
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Git & GitHub</span>
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Docker</span>
-                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">VS Code</span>
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Linux</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">VS Code</span>
                     </div>
                 </div>
             </div>
@@ -397,7 +374,7 @@
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <a href="mailto:contact@example.com" onclick="gtag('event', 'click_social', {'event_category': 'Social', 'event_label': 'Email Link'})" class="p-6 bg-gray-50 dark:bg-darker rounded-xl hover:bg-primary hover:text-white transition group border border-gray-200 dark:border-gray-800">
+                <a href="mailto:yusufsait.sakoglu@agu.edu.tr" onclick="gtag('event', 'click_social', {'event_category': 'Social', 'event_label': 'Email Link'})" class="p-6 bg-gray-50 dark:bg-darker rounded-xl hover:bg-primary hover:text-white transition group border border-gray-200 dark:border-gray-800">
                     <i class="fas fa-envelope text-3xl mb-4 text-primary group-hover:text-white"></i>
                     <h3 class="text-lg font-bold">Email</h3>
                     <p class="text-sm opacity-80" data-i18n="contact_email_desc">Bana mail gönder</p>
@@ -409,14 +386,13 @@
                     <p class="text-sm opacity-80" data-i18n="contact_github_desc">Kodlarımı incele</p>
                 </a>
 
-                <a href="https://www.linkedin.com/in/yusuf-sait-sako%C4%9Flu/d" target="_blank" onclick="gtag('event', 'click_social', {'event_category': 'Social', 'event_label': 'LinkedIn Link'})" class="p-6 bg-gray-50 dark:bg-darker rounded-xl hover:bg-blue-700 hover:text-white transition group border border-gray-200 dark:border-gray-800">
+                <a href="https://www.linkedin.com/in/yusuf-sait-sako%C4%9Flu/" target="_blank" onclick="gtag('event', 'click_social', {'event_category': 'Social', 'event_label': 'LinkedIn Link'})" class="p-6 bg-gray-50 dark:bg-darker rounded-xl hover:bg-blue-700 hover:text-white transition group border border-gray-200 dark:border-gray-800">
                     <i class="fab fa-linkedin text-3xl mb-4 text-blue-600 group-hover:text-white"></i>
                     <h3 class="text-lg font-bold">LinkedIn</h3>
                     <p class="text-sm opacity-80" data-i18n="contact_linkedin_desc">Profesyonel ağım</p>
                 </a>
             </div>
 
-            <!-- Feedback Button -->
             <button id="open-feedback" onclick="gtag('event', 'open_feedback', {'event_category': 'Engagement', 'event_label': 'Feedback Modal'})" class="px-8 py-3 bg-secondary hover:bg-green-600 text-white rounded-xl font-semibold transition flex items-center justify-center gap-2 mx-auto shadow-lg shadow-green-500/30">
                 <i class="fas fa-comment-dots"></i> <span data-i18n="btn_feedback">Geri Bildirim Ver (Anonim)</span>
             </button>
@@ -433,11 +409,8 @@
     <!-- Feedback Modal -->
     <div id="feedback-modal" class="modal fixed w-full h-full top-0 left-0 flex items-center justify-center z-[60]">
         <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
-        
         <div class="modal-container bg-white dark:bg-card w-11/12 md:max-w-md mx-auto rounded-2xl shadow-2xl z-50 overflow-y-auto transform scale-95 transition-transform duration-300">
-            
             <div class="modal-content py-4 text-left px-6">
-                <!-- Title & Close -->
                 <div class="flex justify-between items-center pb-3 border-b dark:border-gray-700">
                     <p class="text-xl font-bold text-gray-900 dark:text-white" data-i18n="feedback_title">Geri Bildirim</p>
                     <div class="modal-close cursor-pointer z-50" id="close-feedback">
@@ -445,12 +418,9 @@
                     </div>
                 </div>
 
-                <!-- Form -->
                 <form id="feedback-form" class="mt-4">
-                    <!-- Web3Forms Access Key -->
                     <input type="hidden" name="access_key" value="a0c6b2dc-6998-4116-8fcc-45c66f6c117a">
                     
-                    <!-- Rating -->
                     <div class="mb-4 text-center">
                         <p class="text-sm text-gray-600 dark:text-gray-400 mb-2" data-i18n="feedback_rate">Siteyi Puanla</p>
                         <div class="flex justify-center gap-2 text-2xl text-gray-300 dark:text-gray-600 cursor-pointer">
@@ -463,13 +433,11 @@
                         <input type="hidden" name="rating" id="rating-input" value="0">
                     </div>
 
-                    <!-- Message -->
                     <div class="mb-4">
                         <label class="block text-sm text-gray-600 dark:text-gray-400 mb-2" data-i18n="feedback_msg">Mesajınız (Opsiyonel)</label>
                         <textarea name="message" class="w-full px-3 py-2 text-gray-700 dark:text-gray-200 border rounded-lg focus:outline-none focus:border-primary dark:bg-darker dark:border-gray-700" rows="4" placeholder="..."></textarea>
                     </div>
                     
-                    <!-- Submit -->
                     <button type="submit" class="w-full py-3 bg-primary hover:bg-blue-600 text-white rounded-xl font-bold transition shadow-md">
                         <span data-i18n="feedback_submit">Gönder</span>
                     </button>
@@ -481,7 +449,6 @@
 
     <!-- JavaScript Logic -->
     <script>
-        // --- 1. Tema Yönetimi ---
         const themeToggleBtn = document.getElementById('theme-toggle');
         const htmlElement = document.documentElement;
 
@@ -500,7 +467,6 @@
             }
         });
 
-        // --- 2. Mobil Menü ---
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -508,8 +474,7 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // --- 3. Dil Yönetimi (i18n) ---
-        
+        // --- Dil Çevirileri (Güncellendi) ---
         const translations = {
             tr: {
                 nav_home: "Ana Sayfa",
@@ -519,24 +484,26 @@
                 nav_contact: "İletişim",
                 hero_greeting: "👋 Merhaba, ben Yusuf Sait",
                 hero_title: 'Full Stack <span class="text-primary">Geliştirici</span> & <br> <span class="text-secondary">Yapay Zeka</span> Tutkunu',
-                hero_desc: "Python, React ve Yapay Zeka teknolojilerini kullanarak modern web uygulamaları ve akıllı sistemler geliştiriyorum. Karmaşık problemleri basit ve etkili kodlara dönüştürmeyi seviyorum.",
+                hero_desc: "Python, React, ROS ve Yapay Zeka teknolojilerini kullanarak otonom sistemler ve modern web uygulamaları geliştiriyorum. Karmaşık problemleri basit ve etkili kodlara dönüştürmeyi seviyorum.",
                 hero_btn_projects: "Projelerimi Gör",
                 hero_btn_cv: "CV İndir",
                 about_main_title: "Hakkımda & Deneyim",
                 edu_work_title: "Eğitim & İş Deneyimi",
-                edu_1_title: "Bilgisayar Mühendisliği (Lisans)",
+                edu_1_title: "Bilgisayar Mühendisliği",
                 edu_1_date: "2021 - Devam Ediyor",
                 edu_1_school: "Abdullah Gül Üniversitesi, Kayseri",
-                edu_1_desc: "İlgili Dersler: OOP, Veri Yapıları, Yazılım Müh, Mobil Programlama, Veritabanı Yönetimi.",
-                work_1_title: "Part-time Çalışan Öğrenci",
-                work_1_date: "Temmuz 2024 - Ağustos 2024",
-                work_1_company: "Prospective Student Coordination Office, AGU",
-                work_1_desc: "Aday öğrencilerle iletişim kurarak üniversite tanıtımı ve veri analizi süreçlerine katkı sağladım.",
+                work_3_title: "Araştırmacı - BAP Projesi",
+                work_3_date: "Ocak 2025 - Devam Ediyor",
+                work_3_company: "Abdullah Gül Üniversitesi",
+                work_3_desc: "Al ve IoT destekli Otonom İHA'lar. Otonom görev icrası ve hibrit görüntü işleme.",
+                work_2_title: "Yazılım Stajyeri",
+                work_2_date: "Haziran 2025 - Ağustos 2025",
+                work_2_company: "B&B Bilişim",
+                work_2_desc: "Bilgisayarlı görü projeleri, C# ve ASP.NET Core MVC ile geliştirme.",
                 cert_title: "Sertifikalar & Başarılar",
-                cert_1_desc: "Kız öğrencilerin STEM alanlarına katılımını artırmak için atölyeler düzenledim.",
-                cert_2_desc: "Python programlama ve görüntü işleme temelleri.",
+                cert_1_desc: "STEM alanında kız öğrencilere yönelik atölye liderliği.",
                 skills_title: "Teknik Yeteneklerim",
-                skills_ai: "Yapay Zeka",
+                skills_ai: "Otonom Sistemler & AI",
                 skills_tools: "Araçlar",
                 projects_title: "Öne Çıkan Projeler",
                 projects_subtitle: "Geliştirdiğim seçkin projeler ve demolar.",
@@ -553,7 +520,7 @@
                 feedback_msg: "Mesajınız (Opsiyonel)",
                 feedback_submit: "Gönder",
                 feedback_success: "Teşekkürler! Geri bildiriminiz alındı.",
-                feedback_error: "Bir hata oluştu. Lütfen tekrar deneyin."
+                feedback_error: "Bir hata oluştu."
             },
             en: {
                 nav_home: "Home",
@@ -563,7 +530,7 @@
                 nav_contact: "Contact",
                 hero_greeting: "👋 Hello, I'm Yusuf Sait",
                 hero_title: 'Full Stack <span class="text-primary">Developer</span> & <br> <span class="text-secondary">AI</span> Enthusiast',
-                hero_desc: "I develop modern web applications and intelligent systems using Python, React, and AI technologies. I love turning complex problems into simple and effective code.",
+                hero_desc: "I develop autonomous systems and modern web applications using Python, React, ROS and AI technologies. I love turning complex problems into simple and effective code.",
                 hero_btn_projects: "View Projects",
                 hero_btn_cv: "Download CV",
                 about_main_title: "About & Experience",
@@ -571,16 +538,18 @@
                 edu_1_title: "Computer Engineering (Bachelor)",
                 edu_1_date: "2021 - Present",
                 edu_1_school: "Abdullah Gul University, Kayseri",
-                edu_1_desc: "Relevant Courses: OOP, Data Structures, Software Eng., Mobile Programming, DBMS.",
-                work_1_title: "Part-time Working Student",
-                work_1_date: "July 2024 - August 2024",
-                work_1_company: "Prospective Student Coordination Office, AGU",
-                work_1_desc: "Contributed to university promotion and data analysis processes by communicating with prospective students.",
+                work_3_title: "Researcher - BAP Project",
+                work_3_date: "Jan 2025 - Present",
+                work_3_company: "Abdullah Gul University",
+                work_3_desc: "Al and IoT-Enabled Fixed-Wing UAVs. Autonomous mission execution and hybrid image processing.",
+                work_2_title: "Software Intern",
+                work_2_date: "June 2025 - August 2025",
+                work_2_company: "B&B Bilişim",
+                work_2_desc: "Computer vision projects, C# and ASP.NET Core MVC development.",
                 cert_title: "Certificates & Achievements",
-                cert_1_desc: "Organized workshops to increase female students' participation in STEM fields.",
-                cert_2_desc: "Fundamentals of Python programming and image processing.",
+                cert_1_desc: "Organized workshops for female students in STEM fields.",
                 skills_title: "Technical Skills",
-                skills_ai: "Artificial Intelligence",
+                skills_ai: "Autonomous Systems & AI",
                 skills_tools: "Tools",
                 projects_title: "Featured Projects",
                 projects_subtitle: "Selected projects and demos I developed.",
@@ -597,7 +566,7 @@
                 feedback_msg: "Your Message (Optional)",
                 feedback_submit: "Submit",
                 feedback_success: "Thanks! Feedback received.",
-                feedback_error: "An error occurred. Please try again."
+                feedback_error: "An error occurred."
             },
             de: {
                 nav_home: "Startseite",
@@ -607,41 +576,43 @@
                 nav_contact: "Kontakt",
                 hero_greeting: "👋 Hallo, ich bin Yusuf Sait",
                 hero_title: 'Full Stack <span class="text-primary">Entwickler</span> & <br> <span class="text-secondary">KI</span> Enthusiast',
-                hero_desc: "Ich entwickle moderne Webanwendungen und intelligente Systeme mit Python, React und KI-Technologien. Ich liebe es, komplexe Probleme in einfachen und effektiven Code zu verwandeln.",
+                hero_desc: "Ich entwickle autonome Systeme und moderne Webanwendungen mit Python, React, ROS und KI-Technologien.",
                 hero_btn_projects: "Projekte Ansehen",
                 hero_btn_cv: "CV Herunterladen",
                 about_main_title: "Über mich & Erfahrung",
                 edu_work_title: "Ausbildung & Berufserfahrung",
                 edu_1_title: "Computer Engineering (Bachelor)",
                 edu_1_date: "2021 - Heute",
-                edu_1_school: "Abdullah Gul Universität, Kayseri",
-                edu_1_desc: "Relevante Kurse: OOP, Datenstrukturen, Softwaretechnik, Mobile Programmierung, DBMS.",
-                work_1_title: "Teilzeit Werkstudent",
-                work_1_date: "Juli 2024 - August 2024",
-                work_1_company: "Prospective Student Coordination Office, AGU",
-                work_1_desc: "Beitrag zur Universitätsförderung und Datenanalyse durch Kommunikation mit Studieninteressierten.",
+                edu_1_school: "Abdullah Gul Universität",
+                work_3_title: "Forscher - BAP Projekt",
+                work_3_date: "Jan 2025 - Heute",
+                work_3_company: "Abdullah Gul Universität",
+                work_3_desc: "KI und IoT-gestützte autonome UAVs. Autonome Missionsdurchführung.",
+                work_2_title: "Software-Praktikant",
+                work_2_date: "Juni 2025 - August 2025",
+                work_2_company: "B&B Bilişim",
+                work_2_desc: "Computer-Vision-Projekte, C#- und ASP.NET Core MVC-Entwicklung.",
                 cert_title: "Zertifikate & Erfolge",
-                cert_1_desc: "Organisation von Workshops zur Erhöhung der Beteiligung von Schülerinnen in MINT-Fächern.",
-                cert_2_desc: "Grundlagen der Python-Programmierung und Bildverarbeitung.",
+                cert_1_desc: "Workshops für Schülerinnen in MINT-Fächern.",
                 skills_title: "Technische Fähigkeiten",
-                skills_ai: "Künstliche Intelligenz",
+                skills_ai: "Autonome Systeme & KI",
                 skills_tools: "Werkzeuge",
                 projects_title: "Ausgewählte Projekte",
-                projects_subtitle: "Ausgewählte Projekte und Demos, die ich entwickelt habe.",
+                projects_subtitle: "Ausgewählte Projekte und Demos.",
                 projects_more: "Alle Projekte auf GitHub ansehen",
                 contact_title: "Kontakt aufnehmen",
-                contact_subtitle: "Ich bin immer offen für neue Projekte, Zusammenarbeit oder einfach nur ein Gespräch über Technologie.",
-                contact_email_desc: "Senden Sie mir eine E-Mail",
-                contact_github_desc: "Überprüfen Sie meinen Code",
-                contact_linkedin_desc: "Mein berufliches Netzwerk",
+                contact_subtitle: "Ich bin immer offen für neue Projekte oder Zusammenarbeit.",
+                contact_email_desc: "E-Mail senden",
+                contact_github_desc: "Code ansehen",
+                contact_linkedin_desc: "LinkedIn Profil",
                 footer_text: "&copy; 2024 Yusuf Sait Sakoglu. Entwickelt mit Tailwind CSS.",
-                btn_feedback: "Feedback Geben (Anonym)",
+                btn_feedback: "Feedback Geben",
                 feedback_title: "Feedback",
                 feedback_rate: "Bewerten Sie Ihre Erfahrung",
                 feedback_msg: "Ihre Nachricht (Optional)",
                 feedback_submit: "Senden",
                 feedback_success: "Danke! Feedback erhalten.",
-                feedback_error: "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+                feedback_error: "Ein Fehler ist aufgetreten."
             }
         };
 
@@ -651,11 +622,9 @@
             currentLang = lang;
             localStorage.setItem('lang', lang);
             
-            // UI Güncelle
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById(`lang-${lang}`).classList.add('active');
 
-            // Metinleri Güncelle
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
                 if (translations[lang][key]) {
@@ -663,13 +632,23 @@
                 }
             });
 
-            // Projeleri Yeniden Render Et
             renderProjects(lang);
         }
 
-        // --- 4. Proje Verileri (Çok Dilli) ---
-        
+        // --- Projeler (CV'den yeni proje eklendi) ---
         const manualProjects = [
+             {
+                name: "Autonomous UAV Reconnaissance",
+                desc: {
+                    tr: "AGU BAP Projesi. AI ve IoT destekli sabit kanatlı İHA'lar ile işbirlikçi otonom keşif ve kamikaze senaryoları. ROS ve Gazebo kullanıldı.",
+                    en: "AGU BAP Project. Collaborative autonomous reconnaissance and kamikaze scenarios with AI and IoT-enabled fixed-wing UAVs using ROS and Gazebo.",
+                    de: "AGU BAP Projekt. Kollaborative autonome Aufklärung und Kamikaze-Szenarien mit KI- und IoT-fähigen Starrflügel-UAVs unter Verwendung von ROS und Gazebo."
+                },
+                language: "Python/ROS",
+                html_url: "https://github.com/thesaidd", 
+                topics: ["ROS", "Gazebo", "AI", "UAV"],
+                stars: 5
+            },
             {
                 name: "Akıllı CV Sistemi",
                 desc: {
@@ -680,6 +659,18 @@
                 language: "Python",
                 html_url: "https://github.com/thesaidd/ak-ll-cv-sistemi-demo-",
                 topics: ["FastAPI", "React", "AI", "NLP"],
+                stars: 5
+            },
+            {
+                name: "RT-DETR Object Detection",
+                desc: {
+                    tr: "RT-DETR modeli kullanılarak gerçek zamanlı nesne tespiti ve yeniden kimliklendirme (Re-ID) projesi. Video analitiği için optimize edildi.",
+                    en: "Real-time object detection and re-identification (Re-ID) project using RT-DETR model. Optimized for video analytics.",
+                    de: "Echtzeit-Objekterkennung und Re-Identifikation (Re-ID) Projekt unter Verwendung des RT-DETR-Modells. Optimiert für Videoanalytik."
+                },
+                language: "Python",
+                html_url: "https://github.com/thesaidd/rt-detr-object-detection-with-re-id",
+                topics: ["Computer Vision", "Deep Learning", "CUDA"],
                 stars: 5
             },
             {
@@ -695,30 +686,6 @@
                 stars: 4
             },
             {
-                name: "Full Stack CRUD Project",
-                desc: {
-                    tr: "React ve Node.js mimarisi üzerine kurulu, modern UI bileşenleri içeren görev yönetim sistemi. Typescript desteği.",
-                    en: "Task management system built on React and Node.js architecture, featuring modern UI components. TypeScript support.",
-                    de: "Aufgabenverwaltungssystem auf Basis von React und Node.js-Architektur mit modernen UI-Komponenten. TypeScript-Unterstützung."
-                },
-                language: "TypeScript",
-                html_url: "https://github.com/thesaidd/full-stack-crud-project",
-                topics: ["React", "TypeScript", "Node.js"],
-                stars: 3
-            },
-            {
-                name: "RT-DETR Object Detection",
-                desc: {
-                    tr: "RT-DETR modeli kullanılarak gerçek zamanlı nesne tespiti ve yeniden kimliklendirme (Re-ID) projesi. Video analitiği için optimize edildi.",
-                    en: "Real-time object detection and re-identification (Re-ID) project using RT-DETR model. Optimized for video analytics.",
-                    de: "Echtzeit-Objekterkennung und Re-Identifikation (Re-ID) Projekt unter Verwendung des RT-DETR-Modells. Optimiert für Videoanalytik."
-                },
-                language: "Python",
-                html_url: "https://github.com/thesaidd/rt-detr-object-detection-with-re-id",
-                topics: ["Computer Vision", "Deep Learning", "CUDA"],
-                stars: 5
-            },
-            {
                 name: "Face Detection & Tracking",
                 desc: {
                     tr: "OpenCV ve Haar Cascades kullanarak gerçek zamanlı yüz algılama ve takip sistemi. Güvenlik ve izleme sistemleri prototipi.",
@@ -729,6 +696,18 @@
                 html_url: "https://github.com/thesaidd/face-detection-and-tracking-with-python",
                 topics: ["OpenCV", "Image Processing"],
                 stars: 4
+            },
+             {
+                name: "Full Stack CRUD Project",
+                desc: {
+                    tr: "React ve Node.js mimarisi üzerine kurulu, modern UI bileşenleri içeren görev yönetim sistemi. Typescript desteği.",
+                    en: "Task management system built on React and Node.js architecture, featuring modern UI components. TypeScript support.",
+                    de: "Aufgabenverwaltungssystem auf Basis von React und Node.js-Architektur mit modernen UI-Komponenten. TypeScript-Unterstützung."
+                },
+                language: "TypeScript",
+                html_url: "https://github.com/thesaidd/full-stack-crud-project",
+                topics: ["React", "TypeScript", "Node.js"],
+                stars: 3
             }
         ];
 
@@ -739,9 +718,9 @@
                 "Python": "text-yellow-500",
                 "TypeScript": "text-blue-500",
                 "JavaScript": "text-yellow-400",
+                "Python/ROS": "text-purple-500",
                 "HTML": "text-orange-500",
-                "CSS": "text-blue-400",
-                "C++": "text-blue-600"
+                "CSS": "text-blue-400"
             };
             const langColor = colors[project.language] || "text-primary";
             const description = project.desc[lang] || project.desc['en'];
@@ -790,8 +769,7 @@
             });
         }
 
-        // --- 5. Feedback Modal Logic ---
-        
+        // --- Feedback Modal ---
         const openFeedbackBtn = document.getElementById('open-feedback');
         const closeFeedbackBtn = document.getElementById('close-feedback');
         const feedbackModal = document.getElementById('feedback-modal');
@@ -803,35 +781,29 @@
 
         function toggleModal() {
             feedbackModal.classList.toggle('modal-active');
-            document.body.classList.toggle('overflow-hidden'); // Prevent scrolling
+            document.body.classList.toggle('overflow-hidden');
         }
 
         openFeedbackBtn.addEventListener('click', toggleModal);
         closeFeedbackBtn.addEventListener('click', toggleModal);
         overlay.addEventListener('click', toggleModal);
 
-        // Yıldız Puanlama
         stars.forEach(star => {
             star.addEventListener('click', () => {
                 const value = star.getAttribute('data-value');
                 ratingInput.value = value;
-                
-                // Görsel güncelle
                 stars.forEach(s => {
                     if (s.getAttribute('data-value') <= value) {
-                        s.classList.add('selected');
+                        s.classList.add('selected', 'text-yellow-400');
                         s.classList.remove('text-gray-300');
-                        s.classList.add('text-yellow-400');
                     } else {
-                        s.classList.remove('selected');
+                        s.classList.remove('selected', 'text-yellow-400');
                         s.classList.add('text-gray-300');
-                        s.classList.remove('text-yellow-400');
                     }
                 });
             });
         });
 
-        // Form Gönderimi (Web3Forms)
         feedbackForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = feedbackForm.querySelector('button');
@@ -847,10 +819,7 @@
             try {
                 const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                     body: json
                 });
                 const result = await response.json();
@@ -860,16 +829,13 @@
                     feedbackStatus.textContent = translations[currentLang].feedback_success;
                     feedbackStatus.className = "text-center text-sm mt-3 text-green-600 font-semibold";
                     feedbackForm.reset();
-                    // Yıldızları sıfırla
                     stars.forEach(s => s.classList.remove('selected', 'text-yellow-400') && s.classList.add('text-gray-300'));
                     setTimeout(toggleModal, 2000);
                 } else {
-                    console.log(response);
                     feedbackStatus.textContent = result.message || translations[currentLang].feedback_error;
                     feedbackStatus.className = "text-center text-sm mt-3 text-red-600 font-semibold";
                 }
             } catch (error) {
-                console.log(error);
                 feedbackStatus.textContent = translations[currentLang].feedback_error;
                 feedbackStatus.className = "text-center text-sm mt-3 text-red-600 font-semibold";
             } finally {
@@ -878,7 +844,6 @@
             }
         });
 
-        // Sayfa yüklendiğinde çalıştır
         document.addEventListener('DOMContentLoaded', () => {
             changeLanguage(currentLang);
         });
