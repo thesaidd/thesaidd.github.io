@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yusuf Sait Sakoğlu | Portfolio</title>
-    <meta name="description" content="Yusuf Sait Sakoğlu Portfolyo - Full Stack Developer & AI Enthusiast">
+    <meta name="description" content="Yusuf Sait Sakoğlu Portfolyo - Computer Engineering Student & AI Researcher">
 
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NJ5C9E2BN9"></script>
@@ -12,7 +12,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-NJ5C9E2BN9', { 'anonymize_ip': true });
     </script>
     
@@ -85,6 +84,9 @@
             pointer-events: auto;
         }
         .rating-star:hover, .rating-star.selected { color: #fbbf24; }
+
+        .timeline-item { opacity: 0; transform: translateX(-20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        .timeline-item.visible { opacity: 1; transform: translateX(0); }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900 dark:bg-darker dark:text-gray-100 transition-colors duration-300">
@@ -126,6 +128,7 @@
             <div class="flex flex-col p-4 space-y-4 text-center">
                 <a href="#home" class="block hover:text-primary" data-i18n="nav_home">Ana Sayfa</a>
                 <a href="#about" class="block hover:text-primary" data-i18n="nav_about">Hakkımda</a>
+                <a href="#skills" class="block hover:text-primary" data-i18n="nav_skills">Yetenekler</a>
                 <a href="#projects" class="block hover:text-primary" data-i18n="nav_projects">Projeler</a>
                 <a href="#contact" class="block hover:text-primary" data-i18n="nav_contact">İletişim</a>
                 
@@ -171,7 +174,6 @@
             <div class="flex-1 flex justify-center relative">
                 <div class="relative w-72 h-72 md:w-96 md:h-96">
                     <div class="absolute inset-0 bg-gradient-to-tr from-blue-500 to-teal-400 rounded-full blur-2xl opacity-50 animate-pulse"></div>
-                    <!-- Profil Resmi -->
                     <img src="20240325_182833.jpg" alt="Yusuf Sait Sakoğlu" 
                          class="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800 shadow-2xl">
                 </div>
@@ -195,8 +197,22 @@
                     </h3>
                     
                     <div class="relative border-l-2 border-gray-200 dark:border-gray-700 ml-3 space-y-10">
-                        <!-- İş 1: Araştırmacı (En yeni) -->
-                        <div class="ml-8 relative">
+
+                        <!-- TÜBİTAK 2209-A Projesi -->
+                        <div class="ml-8 relative timeline-item">
+                            <span class="absolute -left-[41px] flex h-6 w-6 items-center justify-center rounded-full bg-red-100 dark:bg-red-900 ring-4 ring-white dark:ring-gray-900">
+                                <i class="fas fa-satellite text-red-600 dark:text-red-400 text-xs"></i>
+                            </span>
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white" data-i18n="work_4_title">Araştırmacı - TÜBİTAK 2209-A</h4>
+                            <span class="text-sm text-red-500 font-medium" data-i18n="work_4_date">Nisan 2025 - Devam Ediyor</span>
+                            <p class="text-gray-600 dark:text-gray-400 mt-1" data-i18n="work_4_company">TÜBİTAK Lisans Araştırma Destek Programı</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-500 mt-2" data-i18n="work_4_desc">
+                                GNSS ve görüntü işleme füzyonuyla düşman İHA'ları tespit, takip ve tahmin eden sistem geliştirme. TÜBİTAK tarafından fonlandı.
+                            </p>
+                        </div>
+
+                        <!-- BAP Projesi -->
+                        <div class="ml-8 relative timeline-item">
                             <span class="absolute -left-[41px] flex h-6 w-6 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-900 ring-4 ring-white dark:ring-gray-900">
                                 <i class="fas fa-robot text-purple-600 dark:text-purple-400 text-xs"></i>
                             </span>
@@ -204,12 +220,12 @@
                             <span class="text-sm text-purple-500 font-medium" data-i18n="work_3_date">Ocak 2025 - Devam Ediyor</span>
                             <p class="text-gray-600 dark:text-gray-400 mt-1" data-i18n="work_3_company">Abdullah Gül Üniversitesi</p>
                             <p class="text-sm text-gray-500 dark:text-gray-500 mt-2" data-i18n="work_3_desc">
-                                AI ve IoT destekli Otonom İHA'lar üzerine araştırma ve geliştirme. ROS, Gazebo ve Görüntü İşleme.
+                                AI ve IoT destekli sabit kanatlı İHA'larla işbirlikli keşif ve kamikaze senaryoları. LoRa/GSM ile düşük gecikmeli iletişim ağı.
                             </p>
                         </div>
 
-                        <!-- İş 2: Stajyer -->
-                        <div class="ml-8 relative">
+                        <!-- Staj -->
+                        <div class="ml-8 relative timeline-item">
                             <span class="absolute -left-[41px] flex h-6 w-6 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900 ring-4 ring-white dark:ring-gray-900">
                                 <i class="fas fa-code text-orange-600 dark:text-orange-400 text-xs"></i>
                             </span>
@@ -221,28 +237,91 @@
                             </p>
                         </div>
 
-                         <!-- Eğitim -->
-                         <div class="ml-8 relative">
+                        <!-- Yazılım Takım Lideri - TEKNOFEST -->
+                        <div class="ml-8 relative timeline-item">
+                            <span class="absolute -left-[41px] flex h-6 w-6 items-center justify-center rounded-full bg-teal-100 dark:bg-teal-900 ring-4 ring-white dark:ring-gray-900">
+                                <i class="fas fa-plane text-teal-600 dark:text-teal-400 text-xs"></i>
+                            </span>
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white" data-i18n="work_5_title">Yazılım Takım Lideri – Tulpar UAV Takımı</h4>
+                            <span class="text-sm text-teal-500 font-medium" data-i18n="work_5_date">Ocak 2024 - Devam Ediyor</span>
+                            <p class="text-gray-600 dark:text-gray-400 mt-1" data-i18n="work_5_company">AGU TEKNOFEST Savaşan İHA Yarışması</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-500 mt-2" data-i18n="work_5_desc">
+                                YOLOv8+GOTURN+DeepSORT entegrasyonu, PX4+Gazebo simülasyon ortamı, ROS 2 uçuş testi.
+                            </p>
+                        </div>
+
+                        <!-- Eğitim -->
+                        <div class="ml-8 relative timeline-item">
                             <span class="absolute -left-[41px] flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900 ring-4 ring-white dark:ring-gray-900">
                                 <i class="fas fa-university text-blue-600 dark:text-blue-400 text-xs"></i>
                             </span>
                             <h4 class="text-lg font-bold text-gray-900 dark:text-white" data-i18n="edu_1_title">Bilgisayar Mühendisliği</h4>
                             <span class="text-sm text-primary font-medium" data-i18n="edu_1_date">2021 - Devam Ediyor</span>
-                            <p class="text-gray-600 dark:text-gray-400 mt-1" data-i18n="edu_1_school">Abdullah Gül Üniversitesi</p>
+                            <p class="text-gray-600 dark:text-gray-400 mt-1" data-i18n="edu_1_school">Abdullah Gül Üniversitesi, Kayseri</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Sağ Kolon: Sertifikalar -->
+                <!-- Sağ Kolon: Sertifikalar & Başarılar -->
                 <div>
                     <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
                         <i class="fas fa-certificate text-yellow-500"></i> <span data-i18n="cert_title">Sertifikalar & Başarılar</span>
                     </h3>
                     
                     <div class="grid gap-4">
-                        <!-- Sertifika 1 -->
+                        <!-- TÜBİTAK Fonlama -->
+                        <div class="p-4 bg-gray-50 dark:bg-darker rounded-xl border border-gray-200 dark:border-gray-800 hover:border-red-500 transition flex items-start gap-4">
+                            <div class="text-2xl text-red-500 mt-1"><i class="fas fa-flask"></i></div>
+                            <div>
+                                <h4 class="font-bold" data-i18n="cert_tubitak_title">TÜBİTAK 2209-A Fon Desteği</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="cert_tubitak_org">TÜBİTAK Lisans Araştırma Destek Programı</p>
+                                <p class="text-xs text-gray-500 mt-1" data-i18n="cert_tubitak_desc">GNSS ve Görüntü İşleme ile Sabit Kanatlı İHA Takibi projesi.</p>
+                            </div>
+                        </div>
+
+                        <!-- TEKNOFEST 2025 Hackathon -->
+                        <div class="p-4 bg-gray-50 dark:bg-darker rounded-xl border border-gray-200 dark:border-gray-800 hover:border-orange-500 transition flex items-start gap-4">
+                            <div class="text-2xl text-orange-500 mt-1"><i class="fas fa-trophy"></i></div>
+                            <div>
+                                <h4 class="font-bold" data-i18n="cert_teknofest_title">TEKNOFEST 2025 – Hepsiburada AI Hackathon</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400" data-i18n="cert_teknofest_org">Sümertech Takımı – Ağustos 2025</p>
+                                <p class="text-xs text-gray-500 mt-1" data-i18n="cert_teknofest_desc">NLP ve veri ön işleme ile AI tabanlı adres çözümleme.</p>
+                            </div>
+                        </div>
+
+                        <!-- Young Academy -->
+                        <div class="p-4 bg-gray-50 dark:bg-darker rounded-xl border border-gray-200 dark:border-gray-800 hover:border-indigo-500 transition flex items-start gap-4">
+                            <div class="text-2xl text-indigo-500 mt-1"><i class="fas fa-graduation-cap"></i></div>
+                            <div>
+                                <h4 class="font-bold" data-i18n="cert_youngacademy_title">19. & 20. Young Academy</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Bilkent University Operational Research Club</p>
+                                <p class="text-xs text-gray-500 mt-1" data-i18n="cert_youngacademy_desc">1000+ öğrencinin katıldığı, sektör liderlerinin konuşmacı olduğu etkinlik.</p>
+                            </div>
+                        </div>
+
+                        <!-- Yapay Zeka Yıldızları -->
                         <div class="p-4 bg-gray-50 dark:bg-darker rounded-xl border border-gray-200 dark:border-gray-800 hover:border-yellow-500 transition flex items-start gap-4">
-                            <div class="text-2xl text-yellow-500 mt-1"><i class="fas fa-award"></i></div>
+                            <div class="text-2xl text-yellow-500 mt-1"><i class="fas fa-chalkboard-teacher"></i></div>
+                            <div>
+                                <h4 class="font-bold" data-i18n="cert_aiyildizlari_title">Yapay Zeka Yıldızları – Gönüllü Eğitmen</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Habitat Derneği & Vodafone Vakfı</p>
+                                <p class="text-xs text-gray-500 mt-1" data-i18n="cert_aiyildizlari_desc">Ortaokul ve lise öğrencilerine AI okuryazarlığı ve Python atölyeleri.</p>
+                            </div>
+                        </div>
+
+                        <!-- Power Up With Us -->
+                        <div class="p-4 bg-gray-50 dark:bg-darker rounded-xl border border-gray-200 dark:border-gray-800 hover:border-green-500 transition flex items-start gap-4">
+                            <div class="text-2xl text-green-500 mt-1"><i class="fas fa-bolt"></i></div>
+                            <div>
+                                <h4 class="font-bold" data-i18n="cert_powerup_title">Power Up With Us – Katılımcı</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Starbucks Foundation & Alshaya Group</p>
+                                <p class="text-xs text-gray-500 mt-1" data-i18n="cert_powerup_desc">21. yüzyıl dijital yetkinlikleri ve girişimcilik programı.</p>
+                            </div>
+                        </div>
+
+                        <!-- SHE++ -->
+                        <div class="p-4 bg-gray-50 dark:bg-darker rounded-xl border border-gray-200 dark:border-gray-800 hover:border-pink-500 transition flex items-start gap-4">
+                            <div class="text-2xl text-pink-500 mt-1"><i class="fas fa-award"></i></div>
                             <div>
                                 <h4 class="font-bold">SHE++ Project Manager</h4>
                                 <p class="text-sm text-gray-600 dark:text-gray-400">AGU Youth Studies Center</p>
@@ -250,21 +329,12 @@
                             </div>
                         </div>
 
-                        <!-- Sertifika 2 -->
-                        <div class="p-4 bg-gray-50 dark:bg-darker rounded-xl border border-gray-200 dark:border-gray-800 hover:border-yellow-500 transition flex items-start gap-4">
+                        <!-- Python & Image Processing -->
+                        <div class="p-4 bg-gray-50 dark:bg-darker rounded-xl border border-gray-200 dark:border-gray-800 hover:border-blue-500 transition flex items-start gap-4">
                             <div class="text-2xl text-blue-500 mt-1"><i class="fas fa-laptop-code"></i></div>
                             <div>
                                 <h4 class="font-bold">Fundamental Python & Image Processing</h4>
                                 <p class="text-sm text-gray-600 dark:text-gray-400">United Latino Students Association</p>
-                            </div>
-                        </div>
-
-                         <!-- Sertifika 3 -->
-                         <div class="p-4 bg-gray-50 dark:bg-darker rounded-xl border border-gray-200 dark:border-gray-800 hover:border-yellow-500 transition flex items-start gap-4">
-                            <div class="text-2xl text-green-500 mt-1"><i class="fas fa-globe"></i></div>
-                            <div>
-                                <h4 class="font-bold">SDG Speaking Club Project</h4>
-                                <p class="text-sm text-gray-600 dark:text-gray-400">Abdullah Gül University</p>
                             </div>
                         </div>
                     </div>
@@ -281,35 +351,54 @@
                 <span class="border-b-4 border-primary pb-2" data-i18n="skills_title">Teknik Yeteneklerim</span>
             </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- AI & Robotics (Güncellendi) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- AI & Robotics -->
                 <div class="p-6 bg-gray-50 dark:bg-darker rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-purple-500 transition group">
                     <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
                         <i class="fas fa-robot"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4" data-i18n="skills_ai">Otonom Sistemler & AI</h3>
+                    <h3 class="text-lg font-bold mb-4" data-i18n="skills_ai">Otonom Sistemler & AI</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">ROS</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">ROS 2</span>
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Gazebo</span>
-                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">YOLO/RT-DETR</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">YOLO</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">RT-DETR</span>
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">DeepSORT</span>
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">OpenCV</span>
-                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">PyTorch</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">PX4</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">LoRa/GSM</span>
                     </div>
                 </div>
 
-                <!-- Backend (Güncellendi) -->
+                <!-- Backend -->
                 <div class="p-6 bg-gray-50 dark:bg-darker rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-secondary transition group">
                     <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
                         <i class="fas fa-server"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Backend</h3>
+                    <h3 class="text-lg font-bold mb-4">Backend</h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Python</span>
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">C#</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">C</span>
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">ASP.NET Core</span>
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">FastAPI</span>
-                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">PostgreSQL</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">MySQL</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Firebase</span>
+                    </div>
+                </div>
+
+                <!-- Mobile -->
+                <div class="p-6 bg-gray-50 dark:bg-darker rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-cyan-500 transition group">
+                    <div class="w-12 h-12 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-4" data-i18n="skills_mobile">Mobil Geliştirme</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Flutter</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Dart</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Java</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Android Studio</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">FCM</span>
                     </div>
                 </div>
 
@@ -318,11 +407,12 @@
                     <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
                         <i class="fas fa-desktop"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Frontend</h3>
+                    <h3 class="text-lg font-bold mb-4">Frontend</h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">React.js</span>
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Next.js</span>
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Tailwind CSS</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">HTML</span>
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">JavaScript</span>
                     </div>
                 </div>
@@ -332,12 +422,13 @@
                     <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 text-orange-600 rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
                         <i class="fas fa-tools"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4" data-i18n="skills_tools">Araçlar</h3>
+                    <h3 class="text-lg font-bold mb-4" data-i18n="skills_tools">Araçlar</h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Git & GitHub</span>
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Docker</span>
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Linux</span>
                         <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">VS Code</span>
+                        <span class="px-3 py-1 bg-white dark:bg-card rounded-md text-sm border dark:border-gray-700">Canva</span>
                     </div>
                 </div>
             </div>
@@ -352,7 +443,6 @@
                 <p class="text-gray-600 dark:text-gray-400" data-i18n="projects_subtitle">Geliştirdiğim seçkin projeler ve demolar.</p>
             </div>
 
-            <!-- Featured Projects Container -->
             <div id="featured-projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Projeler JavaScript ile buraya yüklenecek -->
             </div>
@@ -402,7 +492,7 @@
     <!-- Footer -->
     <footer class="py-8 bg-white dark:bg-darker border-t border-gray-200 dark:border-gray-800 text-center">
         <p class="text-gray-600 dark:text-gray-400" data-i18n="footer_text">
-            &copy; 2024 Yusuf Sait Sakoğlu. Tailwind CSS ile geliştirildi.
+            &copy; 2025 Yusuf Sait Sakoğlu. Tailwind CSS ile geliştirildi.
         </p>
     </footer>
 
@@ -449,6 +539,7 @@
 
     <!-- JavaScript Logic -->
     <script>
+        // --- Theme Toggle ---
         const themeToggleBtn = document.getElementById('theme-toggle');
         const htmlElement = document.documentElement;
 
@@ -460,21 +551,26 @@
 
         themeToggleBtn.addEventListener('click', () => {
             htmlElement.classList.toggle('dark');
-            if (htmlElement.classList.contains('dark')) {
-                localStorage.theme = 'dark';
-            } else {
-                localStorage.theme = 'light';
-            }
+            localStorage.theme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
         });
 
+        // --- Mobile Menu ---
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        // --- Timeline Intersection Observer ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 100);
+                }
+            });
+        }, { threshold: 0.1 });
 
-        // --- Dil Çevirileri (Güncellendi) ---
+        document.querySelectorAll('.timeline-item').forEach(item => observer.observe(item));
+
+        // --- Translations ---
         const translations = {
             tr: {
                 nav_home: "Ana Sayfa",
@@ -492,18 +588,39 @@
                 edu_1_title: "Bilgisayar Mühendisliği",
                 edu_1_date: "2021 - Devam Ediyor",
                 edu_1_school: "Abdullah Gül Üniversitesi, Kayseri",
-                work_3_title: "Araştırmacı - BAP Projesi",
+                work_4_title: "Araştırmacı – TÜBİTAK 2209-A",
+                work_4_date: "Nisan 2025 - Devam Ediyor",
+                work_4_company: "TÜBİTAK Lisans Araştırma Destek Programı",
+                work_4_desc: "GNSS ve görüntü işleme füzyonuyla düşman İHA'ları tespit, takip ve tahmin eden sistem. TÜBİTAK tarafından fonlandı.",
+                work_3_title: "Araştırmacı – BAP Projesi",
                 work_3_date: "Ocak 2025 - Devam Ediyor",
                 work_3_company: "Abdullah Gül Üniversitesi",
-                work_3_desc: "Al ve IoT destekli Otonom İHA'lar. Otonom görev icrası ve hibrit görüntü işleme.",
+                work_3_desc: "AI ve IoT destekli sabit kanatlı İHA'larla işbirlikli keşif ve kamikaze senaryoları. LoRa/GSM ile düşük gecikmeli (&lt;150ms) iletişim ağı.",
                 work_2_title: "Yazılım Stajyeri",
                 work_2_date: "Haziran 2025 - Ağustos 2025",
                 work_2_company: "B&B Bilişim",
-                work_2_desc: "Bilgisayarlı görü projeleri, C# ve ASP.NET Core MVC ile geliştirme.",
+                work_2_desc: "Bilgisayarlı görü projeleri, C# ve ASP.NET Core MVC geliştirme süreçleri.",
+                work_5_title: "Yazılım Takım Lideri – Tulpar UAV",
+                work_5_date: "Ocak 2024 - Devam Ediyor",
+                work_5_company: "AGU TEKNOFEST Savaşan İHA Yarışması",
+                work_5_desc: "YOLOv8+GOTURN+DeepSORT entegrasyonu, PX4+Gazebo simülasyon, ROS 2 uçuş testi.",
                 cert_title: "Sertifikalar & Başarılar",
+                cert_tubitak_title: "TÜBİTAK 2209-A Fon Desteği",
+                cert_tubitak_org: "TÜBİTAK Lisans Araştırma Destek Programı",
+                cert_tubitak_desc: "GNSS ve Görüntü İşleme ile Sabit Kanatlı İHA Takibi projesi.",
+                cert_teknofest_title: "TEKNOFEST 2025 – Hepsiburada AI Hackathon",
+                cert_teknofest_org: "Sümertech Takımı – Ağustos 2025",
+                cert_teknofest_desc: "NLP ve veri ön işleme ile AI tabanlı adres çözümleme.",
+                cert_youngacademy_title: "19. & 20. Young Academy",
+                cert_youngacademy_desc: "1000+ öğrencinin katıldığı, sektör liderlerinin konuşmacı olduğu etkinlik.",
+                cert_aiyildizlari_title: "Yapay Zeka Yıldızları – Gönüllü Eğitmen",
+                cert_aiyildizlari_desc: "Ortaokul ve lise öğrencilerine AI okuryazarlığı ve Python atölyeleri.",
+                cert_powerup_title: "Power Up With Us – Katılımcı",
+                cert_powerup_desc: "21. yüzyıl dijital yetkinlikleri ve girişimcilik programı.",
                 cert_1_desc: "STEM alanında kız öğrencilere yönelik atölye liderliği.",
                 skills_title: "Teknik Yeteneklerim",
                 skills_ai: "Otonom Sistemler & AI",
+                skills_mobile: "Mobil Geliştirme",
                 skills_tools: "Araçlar",
                 projects_title: "Öne Çıkan Projeler",
                 projects_subtitle: "Geliştirdiğim seçkin projeler ve demolar.",
@@ -513,7 +630,7 @@
                 contact_email_desc: "Bana mail gönder",
                 contact_github_desc: "Kodlarımı incele",
                 contact_linkedin_desc: "Profesyonel ağım",
-                footer_text: "&copy; 2024 Yusuf Sait Sakoğlu. Tailwind CSS ile geliştirildi.",
+                footer_text: "&copy; 2025 Yusuf Sait Sakoğlu. Tailwind CSS ile geliştirildi.",
                 btn_feedback: "Geri Bildirim Ver (Anonim)",
                 feedback_title: "Geri Bildirim",
                 feedback_rate: "Deneyiminizi Puanlayın",
@@ -538,18 +655,39 @@
                 edu_1_title: "Computer Engineering (Bachelor)",
                 edu_1_date: "2021 - Present",
                 edu_1_school: "Abdullah Gul University, Kayseri",
-                work_3_title: "Researcher - BAP Project",
+                work_4_title: "Researcher – TÜBİTAK 2209-A",
+                work_4_date: "April 2025 - Present",
+                work_4_company: "TÜBİTAK Undergraduate Research Support Program",
+                work_4_desc: "Developing a system to detect, track, and predict enemy UAVs by fusing GNSS and real-time image data. Funded by TÜBİTAK.",
+                work_3_title: "Researcher – BAP Project",
                 work_3_date: "Jan 2025 - Present",
                 work_3_company: "Abdullah Gul University",
-                work_3_desc: "Al and IoT-Enabled Fixed-Wing UAVs. Autonomous mission execution and hybrid image processing.",
+                work_3_desc: "Collaborative autonomous reconnaissance and kamikaze scenarios with AI & IoT-enabled fixed-wing UAVs. LoRa/GSM low-latency (&lt;150ms) communication network.",
                 work_2_title: "Software Intern",
                 work_2_date: "June 2025 - August 2025",
                 work_2_company: "B&B Bilişim",
                 work_2_desc: "Computer vision projects, C# and ASP.NET Core MVC development.",
+                work_5_title: "Software Team Lead – Tulpar UAV",
+                work_5_date: "Jan 2024 - Present",
+                work_5_company: "AGU TEKNOFEST Fighter UAV Competition",
+                work_5_desc: "YOLOv8+GOTURN+DeepSORT integration, PX4+Gazebo simulation, ROS 2 flight testing.",
                 cert_title: "Certificates & Achievements",
+                cert_tubitak_title: "TÜBİTAK 2209-A Research Funding",
+                cert_tubitak_org: "TÜBİTAK Undergraduate Research Support Program",
+                cert_tubitak_desc: "Fixed-Wing UAV Tracking with GNSS and Image Processing.",
+                cert_teknofest_title: "TEKNOFEST 2025 – Hepsiburada AI Hackathon",
+                cert_teknofest_org: "Sümertech Team – August 2025",
+                cert_teknofest_desc: "AI-based address resolution with NLP and data preprocessing.",
+                cert_youngacademy_title: "19th & 20th Young Academy",
+                cert_youngacademy_desc: "Event with 1000+ students and industry leaders as speakers.",
+                cert_aiyildizlari_title: "AI Stars – Volunteer Trainer",
+                cert_aiyildizlari_desc: "AI literacy and Python coding workshops for middle/high school students.",
+                cert_powerup_title: "Power Up With Us – Participant",
+                cert_powerup_desc: "21st century digital competencies and entrepreneurship program.",
                 cert_1_desc: "Organized workshops for female students in STEM fields.",
                 skills_title: "Technical Skills",
                 skills_ai: "Autonomous Systems & AI",
+                skills_mobile: "Mobile Development",
                 skills_tools: "Tools",
                 projects_title: "Featured Projects",
                 projects_subtitle: "Selected projects and demos I developed.",
@@ -559,7 +697,7 @@
                 contact_email_desc: "Send me an email",
                 contact_github_desc: "Check my code",
                 contact_linkedin_desc: "My professional network",
-                footer_text: "&copy; 2024 Yusuf Sait Sakoglu. Developed with Tailwind CSS.",
+                footer_text: "&copy; 2025 Yusuf Sait Sakoglu. Developed with Tailwind CSS.",
                 btn_feedback: "Give Feedback (Anonymous)",
                 feedback_title: "Feedback",
                 feedback_rate: "Rate your experience",
@@ -583,19 +721,40 @@
                 edu_work_title: "Ausbildung & Berufserfahrung",
                 edu_1_title: "Computer Engineering (Bachelor)",
                 edu_1_date: "2021 - Heute",
-                edu_1_school: "Abdullah Gul Universität",
-                work_3_title: "Forscher - BAP Projekt",
+                edu_1_school: "Abdullah Gul Universität, Kayseri",
+                work_4_title: "Forscher – TÜBİTAK 2209-A",
+                work_4_date: "April 2025 - Heute",
+                work_4_company: "TÜBİTAK Forschungsförderprogramm",
+                work_4_desc: "System zur Erkennung und Verfolgung feindlicher UAVs durch GNSS- und Bilddatenfusion.",
+                work_3_title: "Forscher – BAP Projekt",
                 work_3_date: "Jan 2025 - Heute",
                 work_3_company: "Abdullah Gul Universität",
-                work_3_desc: "KI und IoT-gestützte autonome UAVs. Autonome Missionsdurchführung.",
+                work_3_desc: "Kollaborative autonome Aufklärung mit KI- und IoT-fähigen UAVs. LoRa/GSM-Kommunikationsnetz.",
                 work_2_title: "Software-Praktikant",
                 work_2_date: "Juni 2025 - August 2025",
                 work_2_company: "B&B Bilişim",
                 work_2_desc: "Computer-Vision-Projekte, C#- und ASP.NET Core MVC-Entwicklung.",
+                work_5_title: "Software-Teamleiter – Tulpar UAV",
+                work_5_date: "Jan 2024 - Heute",
+                work_5_company: "AGU TEKNOFEST Kampfdrohnen-Wettbewerb",
+                work_5_desc: "YOLOv8+GOTURN+DeepSORT-Integration, PX4+Gazebo-Simulation, ROS 2 Flugtests.",
                 cert_title: "Zertifikate & Erfolge",
+                cert_tubitak_title: "TÜBİTAK 2209-A Forschungsförderung",
+                cert_tubitak_org: "TÜBİTAK Forschungsförderprogramm",
+                cert_tubitak_desc: "UAV-Tracking mit GNSS und Bildverarbeitung.",
+                cert_teknofest_title: "TEKNOFEST 2025 – Hepsiburada KI-Hackathon",
+                cert_teknofest_org: "Sümertech Team – August 2025",
+                cert_teknofest_desc: "KI-basierte Adressauflösung mit NLP.",
+                cert_youngacademy_title: "19. & 20. Young Academy",
+                cert_youngacademy_desc: "Veranstaltung mit 1000+ Studierenden und Branchenführern.",
+                cert_aiyildizlari_title: "KI-Sterne – Freiwilliger Trainer",
+                cert_aiyildizlari_desc: "KI-Workshops für Schüler an Mittel- und Oberschulen.",
+                cert_powerup_title: "Power Up With Us – Teilnehmer",
+                cert_powerup_desc: "Programm für digitale Kompetenzen und Unternehmertum.",
                 cert_1_desc: "Workshops für Schülerinnen in MINT-Fächern.",
                 skills_title: "Technische Fähigkeiten",
                 skills_ai: "Autonome Systeme & KI",
+                skills_mobile: "Mobile Entwicklung",
                 skills_tools: "Werkzeuge",
                 projects_title: "Ausgewählte Projekte",
                 projects_subtitle: "Ausgewählte Projekte und Demos.",
@@ -605,7 +764,7 @@
                 contact_email_desc: "E-Mail senden",
                 contact_github_desc: "Code ansehen",
                 contact_linkedin_desc: "LinkedIn Profil",
-                footer_text: "&copy; 2024 Yusuf Sait Sakoglu. Entwickelt mit Tailwind CSS.",
+                footer_text: "&copy; 2025 Yusuf Sait Sakoglu. Entwickelt mit Tailwind CSS.",
                 btn_feedback: "Feedback Geben",
                 feedback_title: "Feedback",
                 feedback_rate: "Bewerten Sie Ihre Erfahrung",
@@ -627,7 +786,7 @@
 
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
-                if (translations[lang][key]) {
+                if (translations[lang] && translations[lang][key]) {
                     element.innerHTML = translations[lang][key];
                 }
             });
@@ -635,18 +794,42 @@
             renderProjects(lang);
         }
 
-        // --- Projeler (CV'den yeni proje eklendi) ---
+        // --- Projects Data (Updated with new CV projects) ---
         const manualProjects = [
-             {
-                name: "Autonomous UAV Reconnaissance",
+            {
+                name: "TÜBİTAK UAV Tracking System",
                 desc: {
-                    tr: "AGU BAP Projesi. AI ve IoT destekli sabit kanatlı İHA'lar ile işbirlikçi otonom keşif ve kamikaze senaryoları. ROS ve Gazebo kullanıldı.",
-                    en: "AGU BAP Project. Collaborative autonomous reconnaissance and kamikaze scenarios with AI and IoT-enabled fixed-wing UAVs using ROS and Gazebo.",
-                    de: "AGU BAP Projekt. Kollaborative autonome Aufklärung und Kamikaze-Szenarien mit KI- und IoT-fähigen Starrflügel-UAVs unter Verwendung von ROS und Gazebo."
+                    tr: "TÜBİTAK 2209-A fon desteğiyle geliştirilen sistem: GNSS ve gerçek zamanlı görüntü verisi füzyonuyla düşman İHA'ları tespit, takip ve öngörü.",
+                    en: "TÜBİTAK 2209-A funded project: detecting, tracking, and predicting enemy UAVs by fusing GNSS and real-time image data.",
+                    de: "TÜBİTAK 2209-A gefördertes Projekt: Erkennung und Verfolgung feindlicher UAVs durch GNSS- und Bilddatenfusion."
                 },
                 language: "Python/ROS",
-                html_url: "https://github.com/thesaidd", 
-                topics: ["ROS", "Gazebo", "AI", "UAV"],
+                html_url: "https://github.com/thesaidd",
+                topics: ["GNSS", "OpenCV", "YOLO", "UAV"],
+                stars: 5
+            },
+            {
+                name: "Autonomous UAV Reconnaissance (BAP)",
+                desc: {
+                    tr: "AGU BAP Projesi. Hibrit görüntü işleme pipeline (OpenCV & YOLO) ve iki İHA sistemi ile otonom görev icra. LoRa/GSM ile IoFT ağı.",
+                    en: "AGU BAP Project. Hybrid image processing pipeline (OpenCV & YOLO) with two-UAV system. LoFT network using LoRa and GSM for low-latency inter-UAV communication.",
+                    de: "AGU BAP Projekt. Hybride Bildverarbeitungs-Pipeline mit Zwei-UAV-System. LoRa/GSM IoFT-Netz."
+                },
+                language: "Python/ROS",
+                html_url: "https://github.com/thesaidd",
+                topics: ["ROS 2", "Gazebo", "PX4", "LoRa"],
+                stars: 5
+            },
+            {
+                name: "Worship Tracking System",
+                desc: {
+                    tr: "Flutter ve Dart ile geliştirilen namaz takip uygulaması. Gerçek zamanlı hatırlatmalar, kaçırılan namaz logu, takvim bazlı geçmiş görünümü ve FCM bildirim sistemi.",
+                    en: "Prayer tracking app built with Flutter and Dart. Real-time reminders, missed prayer logging, calendar-based history, and FCM notification system.",
+                    de: "Gebet-Tracking-App mit Flutter und Dart. Echtzeit-Erinnerungen, verpasste Gebete, Kalenderansicht und FCM-Benachrichtigungen."
+                },
+                language: "Flutter/Dart",
+                html_url: "https://github.com/thesaidd",
+                topics: ["Flutter", "Firebase", "FCM", "MySQL"],
                 stars: 5
             },
             {
@@ -654,7 +837,7 @@
                 desc: {
                     tr: "Yapay zeka destekli CV analizi, iş eşleştirme ve PDF işleme sistemi. Python, FastAPI ve React kullanılarak geliştirildi. Docker ile deploy edildi.",
                     en: "AI-powered CV analysis, job matching, and PDF processing system. Developed using Python, FastAPI, and React. Deployed with Docker.",
-                    de: "KI-gestütztes System zur CV-Analyse, Job-Matching und PDF-Verarbeitung. Entwickelt mit Python, FastAPI und React. Bereitgestellt mit Docker."
+                    de: "KI-gestütztes System zur CV-Analyse, Job-Matching und PDF-Verarbeitung. Entwickelt mit Python, FastAPI und React."
                 },
                 language: "Python",
                 html_url: "https://github.com/thesaidd/ak-ll-cv-sistemi-demo-",
@@ -662,52 +845,28 @@
                 stars: 5
             },
             {
+                name: "Cepteservis – Mobile Marketplace",
+                desc: {
+                    tr: "Kullanıcıların yerel tamir ve bakım hizmeti bulup talep edebildiği Android uygulaması. Firebase Auth, Realtime DB ve kategori bazlı listeleme sistemi.",
+                    en: "Android app enabling users to find and request local repair and maintenance services. Firebase Auth, Realtime DB, and category-based listing system.",
+                    de: "Android-App für lokale Reparatur- und Wartungsdienste. Firebase Auth, Realtime DB und kategoriebasiertes Listingsystem."
+                },
+                language: "Java",
+                html_url: "https://github.com/thesaidd",
+                topics: ["Android", "Firebase", "Java"],
+                stars: 4
+            },
+            {
                 name: "RT-DETR Object Detection",
                 desc: {
                     tr: "RT-DETR modeli kullanılarak gerçek zamanlı nesne tespiti ve yeniden kimliklendirme (Re-ID) projesi. Video analitiği için optimize edildi.",
                     en: "Real-time object detection and re-identification (Re-ID) project using RT-DETR model. Optimized for video analytics.",
-                    de: "Echtzeit-Objekterkennung und Re-Identifikation (Re-ID) Projekt unter Verwendung des RT-DETR-Modells. Optimiert für Videoanalytik."
+                    de: "Echtzeit-Objekterkennung und Re-Identifikation (Re-ID) Projekt unter Verwendung des RT-DETR-Modells."
                 },
                 language: "Python",
                 html_url: "https://github.com/thesaidd/rt-detr-object-detection-with-re-id",
-                topics: ["Computer Vision", "Deep Learning", "CUDA"],
+                topics: ["RT-DETR", "Deep Learning", "Re-ID"],
                 stars: 5
-            },
-            {
-                name: "Space Invaders AI Game",
-                desc: {
-                    tr: "Python ve Pygame kütüphanesi ile geliştirilmiş klasik Space Invaders oyunu. OOP prensipleri ve dinamik varlık yönetimi içerir.",
-                    en: "Classic Space Invaders game developed with Python and Pygame library. Includes OOP principles and dynamic entity management.",
-                    de: "Klassisches Space Invaders-Spiel, entwickelt mit Python und Pygame-Bibliothek. Beinhaltet OOP-Prinzipien und dynamisches Entitätsmanagement."
-                },
-                language: "Python",
-                html_url: "https://github.com/thesaidd/space-invaders-game",
-                topics: ["Pygame", "Game Dev", "OOP"],
-                stars: 4
-            },
-            {
-                name: "Face Detection & Tracking",
-                desc: {
-                    tr: "OpenCV ve Haar Cascades kullanarak gerçek zamanlı yüz algılama ve takip sistemi. Güvenlik ve izleme sistemleri prototipi.",
-                    en: "Real-time face detection and tracking system using OpenCV and Haar Cascades. Prototype for security and surveillance systems.",
-                    de: "Echtzeit-Gesichtserkennung und -verfolgungssystem mit OpenCV und Haar Cascades. Prototyp für Sicherheits- und Überwachungssysteme."
-                },
-                language: "Python",
-                html_url: "https://github.com/thesaidd/face-detection-and-tracking-with-python",
-                topics: ["OpenCV", "Image Processing"],
-                stars: 4
-            },
-             {
-                name: "Full Stack CRUD Project",
-                desc: {
-                    tr: "React ve Node.js mimarisi üzerine kurulu, modern UI bileşenleri içeren görev yönetim sistemi. Typescript desteği.",
-                    en: "Task management system built on React and Node.js architecture, featuring modern UI components. TypeScript support.",
-                    de: "Aufgabenverwaltungssystem auf Basis von React und Node.js-Architektur mit modernen UI-Komponenten. TypeScript-Unterstützung."
-                },
-                language: "TypeScript",
-                html_url: "https://github.com/thesaidd/full-stack-crud-project",
-                topics: ["React", "TypeScript", "Node.js"],
-                stars: 3
             }
         ];
 
@@ -719,16 +878,17 @@
                 "TypeScript": "text-blue-500",
                 "JavaScript": "text-yellow-400",
                 "Python/ROS": "text-purple-500",
-                "HTML": "text-orange-500",
-                "CSS": "text-blue-400"
+                "Flutter/Dart": "text-cyan-500",
+                "Java": "text-orange-500",
+                "HTML": "text-orange-400",
             };
             const langColor = colors[project.language] || "text-primary";
             const description = project.desc[lang] || project.desc['en'];
 
             let tagsHtml = '';
             if (project.topics && project.topics.length > 0) {
-                project.topics.slice(0, 3).forEach(topic => {
-                    tagsHtml += `<span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-600 dark:text-gray-300 mr-2 mb-2 inline-block">#${topic}</span>`;
+                project.topics.slice(0, 4).forEach(topic => {
+                    tagsHtml += `<span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-600 dark:text-gray-300 mr-1 mb-2 inline-block">#${topic}</span>`;
                 });
             }
 
@@ -742,16 +902,9 @@
                             ${project.html_url ? `<a href="${project.html_url}" target="_blank" class="text-gray-500 hover:text-primary transition"><i class="fab fa-github text-xl"></i></a>` : ''}
                         </div>
                     </div>
-                    
                     <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">${project.name}</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-grow line-clamp-3">
-                        ${description}
-                    </p>
-                    
-                    <div class="mb-4">
-                        ${tagsHtml}
-                    </div>
-
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-grow line-clamp-3">${description}</p>
+                    <div class="mb-4">${tagsHtml}</div>
                     <div class="flex items-center text-sm font-medium mt-auto">
                         <span class="${langColor} mr-4 flex items-center gap-1">
                             <i class="fas fa-circle text-[10px]"></i> ${project.language || "Diğer"}
@@ -808,13 +961,11 @@
             e.preventDefault();
             const btn = feedbackForm.querySelector('button');
             const originalText = btn.innerHTML;
-            
             btn.disabled = true;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
 
             const formData = new FormData(feedbackForm);
-            const object = Object.fromEntries(formData);
-            const json = JSON.stringify(object);
+            const json = JSON.stringify(Object.fromEntries(formData));
 
             try {
                 const response = await fetch('https://api.web3forms.com/submit', {
@@ -823,13 +974,12 @@
                     body: json
                 });
                 const result = await response.json();
-                
                 feedbackStatus.classList.remove('hidden');
                 if (response.status === 200) {
                     feedbackStatus.textContent = translations[currentLang].feedback_success;
                     feedbackStatus.className = "text-center text-sm mt-3 text-green-600 font-semibold";
                     feedbackForm.reset();
-                    stars.forEach(s => s.classList.remove('selected', 'text-yellow-400') && s.classList.add('text-gray-300'));
+                    stars.forEach(s => { s.classList.remove('selected', 'text-yellow-400'); s.classList.add('text-gray-300'); });
                     setTimeout(toggleModal, 2000);
                 } else {
                     feedbackStatus.textContent = result.message || translations[currentLang].feedback_error;
@@ -848,6 +998,8 @@
             changeLanguage(currentLang);
         });
 
+        // Initialize on load (in case DOMContentLoaded already fired)
+        changeLanguage(currentLang);
     </script>
 </body>
 </html>
