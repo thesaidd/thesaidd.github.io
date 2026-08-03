@@ -11,6 +11,8 @@ const translations = {
         nav_projects: "Çalışmalar",
         nav_contact: "İletişim",
         hero_eyebrow: "Bilgisayar Mühendisliği · Abdullah Gül Üniversitesi",
+        hero_status: "Yeni projelere ve iş birliklerine açık",
+        hero_scroll: "Keşfet",
         hero_lead: "Yapay zekâ, bilgisayarlı görü ve otonom sistemler odağında çalışan bir bilgisayar mühendisliği öğrencisiyim. Araştırma projelerinde ve ürün geliştirme süreçlerinde sade, güvenilir çözümler üretmeye odaklanıyorum.",
         hero_work: "Seçili çalışmalar",
         hero_cv: "CV'yi görüntüle",
@@ -25,6 +27,8 @@ const translations = {
         focus_2_desc: "Gerçek zamanlı nesne tespiti, takip ve veri füzyonu.",
         focus_3_title: "Yazılım geliştirme",
         focus_3_desc: "Web, mobil ve servis katmanlarında uçtan uca ürün geliştirme.",
+        metric_projects: "Seçili proje",
+        metric_languages: "Dil desteği",
         experience_label: "Yolculuk",
         experience_title: "Deneyim ve eğitim",
         internship: "Staj",
@@ -53,6 +57,12 @@ const translations = {
         education_date: "2021 — Devam ediyor",
         projects_label: "Seçki",
         projects_title: "Çalışmalar",
+        filter_all: "Tümü",
+        filter_energy: "Enerji",
+        filter_autonomy: "Otonomi",
+        filter_ai: "Yapay zekâ",
+        filter_software: "Yazılım",
+        projects_visible: "proje gösteriliyor",
         project_research: "Araştırma projesi",
         project_personal: "Kişisel proje",
         project_product: "Ürün projesi",
@@ -77,6 +87,7 @@ const translations = {
         project_8_desc: "Aynı kronolojik veri ayrımı üzerinde naive baseline, LSTM ve GRU modellerini karşılaştıran tekrarlanabilir zaman serisi deneyi.",
         view_github: "GitHub'da görüntüle",
         all_projects: "GitHub'daki tüm projeleri görüntüle",
+        projects_hint: "Her proje, araştırma ile çalışan yazılım arasındaki mesafeyi kısaltan bir deney.",
         toolbox_label: "Araç kutusu",
         recognition_label: "Seçili notlar",
         recognition_title: "Programlar ve katkılar",
@@ -103,6 +114,8 @@ const translations = {
         nav_projects: "Work",
         nav_contact: "Contact",
         hero_eyebrow: "Computer Engineering · Abdullah Gül University",
+        hero_status: "Open to new projects and collaborations",
+        hero_scroll: "Explore",
         hero_lead: "I am a computer engineering student focused on artificial intelligence, computer vision, and autonomous systems. In research and product development, I aim to build clear and reliable solutions.",
         hero_work: "Selected work",
         hero_cv: "View résumé",
@@ -117,6 +130,8 @@ const translations = {
         focus_2_desc: "Real-time object detection, tracking, and sensor-data fusion.",
         focus_3_title: "Software development",
         focus_3_desc: "End-to-end products across web, mobile, and service layers.",
+        metric_projects: "Selected projects",
+        metric_languages: "Languages supported",
         experience_label: "Journey",
         experience_title: "Experience and education",
         internship: "Internship",
@@ -145,6 +160,12 @@ const translations = {
         education_date: "2021 — Present",
         projects_label: "Selection",
         projects_title: "Work",
+        filter_all: "All",
+        filter_energy: "Energy",
+        filter_autonomy: "Autonomy",
+        filter_ai: "Artificial intelligence",
+        filter_software: "Software",
+        projects_visible: "projects visible",
         project_research: "Research project",
         project_personal: "Personal project",
         project_product: "Product project",
@@ -169,6 +190,7 @@ const translations = {
         project_8_desc: "A reproducible time-series experiment comparing a naive baseline, LSTM, and GRU under the same chronological data split.",
         view_github: "View on GitHub",
         all_projects: "View all projects on GitHub",
+        projects_hint: "Each project is an experiment in shortening the distance between research and working software.",
         toolbox_label: "Toolbox",
         recognition_label: "Selected notes",
         recognition_title: "Programs and contributions",
@@ -195,6 +217,8 @@ const translations = {
         nav_projects: "Arbeiten",
         nav_contact: "Kontakt",
         hero_eyebrow: "Computer Engineering · Abdullah Gül Universität",
+        hero_status: "Offen für neue Projekte und Kooperationen",
+        hero_scroll: "Entdecken",
         hero_lead: "Ich studiere Computer Engineering mit Schwerpunkt auf künstlicher Intelligenz, Computer Vision und autonomen Systemen. In Forschung und Produktentwicklung konzentriere ich mich auf klare und zuverlässige Lösungen.",
         hero_work: "Ausgewählte Arbeiten",
         hero_cv: "Lebenslauf ansehen",
@@ -209,6 +233,8 @@ const translations = {
         focus_2_desc: "Echtzeit-Objekterkennung, Tracking und Datenfusion.",
         focus_3_title: "Softwareentwicklung",
         focus_3_desc: "Durchgängige Produkte für Web, Mobile und Service-Schichten.",
+        metric_projects: "Ausgewählte Projekte",
+        metric_languages: "Unterstützte Sprachen",
         experience_label: "Werdegang",
         experience_title: "Erfahrung und Ausbildung",
         internship: "Praktikum",
@@ -237,6 +263,12 @@ const translations = {
         education_date: "2021 — Heute",
         projects_label: "Auswahl",
         projects_title: "Arbeiten",
+        filter_all: "Alle",
+        filter_energy: "Energie",
+        filter_autonomy: "Autonomie",
+        filter_ai: "Künstliche Intelligenz",
+        filter_software: "Software",
+        projects_visible: "Projekte sichtbar",
         project_research: "Forschungsprojekt",
         project_personal: "Persönliches Projekt",
         project_product: "Produktprojekt",
@@ -261,6 +293,7 @@ const translations = {
         project_8_desc: "Ein reproduzierbares Zeitreihenexperiment, das eine naive Baseline, LSTM und GRU mit derselben chronologischen Datenaufteilung vergleicht.",
         view_github: "Auf GitHub ansehen",
         all_projects: "Alle Projekte auf GitHub ansehen",
+        projects_hint: "Jedes Projekt ist ein Versuch, den Weg von der Forschung zur funktionierenden Software zu verkürzen.",
         toolbox_label: "Werkzeuge",
         recognition_label: "Ausgewählte Hinweise",
         recognition_title: "Programme und Beiträge",
@@ -286,9 +319,40 @@ const navigation = document.querySelector(".site-nav");
 const languageButtons = document.querySelectorAll("[data-language]");
 const themeButton = document.querySelector(".theme-toggle");
 const metaDescription = document.querySelector('meta[name="description"]');
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-let currentLanguage = localStorage.getItem("portfolio-language") || "tr";
+const safeStorage = {
+    get(key) {
+        try { return localStorage.getItem(key); } catch { return null; }
+    },
+    set(key, value) {
+        try { localStorage.setItem(key, value); } catch { /* Storage may be unavailable. */ }
+    }
+};
+
+let currentLanguage = safeStorage.get("portfolio-language") || "tr";
 if (!translations[currentLanguage]) currentLanguage = "tr";
+root.dataset.theme = safeStorage.get("portfolio-theme") || "dark";
+
+function visibleProjectCount() {
+    return [...document.querySelectorAll("[data-project]")]
+        .filter((card) => !card.classList.contains("is-filtered")).length;
+}
+
+function updateFilterStatus() {
+    const count = visibleProjectCount();
+    const countElement = document.querySelector("[data-project-count]");
+    const liveElement = document.getElementById("filter-status");
+    if (countElement) countElement.textContent = String(count).padStart(2, "0");
+    if (liveElement) liveElement.textContent = `${count} ${translations[currentLanguage].projects_visible}`;
+}
+
+function updateThemeLabel() {
+    const isDark = root.dataset.theme === "dark";
+    const key = isDark ? "theme_light" : "theme_dark";
+    themeButton.setAttribute("aria-label", translations[currentLanguage][key]);
+}
 
 function applyLanguage(language) {
     const copy = translations[language];
@@ -306,8 +370,9 @@ function applyLanguage(language) {
         button.setAttribute("aria-pressed", String(button.dataset.language === language));
     });
 
-    localStorage.setItem("portfolio-language", language);
+    safeStorage.set("portfolio-language", language);
     updateThemeLabel();
+    updateFilterStatus();
 }
 
 function closeMenu() {
@@ -333,39 +398,281 @@ languageButtons.forEach((button) => {
     button.addEventListener("click", () => applyLanguage(button.dataset.language));
 });
 
-const savedTheme = localStorage.getItem("portfolio-theme");
-const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-root.dataset.theme = savedTheme || (prefersDark ? "dark" : "light");
-
-function updateThemeLabel() {
-    const isDark = root.dataset.theme === "dark";
-    const key = isDark ? "theme_light" : "theme_dark";
-    themeButton.setAttribute("aria-label", translations[currentLanguage][key]);
-}
+let signalField = null;
 
 themeButton.addEventListener("click", () => {
     root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
-    localStorage.setItem("portfolio-theme", root.dataset.theme);
+    safeStorage.set("portfolio-theme", root.dataset.theme);
     updateThemeLabel();
+    signalField?.refreshPalette();
 });
 
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            revealObserver.unobserve(entry.target);
+document.querySelectorAll(".bento-grid, .project-grid, .recognition-list, .timeline").forEach((group) => {
+    [...group.children].forEach((element, index) => {
+        if (element.classList.contains("reveal")) {
+            element.style.setProperty("--reveal-delay", `${Math.min(index * 70, 350)}ms`);
         }
     });
-}, { threshold: 0.12, rootMargin: "0px 0px -40px" });
+});
 
-document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.11, rootMargin: "0px 0px -45px" });
 
-function updateHeader() {
-    header.classList.toggle("scrolled", window.scrollY > 12);
+    document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+} else {
+    document.querySelectorAll(".reveal").forEach((element) => element.classList.add("is-visible"));
 }
 
-window.addEventListener("scroll", updateHeader, { passive: true });
-updateHeader();
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        document.querySelectorAll("[data-section-link]").forEach((link) => {
+            link.classList.toggle("active", link.dataset.sectionLink === entry.target.id);
+        });
+    });
+}, { rootMargin: "-38% 0px -52%", threshold: 0 });
+
+document.querySelectorAll("main section[id]").forEach((section) => sectionObserver.observe(section));
+
+let scrollTicking = false;
+
+function updateScrollEffects() {
+    const scrollable = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+    const progress = Math.min(Math.max(window.scrollY / scrollable, 0), 1);
+    root.style.setProperty("--scroll-progress", `${progress * 100}%`);
+    header.classList.toggle("scrolled", window.scrollY > 18);
+
+    const timeline = document.querySelector("[data-timeline]");
+    if (timeline) {
+        const rect = timeline.getBoundingClientRect();
+        const timelineProgress = Math.min(Math.max((window.innerHeight * 0.7 - rect.top) / rect.height, 0), 1);
+        timeline.style.setProperty("--timeline-progress", `${timelineProgress * 100}%`);
+    }
+
+    scrollTicking = false;
+}
+
+window.addEventListener("scroll", () => {
+    if (!scrollTicking) {
+        requestAnimationFrame(updateScrollEffects);
+        scrollTicking = true;
+    }
+}, { passive: true });
+
+updateScrollEffects();
+
+document.querySelectorAll("[data-filter]").forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.classList.contains("active")));
+    button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        document.querySelectorAll("[data-filter]").forEach((item) => {
+            const active = item === button;
+            item.classList.toggle("active", active);
+            item.setAttribute("aria-pressed", String(active));
+        });
+
+        document.querySelectorAll("[data-project]").forEach((card) => {
+            const categories = card.dataset.category.split(" ");
+            card.classList.toggle("is-filtered", filter !== "all" && !categories.includes(filter));
+        });
+
+        updateFilterStatus();
+    });
+});
+
+document.querySelectorAll(".spotlight-card").forEach((card) => {
+    card.addEventListener("pointermove", (event) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty("--spotlight-x", `${event.clientX - rect.left}px`);
+        card.style.setProperty("--spotlight-y", `${event.clientY - rect.top}px`);
+    });
+});
+
+if (finePointer && !reduceMotion) {
+    document.addEventListener("pointermove", (event) => {
+        root.style.setProperty("--pointer-x", `${event.clientX}px`);
+        root.style.setProperty("--pointer-y", `${event.clientY}px`);
+    }, { passive: true });
+
+    document.querySelectorAll("[data-project]").forEach((card) => {
+        card.addEventListener("pointermove", (event) => {
+            const rect = card.getBoundingClientRect();
+            const x = (event.clientX - rect.left) / rect.width - 0.5;
+            const y = (event.clientY - rect.top) / rect.height - 0.5;
+            card.style.setProperty("--tilt-x", `${y * -3.5}deg`);
+            card.style.setProperty("--tilt-y", `${x * 3.5}deg`);
+        });
+        card.addEventListener("pointerleave", () => {
+            card.style.setProperty("--tilt-x", "0deg");
+            card.style.setProperty("--tilt-y", "0deg");
+        });
+    });
+
+    document.querySelectorAll(".magnetic").forEach((element) => {
+        element.addEventListener("pointermove", (event) => {
+            const rect = element.getBoundingClientRect();
+            const x = (event.clientX - rect.left - rect.width / 2) * 0.12;
+            const y = (event.clientY - rect.top - rect.height / 2) * 0.12;
+            element.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+        });
+        element.addEventListener("pointerleave", () => {
+            element.style.transform = "translate3d(0, 0, 0)";
+        });
+    });
+
+    const parallaxRoot = document.querySelector("[data-parallax-root]");
+    const parallaxCard = document.querySelector("[data-parallax-card]");
+    if (parallaxRoot && parallaxCard) {
+        parallaxRoot.addEventListener("pointermove", (event) => {
+            const rect = parallaxRoot.getBoundingClientRect();
+            const x = (event.clientX - rect.left) / rect.width - 0.5;
+            const y = (event.clientY - rect.top) / rect.height - 0.5;
+            parallaxCard.style.transform = `rotateX(${y * -5}deg) rotateY(${x * 6}deg)`;
+            parallaxRoot.querySelectorAll("[data-parallax-layer]").forEach((layer) => {
+                const depth = Number(layer.dataset.parallaxLayer);
+                layer.style.transform = `translate3d(${x * depth * 15}px, ${y * depth * 15}px, ${depth * 5}px)`;
+            });
+        });
+        parallaxRoot.addEventListener("pointerleave", () => {
+            parallaxCard.style.transform = "rotateX(0deg) rotateY(0deg)";
+            parallaxRoot.querySelectorAll("[data-parallax-layer]").forEach((layer) => {
+                layer.style.transform = "translate3d(0, 0, 0)";
+            });
+        });
+    }
+}
+
+if (!reduceMotion && "IntersectionObserver" in window) {
+    const countObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const element = entry.target;
+            const target = Number(element.dataset.count);
+            const started = performance.now();
+            const duration = 900;
+            const step = (now) => {
+                const t = Math.min((now - started) / duration, 1);
+                const eased = 1 - Math.pow(1 - t, 3);
+                element.textContent = String(Math.round(target * eased)).padStart(2, "0");
+                if (t < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+            countObserver.unobserve(element);
+        });
+    }, { threshold: 0.7 });
+    document.querySelectorAll("[data-count]").forEach((element) => countObserver.observe(element));
+}
+
+class SignalField {
+    constructor(canvas) {
+        this.canvas = canvas;
+        this.context = canvas.getContext("2d");
+        this.nodes = [];
+        this.pointer = { x: -1000, y: -1000 };
+        this.raf = 0;
+        this.resize = this.resize.bind(this);
+        this.animate = this.animate.bind(this);
+        this.refreshPalette();
+        this.resize();
+        window.addEventListener("resize", this.resize, { passive: true });
+        window.addEventListener("pointermove", (event) => {
+            const rect = canvas.getBoundingClientRect();
+            this.pointer.x = event.clientX - rect.left;
+            this.pointer.y = event.clientY - rect.top;
+        }, { passive: true });
+        window.addEventListener("pointerleave", () => {
+            this.pointer.x = -1000;
+            this.pointer.y = -1000;
+        });
+        if (!reduceMotion) this.animate();
+        else this.draw();
+    }
+
+    refreshPalette() {
+        const styles = getComputedStyle(root);
+        this.nodeColor = styles.getPropertyValue("--green").trim();
+        this.lineColor = styles.getPropertyValue("--violet").trim();
+        this.context?.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+
+    resize() {
+        const rect = this.canvas.getBoundingClientRect();
+        const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
+        this.width = rect.width;
+        this.height = rect.height;
+        this.canvas.width = Math.round(rect.width * ratio);
+        this.canvas.height = Math.round(rect.height * ratio);
+        this.context.setTransform(ratio, 0, 0, ratio, 0, 0);
+        const nodeCount = Math.max(18, Math.min(48, Math.floor(rect.width / 30)));
+        this.nodes = Array.from({ length: nodeCount }, () => ({
+            x: Math.random() * this.width,
+            y: Math.random() * this.height,
+            vx: (Math.random() - 0.5) * 0.22,
+            vy: (Math.random() - 0.5) * 0.22,
+            radius: Math.random() * 1.5 + 0.6
+        }));
+    }
+
+    update() {
+        this.nodes.forEach((node) => {
+            const dx = this.pointer.x - node.x;
+            const dy = this.pointer.y - node.y;
+            const distance = Math.hypot(dx, dy);
+            if (distance < 180 && distance > 1) {
+                node.vx += (dx / distance) * 0.0025;
+                node.vy += (dy / distance) * 0.0025;
+            }
+            node.vx *= 0.995;
+            node.vy *= 0.995;
+            node.x += node.vx;
+            node.y += node.vy;
+            if (node.x < 0 || node.x > this.width) node.vx *= -1;
+            if (node.y < 0 || node.y > this.height) node.vy *= -1;
+        });
+    }
+
+    draw() {
+        const ctx = this.context;
+        ctx.clearRect(0, 0, this.width, this.height);
+        for (let i = 0; i < this.nodes.length; i += 1) {
+            const a = this.nodes[i];
+            for (let j = i + 1; j < this.nodes.length; j += 1) {
+                const b = this.nodes[j];
+                const distance = Math.hypot(a.x - b.x, a.y - b.y);
+                if (distance < 125) {
+                    ctx.globalAlpha = (1 - distance / 125) * 0.22;
+                    ctx.strokeStyle = this.lineColor;
+                    ctx.beginPath();
+                    ctx.moveTo(a.x, a.y);
+                    ctx.lineTo(b.x, b.y);
+                    ctx.stroke();
+                }
+            }
+            ctx.globalAlpha = 0.7;
+            ctx.fillStyle = this.nodeColor;
+            ctx.beginPath();
+            ctx.arc(a.x, a.y, a.radius, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        ctx.globalAlpha = 1;
+    }
+
+    animate() {
+        this.update();
+        this.draw();
+        this.raf = requestAnimationFrame(this.animate);
+    }
+}
+
+const canvas = document.querySelector(".signal-canvas");
+if (canvas) signalField = new SignalField(canvas);
 
 document.querySelectorAll("[data-analytics]").forEach((element) => {
     element.addEventListener("click", () => {
