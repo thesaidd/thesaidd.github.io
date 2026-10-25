@@ -373,6 +373,7 @@ function applyLanguage(language) {
     safeStorage.set("portfolio-language", language);
     updateThemeLabel();
     updateFilterStatus();
+    document.dispatchEvent(new CustomEvent("languagechange", { detail: { language } }));
 }
 
 function closeMenu() {

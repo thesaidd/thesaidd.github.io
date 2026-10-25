@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="game.css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NJ5C9E2BN9"></script>
     <script>
@@ -44,6 +45,7 @@
             </button>
 
             <nav class="site-nav" id="site-nav" aria-label="Ana navigasyon">
+                <a href="#play" data-section-link="play"><span>00</span><b data-i18n="nav_play">Oyun</b></a>
                 <a href="#about" data-section-link="about"><span>01</span><b data-i18n="nav_about">Hakkımda</b></a>
                 <a href="#experience" data-section-link="experience"><span>02</span><b data-i18n="nav_experience">Deneyim</b></a>
                 <a href="#projects" data-section-link="projects"><span>03</span><b data-i18n="nav_projects">Çalışmalar</b></a>
@@ -86,7 +88,10 @@
                     </p>
 
                     <div class="hero-actions reveal">
-                        <a class="button button-primary magnetic" href="#projects">
+                        <a class="button button-primary button-play magnetic" href="#play" data-analytics="hero_play">
+                            <span data-i18n="hero_play">Oyunu başlat</span><i aria-hidden="true">▶</i>
+                        </a>
+                        <a class="button button-ghost magnetic" href="#projects">
                             <span data-i18n="hero_work">Seçili çalışmalar</span><i aria-hidden="true">↘</i>
                         </a>
                         <a class="button button-ghost magnetic" href="cv.pdf" target="_blank" rel="noopener" data-analytics="cv">
@@ -138,6 +143,225 @@
                 <span>ARTIFICIAL INTELLIGENCE</span><i>✦</i><span>AUTONOMOUS SYSTEMS</span><i>✦</i><span>ENERGY TECHNOLOGIES</span><i>✦</i><span>COMPUTER VISION</span><i>✦</i>
             </div>
         </div>
+
+        <section class="section section-play" id="play" aria-labelledby="play-title">
+            <div class="shell">
+                <div class="section-heading reveal">
+                    <div class="section-code"><span>00</span><i></i></div>
+                    <div>
+                        <p class="eyebrow" data-i18n="play_label">Oyun alanı</p>
+                        <h2 id="play-title" data-i18n="play_title">Beni oynayarak tanı</h2>
+                    </div>
+                    <p class="section-aside">PLAY → LEARN<br>3 GAMES · 6 STATIONS<br>1 PORTFOLIO</p>
+                </div>
+
+                <p class="play-intro reveal" data-i18n="play_intro">CV okumak yerine oynayarak tanış: üç oyun, altı istasyon, tek bir portfolyo. Her oyun bana dair bir şey anlatıyor.</p>
+
+                <div class="arcade">
+                    <div class="arcade-main">
+                        <div class="arcade-tabs" role="tablist" aria-label="Arcade">
+                            <button class="arcade-tab" type="button" role="tab" id="tab-flight" aria-controls="panel-flight" aria-selected="true" data-game="flight">
+                                <span class="tab-no">01</span>
+                                <span class="tab-name" data-i18n="g_tab1_name">Tulpar Uçuşu</span>
+                                <span class="tab-sub" data-i18n="g_tab1_sub">Platform · ~90 sn</span>
+                                <i class="tab-check" aria-hidden="true">✓</i>
+                            </button>
+                            <button class="arcade-tab" type="button" role="tab" id="tab-detect" aria-controls="panel-detect" aria-selected="false" data-game="detect" tabindex="-1">
+                                <span class="tab-no">02</span>
+                                <span class="tab-name" data-i18n="g_tab2_name">Tespit</span>
+                                <span class="tab-sub" data-i18n="g_tab2_sub">Refleks · 30 sn</span>
+                                <i class="tab-check" aria-hidden="true">✓</i>
+                            </button>
+                            <button class="arcade-tab" type="button" role="tab" id="tab-quiz" aria-controls="panel-quiz" aria-selected="false" data-game="quiz" tabindex="-1">
+                                <span class="tab-no">03</span>
+                                <span class="tab-name" data-i18n="g_tab3_name">Quiz</span>
+                                <span class="tab-sub" data-i18n="g_tab3_sub">8 soru</span>
+                                <i class="tab-check" aria-hidden="true">✓</i>
+                            </button>
+                        </div>
+
+                        <!-- 01 · Tulpar Uçuşu -->
+                        <div class="game" id="panel-flight" role="tabpanel" aria-labelledby="tab-flight" data-panel="flight">
+                            <div class="game-screen" data-screen>
+                                <canvas aria-hidden="true"></canvas>
+                                <div class="game-hud">
+                                    <div class="hud-group">
+                                        <div class="hud-item"><small data-i18n="g_hud_score">Skor</small><b data-hud="score">0</b></div>
+                                        <div class="hud-item"><small data-i18n="g_hud_shield">Kalkan</small><b class="pips" data-hud="lives"><i class="on"></i><i class="on"></i><i class="on"></i></b></div>
+                                        <div class="hud-item"><small data-i18n="g_hud_tools">Araç</small><b data-hud="tools">0/12</b></div>
+                                        <div class="hud-item"><small data-i18n="g_hud_station">İstasyon</small><b data-hud="station">1/6</b></div>
+                                    </div>
+                                    <div class="hud-buttons" data-hud-buttons></div>
+                                </div>
+                                <div class="hud-progress" aria-hidden="true"><span data-hud="bar"></span></div>
+
+                                <div class="overlay" data-overlay="start">
+                                    <div class="overlay-card">
+                                        <span class="overlay-kicker" data-i18n="g_flight_kicker">OYUN 01 · UÇUŞ</span>
+                                        <h3 data-i18n="g_flight_title">Tulpar Uçuşu</h3>
+                                        <p data-i18n="g_flight_desc">Sabit kanatlı İHA'mı altı istasyondan geçir. Engellerden kaç, araçları topla. Her istasyon beni biraz daha tanıtır.</p>
+                                        <p class="controls-hint"><span class="hint-desktop" data-i18n="g_ctrl_desktop_flight">↑ ↓ ya da W S · fareyi oynat · P: duraklat</span><span class="hint-touch" data-i18n="g_ctrl_touch_flight">Parmağını yukarı-aşağı sürükle</span></p>
+                                        <button class="button button-primary" type="button" data-action="start"><span data-i18n="g_start">Başlat</span><i aria-hidden="true">▶</i></button>
+                                    </div>
+                                </div>
+                                <div class="overlay overlay-light" data-overlay="station" hidden>
+                                    <div class="overlay-card">
+                                        <span class="overlay-kicker" data-station-kicker></span>
+                                        <h3 data-station-title></h3>
+                                        <p data-station-text></p>
+                                        <div class="overlay-actions">
+                                            <button class="button button-primary" type="button" data-action="continue"><span data-continue-label></span><i aria-hidden="true">→</i></button>
+                                            <button class="button button-ghost" type="button" data-action="goto"><span data-i18n="g_see_section">Bölüme git</span><i aria-hidden="true">↓</i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overlay" data-overlay="pause" hidden>
+                                    <div class="overlay-card">
+                                        <h3 data-i18n="g_paused">Duraklatıldı</h3>
+                                        <p data-i18n="g_paused_desc">Hazır olduğunda devam et.</p>
+                                        <div class="overlay-actions">
+                                            <button class="button button-primary" type="button" data-action="resume"><span data-i18n="g_resume">Devam et</span><i aria-hidden="true">▶</i></button>
+                                            <button class="button button-ghost" type="button" data-action="restart"><span data-i18n="g_restart">Baştan başla</span><i aria-hidden="true">↺</i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overlay" data-overlay="crash" hidden>
+                                    <div class="overlay-card">
+                                        <span class="overlay-kicker overlay-kicker-warn">SIGNAL LOST</span>
+                                        <h3 data-i18n="g_crash_title">Sinyal kesildi</h3>
+                                        <p data-i18n="g_crash_desc">Kalkanların bitti. Son istasyondan devam ediyorsun.</p>
+                                        <button class="button button-primary" type="button" data-action="retry"><span data-i18n="g_retry">Yeniden dene</span><i aria-hidden="true">↺</i></button>
+                                    </div>
+                                </div>
+                                <div class="overlay" data-overlay="end" hidden>
+                                    <div class="overlay-card">
+                                        <span class="overlay-kicker">MISSION COMPLETE</span>
+                                        <h3 data-i18n="g_finish_title">Yolculuk tamam</h3>
+                                        <p data-i18n="g_finish_desc">Altı istasyonu da geçtin. Profil dosyam eksiksiz.</p>
+                                        <dl class="end-stats" data-end-stats></dl>
+                                        <div class="overlay-actions">
+                                            <button class="button button-primary" type="button" data-action="next"><span data-i18n="g_next_detect">Tespit oyununa geç</span><i aria-hidden="true">→</i></button>
+                                            <button class="button button-ghost" type="button" data-action="replay"><span data-i18n="g_replay">Tekrar oyna</span><i aria-hidden="true">↺</i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="sr-only" aria-live="polite" data-live></p>
+                            </div>
+                        </div>
+
+                        <!-- 02 · Tespit -->
+                        <div class="game" id="panel-detect" role="tabpanel" aria-labelledby="tab-detect" data-panel="detect" hidden>
+                            <div class="game-screen" data-screen>
+                                <canvas aria-hidden="true"></canvas>
+                                <div class="game-hud">
+                                    <div class="hud-group">
+                                        <div class="hud-item"><small data-i18n="g_hud_time">Süre</small><b data-hud="time">30</b></div>
+                                        <div class="hud-item"><small data-i18n="g_hud_score">Skor</small><b data-hud="score">0</b></div>
+                                        <div class="hud-item"><small data-i18n="g_hud_combo">Seri</small><b data-hud="combo">x0</b></div>
+                                    </div>
+                                    <div class="hud-buttons" data-hud-buttons></div>
+                                </div>
+                                <div class="hud-progress" aria-hidden="true"><span data-hud="bar"></span></div>
+
+                                <div class="overlay" data-overlay="start">
+                                    <div class="overlay-card">
+                                        <span class="overlay-kicker" data-i18n="g_detect_kicker">OYUN 02 · REFLEKS</span>
+                                        <h3 data-i18n="g_detect_title">Tespit</h3>
+                                        <p data-i18n="g_detect_desc">Kameradaki sabit kanatlı İHA'lara dokun. Kuşlara ve balonlara dokunma: yanlış alarm puan kaybettirir.</p>
+                                        <div class="legend" aria-hidden="true">
+                                            <span class="legend-item legend-yes"><canvas width="44" height="44" data-legend="uav"></canvas><em data-i18n="g_legend_uav">İHA · dokun</em></span>
+                                            <span class="legend-item"><canvas width="44" height="44" data-legend="bird"></canvas><em data-i18n="g_legend_bird">Kuş · dokunma</em></span>
+                                            <span class="legend-item"><canvas width="44" height="44" data-legend="balloon"></canvas><em data-i18n="g_legend_balloon">Balon · dokunma</em></span>
+                                        </div>
+                                        <p class="controls-hint"><span class="hint-desktop" data-i18n="g_ctrl_desktop_detect">Fareyle hedeflere tıkla</span><span class="hint-touch" data-i18n="g_ctrl_touch_detect">Hedeflere dokun</span></p>
+                                        <button class="button button-primary" type="button" data-action="start"><span data-i18n="g_start">Başlat</span><i aria-hidden="true">▶</i></button>
+                                    </div>
+                                </div>
+                                <div class="overlay" data-overlay="pause" hidden>
+                                    <div class="overlay-card">
+                                        <h3 data-i18n="g_paused">Duraklatıldı</h3>
+                                        <p data-i18n="g_paused_desc">Hazır olduğunda devam et.</p>
+                                        <div class="overlay-actions">
+                                            <button class="button button-primary" type="button" data-action="resume"><span data-i18n="g_resume">Devam et</span><i aria-hidden="true">▶</i></button>
+                                            <button class="button button-ghost" type="button" data-action="restart"><span data-i18n="g_restart">Baştan başla</span><i aria-hidden="true">↺</i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overlay" data-overlay="end" hidden>
+                                    <div class="overlay-card">
+                                        <span class="overlay-kicker">TIME'S UP</span>
+                                        <h3 data-i18n="g_detect_end_title">Süre doldu</h3>
+                                        <p data-end-text></p>
+                                        <dl class="end-stats" data-end-stats></dl>
+                                        <div class="overlay-actions">
+                                            <button class="button button-primary" type="button" data-action="replay"><span data-i18n="g_replay">Tekrar oyna</span><i aria-hidden="true">↺</i></button>
+                                            <button class="button button-ghost" type="button" data-action="next"><span data-i18n="g_next_quiz">Quiz'e geç</span><i aria-hidden="true">→</i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="sr-only" aria-live="polite" data-live></p>
+                            </div>
+                        </div>
+
+                        <!-- 03 · Quiz -->
+                        <div class="game" id="panel-quiz" role="tabpanel" aria-labelledby="tab-quiz" data-panel="quiz" hidden>
+                            <div class="game-screen quiz-screen">
+                                <div class="quiz-card" data-quiz-start>
+                                    <span class="overlay-kicker" data-i18n="g_quiz_kicker">OYUN 03 · BİLGİ</span>
+                                    <h3 data-i18n="g_quiz_title">Beni ne kadar tanıyorsun?</h3>
+                                    <p data-i18n="g_quiz_desc">Bu sayfada öğrendiklerini sekiz soruyla test et.</p>
+                                    <p class="controls-hint"><span class="hint-desktop" data-i18n="g_ctrl_desktop_quiz">Cevabı tıkla ya da 1 · 2 · 3 tuşlarına bas</span><span class="hint-touch" data-i18n="g_ctrl_touch_quiz">Cevaba dokun</span></p>
+                                    <button class="button button-primary" type="button" data-action="start"><span data-i18n="g_start">Başlat</span><i aria-hidden="true">▶</i></button>
+                                </div>
+                                <div class="quiz-card" data-quiz-ask hidden>
+                                    <div class="quiz-top">
+                                        <span class="overlay-kicker" data-quiz-count></span>
+                                        <span class="quiz-score" data-quiz-score></span>
+                                    </div>
+                                    <div class="quiz-dots" aria-hidden="true" data-quiz-dots></div>
+                                    <h3 data-quiz-question></h3>
+                                    <div class="quiz-options" data-quiz-options></div>
+                                    <div class="quiz-feedback" data-quiz-feedback aria-live="polite"></div>
+                                    <button class="button button-primary" type="button" data-action="next" data-quiz-next hidden><span data-quiz-next-label></span><i aria-hidden="true">→</i></button>
+                                </div>
+                                <div class="quiz-card" data-quiz-end hidden>
+                                    <span class="overlay-kicker" data-quiz-end-kicker></span>
+                                    <h3 data-quiz-end-title></h3>
+                                    <p data-quiz-end-text></p>
+                                    <dl class="end-stats" data-end-stats></dl>
+                                    <div class="overlay-actions">
+                                        <button class="button button-primary" type="button" data-action="replay"><span data-i18n="g_replay">Tekrar oyna</span><i aria-hidden="true">↺</i></button>
+                                        <a class="button button-ghost" href="#contact"><span data-i18n="g_contact">İletişime geç</span><i aria-hidden="true">↗</i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="arcade-side" aria-label="Progress">
+                        <section class="side-card progress-card" data-progress-card>
+                            <div class="progress-ring" data-progress-ring style="--p: 0%"><b data-progress-value>0%</b></div>
+                            <div>
+                                <p class="eyebrow" data-i18n="g_progress">Tanışma ilerlemesi</p>
+                                <p class="progress-copy" data-progress-copy></p>
+                            </div>
+                        </section>
+
+                        <section class="side-card">
+                            <header class="side-head"><h3 data-i18n="g_dossier">Profil dosyası</h3><span data-dossier-count>0/6</span></header>
+                            <p class="side-hint" data-i18n="g_dossier_hint">Tulpar Uçuşu'nda istasyonlara ulaştıkça açılır.</p>
+                            <ol class="dossier" data-dossier></ol>
+                        </section>
+
+                        <section class="side-card">
+                            <header class="side-head"><h3 data-i18n="g_badges">Rozetler</h3><span data-badge-count>0/3</span></header>
+                            <ul class="badges" data-badges></ul>
+                            <button class="reset-link" type="button" data-reset><span data-i18n="g_reset">İlerlemeyi sıfırla</span></button>
+                        </section>
+                    </aside>
+                </div>
+            </div>
+        </section>
 
         <section class="section section-about" id="about">
             <div class="shell">
@@ -328,7 +552,7 @@
             </div>
         </section>
 
-        <section class="section section-recognition">
+        <section class="section section-recognition" id="recognition">
             <div class="shell recognition-layout">
                 <div class="recognition-heading reveal">
                     <div class="section-code"><span>04</span><i></i></div>
@@ -369,5 +593,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="game.js"></script>
 </body>
 </html>
