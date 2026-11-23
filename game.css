@@ -1005,3 +1005,93 @@ summary.slot-row::-webkit-details-marker {
         animation: none;
     }
 }
+
+/* ---------- Cila: konfeti, uyarı, kart girişleri ---------- */
+
+.confetti {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.confetti i {
+    position: absolute;
+    top: -14px;
+    left: var(--x);
+    width: 8px;
+    height: 14px;
+    border-radius: 2px;
+    opacity: 0;
+    animation: confettiFall var(--d) cubic-bezier(0.2, 0.7, 0.4, 1) var(--delay) forwards;
+}
+
+@keyframes confettiFall {
+    0% { opacity: 1; transform: translate3d(0, 0, 0) rotate(0); }
+    100% { opacity: 0; transform: translate3d(var(--dx), 110vh, 0) rotate(var(--r)); }
+}
+
+.game-screen.is-urgent [data-hud="time"] {
+    color: var(--red);
+    animation: urgentPulse 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes urgentPulse {
+    from { opacity: 1; }
+    to { opacity: 0.45; }
+}
+
+.overlay-card,
+.quiz-card {
+    animation: cardRise 420ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes cardRise {
+    from { opacity: 0; transform: translateY(16px) scale(0.985); }
+    to { opacity: 1; transform: none; }
+}
+
+.quiz-option {
+    animation: optionIn 380ms cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+
+.quiz-option:nth-child(2) { animation-delay: 60ms; }
+.quiz-option:nth-child(3) { animation-delay: 120ms; }
+
+@keyframes optionIn {
+    from { opacity: 0; transform: translateX(-12px); }
+    to { opacity: 1; transform: none; }
+}
+
+.quiz-option.is-right {
+    animation: rightPulse 520ms ease;
+}
+
+@keyframes rightPulse {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.025); box-shadow: 0 0 0 6px color-mix(in srgb, var(--green) 25%, transparent); }
+    100% { transform: scale(1); }
+}
+
+.quiz-option.is-wrong {
+    animation: wrongShake 360ms ease;
+}
+
+@keyframes wrongShake {
+    20% { transform: translateX(-7px); }
+    40% { transform: translateX(6px); }
+    60% { transform: translateX(-4px); }
+    80% { transform: translateX(2px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .overlay-card,
+    .quiz-card,
+    .quiz-option,
+    .quiz-option.is-right,
+    .quiz-option.is-wrong,
+    .game-screen.is-urgent [data-hud="time"] {
+        animation: none;
+    }
+}

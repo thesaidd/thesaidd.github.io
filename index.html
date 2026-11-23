@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="lab.css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NJ5C9E2BN9"></script>
     <script>
@@ -68,6 +69,7 @@
     <main id="content">
         <section class="hero" aria-labelledby="hero-title">
             <canvas class="signal-canvas" aria-hidden="true"></canvas>
+            <canvas class="hero-3d" aria-hidden="true"></canvas>
             <div class="hero-aura aura-one" aria-hidden="true"></div>
             <div class="hero-aura aura-two" aria-hidden="true"></div>
 
@@ -363,6 +365,43 @@
             </div>
         </section>
 
+        <section class="section section-lab" id="lab" aria-labelledby="lab-title">
+            <div class="shell">
+                <div class="section-heading reveal">
+                    <div class="section-code"><span>3D</span><i></i></div>
+                    <div>
+                        <p class="eyebrow" data-i18n="lab_label">Etkileşimli modeller</p>
+                        <h2 id="lab-title" data-i18n="lab_title">3D Laboratuvar</h2>
+                    </div>
+                    <p class="section-aside">DRAG · ROTATE<br>EXPLODE · TRAIN<br>WEBGL</p>
+                </div>
+
+                <p class="play-intro reveal" data-i18n="lab_intro">Sürükleyerek döndür. İHA'yı parçalarına ayır, dünyada Kayseri'yi bul, sinir ağını eğit.</p>
+
+                <div class="lab">
+                    <div class="lab-viewer" data-lab data-mode="uav">
+                        <canvas class="lab-canvas" role="img" aria-label="3D model"></canvas>
+                        <div class="lab-labels" aria-hidden="true"></div>
+                        <div class="lab-tools" role="group" data-lab-tools></div>
+                        <p class="lab-hint"><span class="hint-desktop" data-i18n="lab_hint">Sürükle: döndür</span><span class="hint-touch" data-i18n="lab_hint_touch">Yatay sürükle: döndür</span></p>
+                        <p class="lab-fallback" data-i18n="lab_fallback">Bu cihazda 3D (WebGL) kullanılamıyor.</p>
+                    </div>
+
+                    <aside class="lab-info">
+                        <div class="lab-tabs" role="group" aria-label="3D models">
+                            <button type="button" data-lab-mode="uav" aria-pressed="true"><span>01</span><b data-i18n="lab_tab_uav">Tulpar İHA</b></button>
+                            <button type="button" data-lab-mode="globe" aria-pressed="false"><span>02</span><b data-i18n="lab_tab_globe">Dünya</b></button>
+                            <button type="button" data-lab-mode="net" aria-pressed="false"><span>03</span><b data-i18n="lab_tab_net">Sinir ağı</b></button>
+                        </div>
+                        <span class="overlay-kicker" data-lab-kicker></span>
+                        <h3 data-lab-title></h3>
+                        <p data-lab-desc></p>
+                        <ul class="lab-specs" data-lab-specs></ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
         <section class="section section-about" id="about">
             <div class="shell">
                 <div class="section-heading reveal">
@@ -593,6 +632,9 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="audio.js"></script>
+    <script src="vendor/three.min.js"></script>
+    <script src="three-scenes.js"></script>
     <script src="game.js"></script>
 </body>
 </html>
