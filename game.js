@@ -20,6 +20,13 @@
             play_title: "Beni oynayarak tanı",
             play_intro: "CV okumak yerine oynayarak tanış: üç oyun, altı istasyon, tek bir portfolyo. Her oyun bana dair bir şey anlatıyor.",
             g_tab1_name: "Tulpar Uçuşu", g_tab1_sub: "Platform · ~90 sn",
+            g_tab1w_name: "Tulpar Adası", g_tab1w_sub: "3D açık dünya",
+            g_world_kicker: "OYUN 01 · AÇIK DÜNYA", g_world_title: "Tulpar Adası",
+            g_world_desc: "Sabit kanatlı İHA'nla adada özgürce uç. Altı istasyonu bul, havadaki araçları topla. Her yer beni biraz daha tanıtır.",
+            g_ctrl_desktop_world: "W S: tırman / alçal · A D: dön · Shift: hızlan · ya da fareyi sürükle",
+            g_ctrl_touch_world: "Ekranı sürükleyerek yönlendir · Hızlan düğmesine bas",
+            g_boost: "Hızlan", g_free_fly: "Uçmaya devam et", g_world_visited: "İstasyon",
+            g_world_finish_title: "Ada keşfedildi", g_world_finish_desc: "Altı istasyonu da buldun. Profil dosyam eksiksiz; istersen serbest uçuşa devam edebilirsin.",
             g_tab2_name: "Tespit", g_tab2_sub: "Refleks · 30 sn",
             g_tab3_name: "Quiz", g_tab3_sub: "8 soru",
             g_start: "Başlat", g_resume: "Devam et", g_restart: "Baştan başla", g_replay: "Tekrar oyna",
@@ -56,9 +63,9 @@
             g_quiz_t1_d: "Çoğunu yakaladın. Bir tur daha, tam skoru yakalayabilirsin.",
             g_quiz_t2_d: "Rozeti kaptın. Artık gerçekten tanışmış sayılırız.",
             g_stat_correct: "Doğru", g_stat_wrong: "Yanlış",
-            g_dossier: "Profil dosyası", g_dossier_hint: "Tulpar Uçuşu'nda istasyonlara ulaştıkça açılır.", g_locked: "Kilitli",
+            g_dossier: "Profil dosyası", g_dossier_hint: "Oyunda istasyonları ziyaret ettikçe açılır.", g_locked: "Kilitli",
             g_badges: "Rozetler",
-            g_badge_pilot: "Pilot", g_badge_pilot_d: "Tulpar Uçuşu'nu tamamla.",
+            g_badge_pilot: "Pilot", g_badge_pilot_d: "Altı istasyonu da ziyaret et.",
             g_badge_scout: "Gözcü", g_badge_scout_d: "Tespit'te F1 ≥ %80 yap.",
             g_badge_expert: "Yakın dost", g_badge_expert_d: "Quiz'de en az 7 doğru yap.",
             g_progress: "Tanışma ilerlemesi",
@@ -74,6 +81,13 @@
             play_title: "Get to know me by playing",
             play_intro: "Skip the résumé and play instead: three games, six stations, one portfolio. Every game tells you something about me.",
             g_tab1_name: "Tulpar Flight", g_tab1_sub: "Platformer · ~90 s",
+            g_tab1w_name: "Tulpar Island", g_tab1w_sub: "3D open world",
+            g_world_kicker: "GAME 01 · OPEN WORLD", g_world_title: "Tulpar Island",
+            g_world_desc: "Fly your fixed-wing UAV freely around the island. Find six stations and collect the floating tools. Every place tells you a little more about me.",
+            g_ctrl_desktop_world: "W S: climb / descend · A D: turn · Shift: boost · or drag the mouse",
+            g_ctrl_touch_world: "Drag the screen to steer · hold the Boost button",
+            g_boost: "Boost", g_free_fly: "Keep flying", g_world_visited: "Stations",
+            g_world_finish_title: "Island explored", g_world_finish_desc: "You found all six stations. My profile file is complete; keep flying if you like.",
             g_tab2_name: "Detect", g_tab2_sub: "Reflex · 30 s",
             g_tab3_name: "Quiz", g_tab3_sub: "8 questions",
             g_start: "Start", g_resume: "Resume", g_restart: "Start over", g_replay: "Play again",
@@ -110,9 +124,9 @@
             g_quiz_t1_d: "You caught most of it. One more round and you could get a perfect score.",
             g_quiz_t2_d: "Badge earned. We can call this properly introduced.",
             g_stat_correct: "Correct", g_stat_wrong: "Wrong",
-            g_dossier: "Profile file", g_dossier_hint: "Unlocks as you reach stations in Tulpar Flight.", g_locked: "Locked",
+            g_dossier: "Profile file", g_dossier_hint: "Unlocks as you visit stations in the game.", g_locked: "Locked",
             g_badges: "Badges",
-            g_badge_pilot: "Pilot", g_badge_pilot_d: "Complete Tulpar Flight.",
+            g_badge_pilot: "Pilot", g_badge_pilot_d: "Visit all six stations.",
             g_badge_scout: "Scout", g_badge_scout_d: "Reach F1 ≥ 80% in Detect.",
             g_badge_expert: "Close friend", g_badge_expert_d: "Score 7 or more in the quiz.",
             g_progress: "Getting-to-know-me progress",
@@ -128,6 +142,13 @@
             play_title: "Lerne mich spielend kennen",
             play_intro: "Statt Lebenslauf lesen: drei Spiele, sechs Stationen, ein Portfolio. Jedes Spiel erzählt dir etwas über mich.",
             g_tab1_name: "Tulpar-Flug", g_tab1_sub: "Plattformer · ~90 s",
+            g_tab1w_name: "Tulpar-Insel", g_tab1w_sub: "3D-Open-World",
+            g_world_kicker: "SPIEL 01 · OPEN WORLD", g_world_title: "Tulpar-Insel",
+            g_world_desc: "Fliege mit deiner Starrflügel-Drohne frei über die Insel. Finde sechs Stationen und sammle die schwebenden Tools. Jeder Ort verrät dir mehr über mich.",
+            g_ctrl_desktop_world: "W S: steigen / sinken · A D: lenken · Shift: Turbo · oder Maus ziehen",
+            g_ctrl_touch_world: "Bildschirm ziehen zum Lenken · Turbo-Taste halten",
+            g_boost: "Turbo", g_free_fly: "Weiterfliegen", g_world_visited: "Stationen",
+            g_world_finish_title: "Insel erkundet", g_world_finish_desc: "Du hast alle sechs Stationen gefunden. Meine Profilakte ist vollständig; fliege gern weiter.",
             g_tab2_name: "Erkennen", g_tab2_sub: "Reflex · 30 s",
             g_tab3_name: "Quiz", g_tab3_sub: "8 Fragen",
             g_start: "Starten", g_resume: "Fortsetzen", g_restart: "Neu beginnen", g_replay: "Nochmal spielen",
@@ -164,9 +185,9 @@
             g_quiz_t1_d: "Das meiste hast du erwischt. Noch eine Runde, dann klappt die volle Punktzahl.",
             g_quiz_t2_d: "Abzeichen verdient. Jetzt sind wir wirklich miteinander bekannt.",
             g_stat_correct: "Richtig", g_stat_wrong: "Falsch",
-            g_dossier: "Profilakte", g_dossier_hint: "Wird beim Erreichen der Stationen im Tulpar-Flug freigeschaltet.", g_locked: "Gesperrt",
+            g_dossier: "Profilakte", g_dossier_hint: "Wird beim Besuchen der Stationen im Spiel freigeschaltet.", g_locked: "Gesperrt",
             g_badges: "Abzeichen",
-            g_badge_pilot: "Pilot", g_badge_pilot_d: "Schließe den Tulpar-Flug ab.",
+            g_badge_pilot: "Pilot", g_badge_pilot_d: "Besuche alle sechs Stationen.",
             g_badge_scout: "Späher", g_badge_scout_d: "Erreiche F1 ≥ 80 % bei Erkennen.",
             g_badge_expert: "Enger Vertrauter", g_badge_expert_d: "Erreiche im Quiz mindestens 7 Punkte.",
             g_progress: "Kennenlern-Fortschritt",
@@ -367,34 +388,15 @@
        Ses (küçük WebAudio bipleri, varsayılan kapalı)
        ============================================================ */
 
-    let audio = null;
-
-    function beep(freq, duration = 0.09, type = "sine", volume = 0.05, slide = 0) {
-        if (!save.sound) return;
-        try {
-            audio ||= new (window.AudioContext || window.webkitAudioContext)();
-            if (audio.state === "suspended") audio.resume();
-            const now = audio.currentTime;
-            const osc = audio.createOscillator();
-            const gain = audio.createGain();
-            osc.type = type;
-            osc.frequency.setValueAtTime(freq, now);
-            if (slide) osc.frequency.exponentialRampToValueAtTime(Math.max(40, freq + slide), now + duration);
-            gain.gain.setValueAtTime(volume, now);
-            gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
-            osc.connect(gain).connect(audio.destination);
-            osc.start(now);
-            osc.stop(now + duration + 0.02);
-        } catch { /* Ses desteklenmiyor. */ }
-    }
-
+    // Ses artık audio.js'te (window.siteAudio); burada yalnızca ince bir sarmalayıcı var.
+    const sound = () => window.siteAudio;
     const sfx = {
-        pick: () => beep(740, 0.1, "triangle", 0.05, 500),
-        hit: () => beep(170, 0.26, "sawtooth", 0.06, -100),
-        station: () => { beep(523, 0.14, "sine", 0.06); setTimeout(() => beep(784, 0.24, "sine", 0.06), 120); },
-        win: () => { beep(523, 0.14, "triangle", 0.06); setTimeout(() => beep(659, 0.14, "triangle", 0.06), 120); setTimeout(() => beep(988, 0.3, "triangle", 0.06), 240); },
-        good: () => beep(660, 0.1, "sine", 0.05, 380),
-        bad: () => beep(200, 0.2, "square", 0.04, -60)
+        pick: () => sound()?.sfx("pick"),
+        hit: () => sound()?.sfx("hit"),
+        station: () => sound()?.sfx("station"),
+        win: () => sound()?.sfx("win"),
+        good: () => sound()?.sfx("good"),
+        bad: () => sound()?.sfx("bad")
     };
 
     /* ============================================================
@@ -486,7 +488,7 @@
             this.panel = panel;
             this.screen = $("[data-screen]", panel);
             this.canvas = $("canvas", this.screen);
-            this.ctx = this.canvas.getContext("2d");
+            this.ctx = panel.dataset.renderer === "webgl" ? null : this.canvas.getContext("2d");
             this.live = $("[data-live]", panel);
             this.state = "ready";
             this.visible = false;
@@ -494,6 +496,7 @@
             this.W = 640;
             this.H = WORLD_H;
             this.minRatio = 1;
+            this.mood = 0.8;
             this.scale = 1;
             this.raf = 0;
             this.last = 0;
@@ -505,6 +508,7 @@
                 button.addEventListener("click", () => this.onAction(button.dataset.action));
             });
 
+            document.addEventListener("soundchange", () => this.syncButtons());
             new ResizeObserver(() => this.layout()).observe(this.screen);
             new IntersectionObserver(([entry]) => { this.inView = entry.isIntersecting; this.sync(); }, { threshold: 0.12 }).observe(this.screen);
             document.addEventListener("visibilitychange", () => this.sync());
@@ -536,7 +540,7 @@
             const sound = $('.hud-buttons [data-action="sound"]', this.screen);
             const expand = $('.hud-buttons [data-action="expand"]', this.screen);
             const pause = $('.hud-buttons [data-action="pause"]', this.screen);
-            if (sound) sound.setAttribute("aria-pressed", String(Boolean(save.sound)));
+            if (sound) sound.setAttribute("aria-pressed", String(Boolean(window.siteAudio?.enabled)));
             if (expand) expand.setAttribute("aria-pressed", String(Boolean(this.expanded)));
             if (pause) pause.disabled = this.state !== "play";
         }
@@ -588,6 +592,7 @@
             $$("[data-overlay]", this.screen).forEach((el) => { el.hidden = el.dataset.overlay !== name; });
             this.screen.classList.toggle("is-playing", this.state === "play");
             this.syncButtons();
+            window.siteAudio?.mood(this.state === "play" ? this.mood : 0.25);
         }
 
         announce(message) {
@@ -668,10 +673,7 @@
                 case "pause": this.pause(); break;
                 case "resume": this.resume(); break;
                 case "sound":
-                    save.sound = save.sound ? 0 : 1;
-                    persist();
-                    if (save.sound) sfx.good();
-                    arcade.syncSound();
+                    window.siteAudio?.toggle();
                     break;
                 case "expand": this.setExpanded(!this.expanded); break;
                 case "next": arcade.select(this.nextGame); break;
@@ -710,6 +712,11 @@
             this.kb = { up: false, down: false };
             this.pointer = { active: false, y0: 0, p0: 0 };
             this.particles = [];
+            this.ribbon = [];
+            this.popups = [];
+            this.ripples = [];
+            this.banner = 0;
+            this.flash = 0;
             this.stars = Array.from({ length: 56 }, () => ({ x: Math.random(), y: Math.random() * 0.85, z: 0.25 + Math.random() * 0.75, s: Math.random() * 1.3 + 0.4 }));
             this.clouds = Array.from({ length: 6 }, () => ({ x: Math.random(), y: rand(40, 250), s: rand(0.7, 1.5) }));
             this.checkpoint = { score: 0, tools: [] };
@@ -734,6 +741,11 @@
             this.invuln = 0;
             this.shake = 0;
             this.trail = 0;
+            this.ribbon = [];
+            this.popups = [];
+            this.ripples = [];
+            this.flash = 0;
+            this.banner = 0;
             this.player.y = WORLD_H / 2;
             this.player.target = WORLD_H / 2;
             this.player.vy = 0;
@@ -747,6 +759,7 @@
         start() {
             this.reset(0, true);
             this.state = "play";
+            this.banner = 2.6;
             this.overlay(null);
             this.begin();
             this.announce("");
@@ -758,6 +771,7 @@
             this.reset(this.stage, false);
             this.state = "play";
             this.invuln = 1.4;
+            this.banner = 2.6;
             this.overlay(null);
         }
 
@@ -839,7 +853,7 @@
                     this.dist += 55 * dt;
                     this.player.y += (WORLD_H / 2 + Math.sin(this.time * 1.6) * 26 - this.player.y) * Math.min(1, dt * 3);
                     this.player.vy = Math.cos(this.time * 1.6) * 30;
-                    this.emitTrail(dt);
+                    this.emitTrail(dt, 55 * dt);
                 }
                 return;
             }
@@ -850,6 +864,8 @@
             this.score += ds * 0.1;
             this.invuln = Math.max(0, this.invuln - dt);
             this.shake = Math.max(0, this.shake - dt * 3);
+            this.flash = Math.max(0, this.flash - dt * 2.2);
+            this.banner = Math.max(0, this.banner - dt);
 
             if (this.kb.up || this.kb.down) {
                 p.target += ((this.kb.down ? 1 : 0) - (this.kb.up ? 1 : 0)) * 340 * dt;
@@ -857,7 +873,7 @@
             p.target = clamp(p.target, TOP, BOTTOM);
             p.vy = clamp((p.target - p.y) * 11, -440, 440);
             p.y = clamp(p.y + p.vy * dt, TOP, BOTTOM);
-            this.emitTrail(dt);
+            this.emitTrail(dt, ds);
 
             const stageEnd = (this.stage + 1) * STAGE_LEN;
             const travel = this.W + 40 - p.x;
@@ -901,11 +917,18 @@
             this.syncHud();
         }
 
-        emitTrail(dt) {
+        emitTrail(dt, ds) {
+            this.ribbon.forEach((point) => { point.x -= ds; });
             this.trail -= dt;
-            if (this.trail > 0 || reduce) return;
-            this.trail = 0.03;
-            this.particles.push({ x: this.player.x - 17, y: this.player.y, vx: -70, vy: rand(-8, 8), life: 0.45, max: 0.45, size: 2.3, color: this.accent() });
+            if (this.trail <= 0) {
+                this.trail = 0.016;
+                this.ribbon.push({ x: this.player.x - 17, y: this.player.y });
+            }
+            while (this.ribbon.length && (this.ribbon[0].x < this.player.x - 230 || this.ribbon.length > 64)) this.ribbon.shift();
+        }
+
+        popup(x, y, text, color) {
+            this.popups.push({ x, y, text, color, life: 0.9, max: 0.9 });
         }
 
         accent() {
@@ -967,10 +990,12 @@
                 if (pick.kind === "tool") {
                     this.tools.add(pick.tool);
                     this.score += 50;
+                    this.popup(pick.x, pick.y - 16, "+50", this.accent());
                     this.burst(pick.x, pick.y, this.accent(), 10);
                     this.announce(TOOLS[pick.tool]);
                 } else {
                     this.lives = Math.min(3, this.lives + 1);
+                    this.popup(pick.x, pick.y - 16, "+1 ◆", palette.green);
                     this.burst(pick.x, pick.y, palette.green, 14);
                 }
                 sfx.pick();
@@ -994,6 +1019,7 @@
             this.lives -= 1;
             this.invuln = 1.5;
             this.shake = reduce ? 0 : 1;
+            this.flash = 1;
             this.burst(this.player.x, this.player.y, palette.red, 18);
             sfx.hit();
             this.syncHud();
@@ -1006,6 +1032,7 @@
         }
 
         burst(x, y, color, count) {
+            this.ripples.push({ x, y, color, life: 0.55, max: 0.55 });
             if (reduce) return;
             for (let i = 0; i < count; i += 1) {
                 const a = Math.random() * Math.PI * 2;
@@ -1023,6 +1050,10 @@
                 q.vy *= 0.985;
             });
             this.particles = this.particles.filter((q) => q.life > 0);
+            this.popups.forEach((q) => { q.life -= dt; q.y -= 26 * dt; });
+            this.popups = this.popups.filter((q) => q.life > 0);
+            this.ripples.forEach((q) => { q.life -= dt; });
+            this.ripples = this.ripples.filter((q) => q.life > 0);
         }
 
         /* İstasyonlar */
@@ -1074,6 +1105,7 @@
             this.nextPickup = 120;
             this.invuln = 1.2;
             this.state = "play";
+            this.banner = 2.6;
             this.overlay(null);
             this.syncHud(true);
         }
@@ -1104,6 +1136,7 @@
             this.burst(this.W / 2, WORLD_H / 2, palette.yellow, 40);
             this.burst(this.W / 2, WORLD_H / 2, palette.green, 40);
             sfx.win();
+            confetti(this.screen);
             track("game_complete", { game: "flight", score: total });
             this.announce(t("g_finish_title"));
             arcade.render();
@@ -1152,17 +1185,58 @@
             const H = WORLD_H;
             const accent = this.accent();
             const text = palette.text;
+            const p = this.player;
+            const secondary = palette[ACCENTS[(this.stage + 2) % ACCENTS.length]];
 
             ctx.save();
             if (this.shake > 0) ctx.translate(rand(-1, 1) * this.shake * 5, rand(-1, 1) * this.shake * 5);
 
+            // Gökyüzü
             ctx.fillStyle = palette.bg;
             ctx.fillRect(-10, -10, W + 20, H + 20);
             const sky = ctx.createLinearGradient(0, 0, 0, H);
-            sky.addColorStop(0, rgba(accent, 0));
-            sky.addColorStop(1, rgba(accent, 0.2));
+            sky.addColorStop(0, rgba(accent, 0.04));
+            sky.addColorStop(0.55, rgba(accent, 0.08));
+            sky.addColorStop(1, rgba(accent, 0.3));
             ctx.fillStyle = sky;
             ctx.fillRect(-10, -10, W + 20, H + 20);
+
+            // Işıma yapan güneş / ay
+            const sunX = W * 0.74;
+            const sunY = 92 + Math.sin(this.time * 0.25) * 3;
+            const halo = ctx.createRadialGradient(sunX, sunY, 4, sunX, sunY, 170);
+            halo.addColorStop(0, rgba(accent, 0.34));
+            halo.addColorStop(1, rgba(accent, 0));
+            ctx.fillStyle = halo;
+            ctx.fillRect(sunX - 180, sunY - 180, 360, 360);
+            const orb = ctx.createRadialGradient(sunX - 8, sunY - 8, 2, sunX, sunY, 30);
+            orb.addColorStop(0, rgba(text, 0.95));
+            orb.addColorStop(1, rgba(accent, 0.85));
+            ctx.fillStyle = orb;
+            ctx.beginPath();
+            ctx.arc(sunX, sunY, 28, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = rgba(accent, 0.35);
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.arc(sunX, sunY, 44 + Math.sin(this.time * 0.8) * 2, 0, Math.PI * 2);
+            ctx.stroke();
+
+            // Kuzey ışıkları
+            [[accent, 46, 0.09], [secondary, 78, 0.07]].forEach(([color, base, alpha], layer) => {
+                ctx.fillStyle = rgba(color, alpha);
+                ctx.beginPath();
+                const top = [];
+                for (let x = -4; x <= W + 8; x += 10) {
+                    const u = x + dist * (0.05 + layer * 0.03);
+                    top.push([x, base + Math.sin(u * 0.012 + this.time * 0.4 + layer) * 16 + Math.sin(u * 0.031) * 6]);
+                }
+                ctx.moveTo(top[0][0], top[0][1]);
+                top.forEach(([x, y]) => ctx.lineTo(x, y));
+                for (let i = top.length - 1; i >= 0; i -= 1) ctx.lineTo(top[i][0], top[i][1] + 22 + Math.sin(top[i][0] * 0.05 + this.time) * 5);
+                ctx.closePath();
+                ctx.fill();
+            });
 
             // Yıldızlar
             this.stars.forEach((s) => {
@@ -1180,15 +1254,58 @@
                 ctx.beginPath();
                 ctx.ellipse(x, c.y, 48 * c.s, 11 * c.s, 0, 0, Math.PI * 2);
                 ctx.ellipse(x + 24 * c.s, c.y - 7 * c.s, 30 * c.s, 10 * c.s, 0, 0, Math.PI * 2);
+                ctx.ellipse(x - 22 * c.s, c.y - 3 * c.s, 24 * c.s, 8 * c.s, 0, 0, Math.PI * 2);
                 ctx.fill();
             });
 
             // Dağ katmanları
-            this.drawRidge(ctx, W, H - 38, 70, 0.007, 0.32, rgba(accent, 0.1));
-            this.drawRidge(ctx, W, H - 22, 44, 0.012, 0.6, rgba(accent, 0.17));
+            this.drawRidge(ctx, W, H - 74, 78, 0.0055, 0.2, rgba(accent, 0.07));
+            this.drawRidge(ctx, W, H - 50, 64, 0.007, 0.34, rgba(accent, 0.11));
+            this.drawRidge(ctx, W, H - 28, 46, 0.012, 0.62, rgba(accent, 0.18));
+
+            // Ön plan: çam siluetleri ve haberleşme kuleleri
+            const tile = 64;
+            const base = Math.floor((dist * 0.92) / tile);
+            for (let k = base - 1; k <= base + Math.ceil(W / tile) + 1; k += 1) {
+                const rnd = ((k * 9301 + 49297) % 233280) / 233280;
+                const x = k * tile - dist * 0.92 + rnd * 30;
+                const h = 16 + rnd * 20;
+                if (rnd > 0.86) {
+                    ctx.strokeStyle = rgba(accent, 0.5);
+                    ctx.lineWidth = 1.4;
+                    ctx.beginPath();
+                    ctx.moveTo(x, FLOOR);
+                    ctx.lineTo(x, FLOOR - 46);
+                    ctx.moveTo(x - 6, FLOOR);
+                    ctx.lineTo(x, FLOOR - 36);
+                    ctx.lineTo(x + 6, FLOOR);
+                    ctx.stroke();
+                    ctx.fillStyle = Math.sin(this.time * 3 + k) > 0 ? palette.red : rgba(palette.red, 0.25);
+                    ctx.beginPath();
+                    ctx.arc(x, FLOOR - 48, 2.2, 0, Math.PI * 2);
+                    ctx.fill();
+                } else {
+                    ctx.fillStyle = rgba(accent, 0.3);
+                    ctx.beginPath();
+                    ctx.moveTo(x - 7, FLOOR);
+                    ctx.lineTo(x, FLOOR - h);
+                    ctx.lineTo(x + 7, FLOOR);
+                    ctx.closePath();
+                    ctx.moveTo(x - 5, FLOOR - h * 0.45);
+                    ctx.lineTo(x, FLOOR - h * 1.25);
+                    ctx.lineTo(x + 5, FLOOR - h * 0.45);
+                    ctx.closePath();
+                    ctx.fill();
+                }
+            }
 
             // Zemin
-            ctx.strokeStyle = rgba(accent, 0.55);
+            const glow = ctx.createLinearGradient(0, FLOOR - 46, 0, FLOOR);
+            glow.addColorStop(0, rgba(accent, 0));
+            glow.addColorStop(1, rgba(accent, 0.22));
+            ctx.fillStyle = glow;
+            ctx.fillRect(-2, FLOOR - 46, W + 4, 46);
+            ctx.strokeStyle = rgba(accent, 0.6);
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(0, FLOOR);
@@ -1205,7 +1322,7 @@
             // Hız çizgileri
             if (!reduce && this.state === "play") {
                 ctx.strokeStyle = rgba(text, 0.12);
-                for (let i = 0; i < 7; i += 1) {
+                for (let i = 0; i < 9; i += 1) {
                     const x = wrap(i * 173 - dist * 1.8, W + 60) - 30;
                     const y = (i * 71 + 23) % (FLOOR - 20);
                     ctx.beginPath();
@@ -1215,11 +1332,35 @@
                 }
             }
 
-            // Kapı
-            if (this.gate) this.drawGate(ctx, accent);
+            // İHA'nın yere düşen gölgesi
+            if (this.state !== "crash") {
+                const altitude = clamp((FLOOR - p.y) / (FLOOR - TOP), 0, 1);
+                ctx.fillStyle = rgba(accent, 0.28 * (1 - altitude * 0.7));
+                ctx.beginPath();
+                ctx.ellipse(p.x, FLOOR + 5, 22 * (1 - altitude * 0.45), 3.4 * (1 - altitude * 0.4), 0, 0, Math.PI * 2);
+                ctx.fill();
+            }
 
+            // Kapı, engeller, toplanabilirler
+            if (this.gate) this.drawGate(ctx, accent);
             this.obstacles.forEach((o) => this.drawObstacle(ctx, o));
             this.pickups.forEach((pick) => this.drawPickup(ctx, pick, accent));
+
+            // İz şeridi
+            if (this.ribbon.length > 2) {
+                const n = this.ribbon.length;
+                ctx.lineCap = "round";
+                for (let i = 1; i < n; i += 1) {
+                    const f = i / n;
+                    ctx.strokeStyle = rgba(accent, f * 0.55);
+                    ctx.lineWidth = 0.6 + f * 3.4;
+                    ctx.beginPath();
+                    ctx.moveTo(this.ribbon[i - 1].x, this.ribbon[i - 1].y);
+                    ctx.lineTo(this.ribbon[i].x, this.ribbon[i].y);
+                    ctx.stroke();
+                }
+                ctx.lineCap = "butt";
+            }
 
             // Parçacıklar
             this.particles.forEach((q) => {
@@ -1231,16 +1372,95 @@
             });
             ctx.globalAlpha = 1;
 
+            // Dalga halkaları
+            this.ripples.forEach((q) => {
+                const f = 1 - q.life / q.max;
+                ctx.strokeStyle = rgba(q.color, (1 - f) * 0.75);
+                ctx.lineWidth = 2.2 * (1 - f) + 0.4;
+                ctx.beginPath();
+                ctx.arc(q.x, q.y, 6 + f * 42, 0, Math.PI * 2);
+                ctx.stroke();
+            });
+
             // İHA
-            const p = this.player;
             if (this.state !== "crash") {
                 ctx.save();
                 ctx.translate(p.x, p.y);
                 ctx.rotate(clamp(p.vy / 900, -0.35, 0.35));
                 if (this.invuln > 0 && Math.floor(this.time * 14) % 2 === 0) ctx.globalAlpha = 0.35;
+                // Motor alevi
+                const flame = 7 + Math.sin(this.time * 70) * 2.4 + Math.abs(p.vy) * 0.01;
+                const fire = ctx.createLinearGradient(-19, 0, -19 - flame - 6, 0);
+                fire.addColorStop(0, rgba(text, 0.95));
+                fire.addColorStop(0.4, rgba(accent, 0.8));
+                fire.addColorStop(1, rgba(accent, 0));
+                ctx.fillStyle = fire;
+                ctx.beginPath();
+                ctx.ellipse(-19 - (flame + 6) / 2, 0, (flame + 6) / 2, 2.6, 0, 0, Math.PI * 2);
+                ctx.fill();
                 ctx.shadowColor = accent;
-                ctx.shadowBlur = 14;
+                ctx.shadowBlur = 16;
                 drawPlane(ctx, text, accent);
+                // Kalkan halesi
+                if (this.invuln > 0) {
+                    ctx.shadowBlur = 0;
+                    ctx.strokeStyle = rgba(accent, 0.45 + Math.sin(this.time * 12) * 0.2);
+                    ctx.lineWidth = 1.6;
+                    ctx.beginPath();
+                    ctx.arc(2, 0, 24, 0, Math.PI * 2);
+                    ctx.stroke();
+                }
+                ctx.restore();
+            }
+
+            // Uçan puan yazıları
+            this.popups.forEach((q) => {
+                const a = clamp(q.life / q.max, 0, 1);
+                ctx.globalAlpha = a;
+                ctx.fillStyle = q.color;
+                ctx.font = '700 13px "Space Grotesk", system-ui, sans-serif';
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.fillText(q.text, q.x, q.y);
+            });
+            ctx.globalAlpha = 1;
+
+            // Vinyet ve darbe kızarması
+            const vignette = ctx.createRadialGradient(W / 2, H / 2, H * 0.45, W / 2, H / 2, Math.max(W, H) * 0.72);
+            vignette.addColorStop(0, rgba(palette.bg, 0));
+            vignette.addColorStop(1, rgba(palette.bg, 0.5));
+            ctx.fillStyle = vignette;
+            ctx.fillRect(-10, -10, W + 20, H + 20);
+            if (this.flash > 0) {
+                const hurt = ctx.createRadialGradient(W / 2, H / 2, H * 0.25, W / 2, H / 2, Math.max(W, H) * 0.7);
+                hurt.addColorStop(0, rgba(palette.red, 0));
+                hurt.addColorStop(1, rgba(palette.red, this.flash * 0.5));
+                ctx.fillStyle = hurt;
+                ctx.fillRect(-10, -10, W + 20, H + 20);
+            }
+
+            // İstasyon başlığı
+            if (this.banner > 0 && this.state === "play") {
+                const total = 2.6;
+                const a = clamp(Math.min((total - this.banner) / 0.4, this.banner / 0.7), 0, 1);
+                const data = content().stations[Math.min(this.stage, STAGES - 1)];
+                ctx.save();
+                ctx.globalAlpha = a;
+                ctx.textAlign = "center";
+                ctx.textBaseline = "alphabetic";
+                ctx.fillStyle = accent;
+                ctx.font = '700 11px monospace';
+                ctx.fillText(`${t("g_station")} ${pad(this.stage + 1)} / ${pad(STAGES)} · ${data.code}`, W / 2, H * 0.34 - (1 - a) * 8);
+                let size = 36;
+                ctx.font = `400 ${size}px "Instrument Serif", Georgia, serif`;
+                const maxWidth = W - 40;
+                const width = ctx.measureText(data.title).width;
+                if (width > maxWidth) {
+                    size = Math.floor(size * (maxWidth / width));
+                    ctx.font = `400 ${size}px "Instrument Serif", Georgia, serif`;
+                }
+                ctx.fillStyle = text;
+                ctx.fillText(data.title, W / 2, H * 0.34 + size * 0.9 - (1 - a) * 8);
                 ctx.restore();
             }
 
@@ -1263,8 +1483,13 @@
 
         drawGate(ctx, accent) {
             const { x } = this.gate;
-            const pulse = Math.sin(this.time * 5) * 3;
             ctx.save();
+            const beam = ctx.createLinearGradient(x - 34, 0, x + 34, 0);
+            beam.addColorStop(0, rgba(accent, 0));
+            beam.addColorStop(0.5, rgba(accent, 0.2));
+            beam.addColorStop(1, rgba(accent, 0));
+            ctx.fillStyle = beam;
+            ctx.fillRect(x - 34, 0, 68, WORLD_H);
             ctx.setLineDash([6, 8]);
             ctx.strokeStyle = rgba(accent, 0.55);
             ctx.lineWidth = 1.5;
@@ -1273,11 +1498,12 @@
             ctx.lineTo(x, WORLD_H);
             ctx.stroke();
             ctx.setLineDash([]);
-            for (let i = 0; i < 3; i += 1) {
-                ctx.strokeStyle = rgba(accent, 0.6 - i * 0.17);
-                ctx.lineWidth = 2;
+            for (let i = 0; i < 4; i += 1) {
+                const spin = Math.abs(Math.cos(this.time * 1.6 + i * 0.8));
+                ctx.strokeStyle = rgba(accent, 0.75 - i * 0.16);
+                ctx.lineWidth = 2.2;
                 ctx.beginPath();
-                ctx.ellipse(x, WORLD_H / 2, 9 + i * 6 + pulse, 138 - i * 20, 0, 0, Math.PI * 2);
+                ctx.ellipse(x, WORLD_H / 2, 4 + spin * 18 + i * 2, 142 - i * 20, 0, 0, Math.PI * 2);
                 ctx.stroke();
             }
             ctx.fillStyle = accent;
@@ -1291,6 +1517,8 @@
             ctx.save();
             if (o.kind === "bird") {
                 ctx.translate(o.x, o.y);
+                ctx.shadowColor = palette.orange;
+                ctx.shadowBlur = 8;
                 drawBird(ctx, Math.sin(this.time * 14 + o.phase), palette.orange);
             } else if (o.kind === "storm") {
                 ctx.translate(o.x, o.y);
@@ -1303,6 +1531,16 @@
                     ctx.fill();
                     ctx.stroke();
                 });
+                ctx.strokeStyle = rgba(palette.violet, 0.5);
+                ctx.lineWidth = 1;
+                for (let i = 0; i < 6; i += 1) {
+                    const rx = -18 + i * 7;
+                    const ry = 14 + wrap(this.time * 70 + i * 17, 26);
+                    ctx.beginPath();
+                    ctx.moveTo(rx, ry);
+                    ctx.lineTo(rx - 2, ry + 6);
+                    ctx.stroke();
+                }
                 if (Math.sin(this.time * 9 + o.phase) > 0.78) {
                     ctx.strokeStyle = palette.yellow;
                     ctx.lineWidth = 2.2;
@@ -1361,6 +1599,11 @@
                 ctx.textAlign = "center";
                 ctx.textBaseline = "middle";
                 ctx.fillText(label, 0, 1);
+                const a = this.time * 3 + pick.phase;
+                ctx.fillStyle = palette.text;
+                ctx.beginPath();
+                ctx.arc(Math.cos(a) * (w / 2 + 2), Math.sin(a) * 12, 1.8, 0, Math.PI * 2);
+                ctx.fill();
             } else {
                 ctx.shadowColor = palette.green;
                 ctx.shadowBlur = 14;
@@ -1392,6 +1635,7 @@
             super(panel);
             this.nextGame = "quiz";
             this.minRatio = 0.75;
+            this.mood = 0.65;
             this.hudEls = {
                 time: $('[data-hud="time"]', panel),
                 score: $('[data-hud="score"]', panel),
@@ -1399,11 +1643,16 @@
                 bar: $('[data-hud="bar"]', panel)
             };
             this.marks = [];
+            this.cursor = null;
             this.reset();
             this.screen.addEventListener("pointerdown", (event) => {
                 if (this.state !== "play" || event.target.closest("button, a, .overlay")) return;
                 this.tap(this.toWorld(event), event.pointerType);
             });
+            this.screen.addEventListener("pointermove", (event) => {
+                this.cursor = event.pointerType === "mouse" ? this.toWorld(event) : null;
+            });
+            this.screen.addEventListener("pointerleave", () => { this.cursor = null; });
             document.addEventListener("keydown", (event) => {
                 if (!this.visible || event.target.closest?.("input, textarea, select")) return;
                 const key = event.key.toLowerCase();
@@ -1419,6 +1668,8 @@
         reset() {
             this.objects = [];
             this.marks = [];
+            this.popups = [];
+            this.rings = [];
             this.elapsed = 0;
             this.spawnTimer = 0.3;
             this.firstUav = true;
@@ -1458,7 +1709,9 @@
                 phase: rand(0, 6),
                 y0: 0,
                 r: kind === "uav" ? 17 : kind === "bird" ? 13 : 14,
-                done: false
+                done: false,
+                trail: [],
+                trailT: 0
             });
             const last = this.objects.at(-1);
             last.y0 = last.y;
@@ -1467,6 +1720,10 @@
         tick(dt) {
             this.marks.forEach((m) => { m.life -= dt; });
             this.marks = this.marks.filter((m) => m.life > 0);
+            this.popups.forEach((q) => { q.life -= dt; q.y -= 24 * dt; });
+            this.popups = this.popups.filter((q) => q.life > 0);
+            this.rings.forEach((q) => { q.life -= dt; });
+            this.rings = this.rings.filter((q) => q.life > 0);
             this.flash = Math.max(0, this.flash - dt * 3);
 
             if (this.state !== "play") {
@@ -1500,6 +1757,12 @@
             this.objects.forEach((o) => {
                 o.x += o.vx * dt;
                 o.y = o.y0 + Math.sin(this.time * o.freq + o.phase) * o.amp;
+                o.trailT -= dt;
+                if (o.trailT <= 0) {
+                    o.trailT = 0.045;
+                    o.trail.push({ x: o.x, y: o.y });
+                    if (o.trail.length > 8) o.trail.shift();
+                }
             });
 
             this.objects = this.objects.filter((o) => {
@@ -1530,6 +1793,8 @@
                 this.combo += 1;
                 this.score += 10 + Math.min(this.combo, 5) * 2;
                 this.marks.push({ x: best.x, y: best.y, w: box * 2.2, h: box * 1.7, life: 0.7, ok: true, label: `uav ${(0.86 + Math.random() * 0.13).toFixed(2)}` });
+                this.popups.push({ x: best.x, y: best.y - box - 10, text: `+${10 + Math.min(this.combo, 5) * 2}`, color: palette.green, life: 0.9, max: 0.9 });
+                this.rings.push({ x: best.x, y: best.y, color: palette.green, life: 0.5, max: 0.5 });
                 sfx.good();
             } else {
                 this.fp += 1;
@@ -1537,6 +1802,8 @@
                 this.score = Math.max(0, this.score - 5);
                 this.flash = 1;
                 this.marks.push({ x: best.x, y: best.y, w: box * 2, h: box * 2, life: 0.7, ok: false, label: `${best.kind} ✕` });
+                this.popups.push({ x: best.x, y: best.y - box - 10, text: "−5", color: palette.red, life: 0.9, max: 0.9 });
+                this.rings.push({ x: best.x, y: best.y, color: palette.red, life: 0.5, max: 0.5 });
                 sfx.bad();
             }
             this.objects = this.objects.filter((o) => o !== best);
@@ -1568,7 +1835,7 @@
             this.win = win;
             this.renderEnd();
             this.overlay("end");
-            if (win) sfx.win(); else sfx.station();
+            if (win) { sfx.win(); confetti(this.screen); } else sfx.station();
             track("game_complete", { game: "detect", score: total, f1: Math.round(f1 * 100) });
             this.announce(t("g_detect_end_title"));
             arcade.render();
@@ -1590,6 +1857,7 @@
             if (force || combo !== this._combo) { h.combo.textContent = combo; this._combo = combo; }
             const bar = Math.round((this.elapsed / DETECT_TIME) * 1000) / 10;
             if (force || bar !== this._bar) { h.bar.style.width = `${bar}%`; this._bar = bar; }
+            this.screen.classList.toggle("is-urgent", this.state === "play" && DETECT_TIME - this.elapsed <= 5);
         }
 
         relang() {
@@ -1634,6 +1902,43 @@
             g.addColorStop(1, rgba(green, 0.14));
             ctx.fillStyle = g;
             ctx.fillRect(0, scan - 30, W, 30);
+
+            // Radar süpürmesi
+            const rx = W / 2;
+            const ry = H / 2 + 10;
+            const sweep = this.time * 0.9;
+            ctx.lineWidth = 1;
+            [60, 110, 160, 210].forEach((radius) => {
+                ctx.strokeStyle = rgba(green, 0.06);
+                ctx.beginPath();
+                ctx.arc(rx, ry, radius, 0, Math.PI * 2);
+                ctx.stroke();
+            });
+            for (let i = 0; i < 16; i += 1) {
+                const a1 = sweep - i * 0.05;
+                ctx.fillStyle = rgba(green, 0.1 * (1 - i / 16));
+                ctx.beginPath();
+                ctx.moveTo(rx, ry);
+                ctx.arc(rx, ry, 280, a1 - 0.05, a1);
+                ctx.closePath();
+                ctx.fill();
+            }
+            ctx.strokeStyle = rgba(green, 0.3);
+            ctx.beginPath();
+            ctx.moveTo(rx, ry);
+            ctx.lineTo(rx + Math.cos(sweep) * 280, ry + Math.sin(sweep) * 280);
+            ctx.stroke();
+
+            // Hedef izleri
+            this.objects.forEach((o) => {
+                if (o.kind !== "uav") return;
+                o.trail.forEach((point, i) => {
+                    ctx.fillStyle = rgba(palette.cyan, (i / o.trail.length) * 0.3);
+                    ctx.beginPath();
+                    ctx.arc(point.x, point.y, 2 + (i / o.trail.length) * 2.4, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+            });
 
             // Hedefler
             this.objects.forEach((o) => {
@@ -1682,6 +1987,50 @@
                 ctx.globalAlpha = 1;
             });
 
+            // Dalga halkaları ve puan yazıları
+            this.rings.forEach((q) => {
+                const f = 1 - q.life / q.max;
+                ctx.strokeStyle = rgba(q.color, (1 - f) * 0.8);
+                ctx.lineWidth = 2 * (1 - f) + 0.4;
+                ctx.beginPath();
+                ctx.arc(q.x, q.y, 10 + f * 40, 0, Math.PI * 2);
+                ctx.stroke();
+            });
+            this.popups.forEach((q) => {
+                ctx.globalAlpha = clamp(q.life / q.max, 0, 1);
+                ctx.fillStyle = q.color;
+                ctx.font = '700 14px "Space Grotesk", system-ui, sans-serif';
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.fillText(q.text, q.x, q.y);
+            });
+            ctx.globalAlpha = 1;
+            ctx.textAlign = "left";
+
+            // Nişangâh (fare ile oynarken)
+            if (this.cursor && this.state === "play") {
+                const locked = this.objects.some((o) => !o.done && Math.hypot(o.x - this.cursor.x, o.y - this.cursor.y) <= o.r + 8 / this.scale);
+                const color = locked ? green : palette.text;
+                const radius = locked ? 15 + Math.sin(this.time * 14) * 1.5 : 18;
+                ctx.strokeStyle = rgba(color, locked ? 0.95 : 0.6);
+                ctx.lineWidth = 1.4;
+                ctx.beginPath();
+                ctx.arc(this.cursor.x, this.cursor.y, radius, 0, Math.PI * 2);
+                ctx.moveTo(this.cursor.x - radius - 6, this.cursor.y);
+                ctx.lineTo(this.cursor.x - radius + 5, this.cursor.y);
+                ctx.moveTo(this.cursor.x + radius - 5, this.cursor.y);
+                ctx.lineTo(this.cursor.x + radius + 6, this.cursor.y);
+                ctx.moveTo(this.cursor.x, this.cursor.y - radius - 6);
+                ctx.lineTo(this.cursor.x, this.cursor.y - radius + 5);
+                ctx.moveTo(this.cursor.x, this.cursor.y + radius - 5);
+                ctx.lineTo(this.cursor.x, this.cursor.y + radius + 6);
+                ctx.stroke();
+                ctx.fillStyle = rgba(color, 0.9);
+                ctx.beginPath();
+                ctx.arc(this.cursor.x, this.cursor.y, 1.6, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
             // Köşe işaretleri ve kamera künyesi
             ctx.strokeStyle = rgba(palette.text, 0.35);
             ctx.lineWidth = 1.5;
@@ -1707,6 +2056,12 @@
             ctx.textAlign = "right";
             ctx.fillText("REC", W - 20, H - 18);
             ctx.textAlign = "left";
+
+            const vignette = ctx.createRadialGradient(W / 2, H / 2, H * 0.4, W / 2, H / 2, Math.max(W, H) * 0.7);
+            vignette.addColorStop(0, rgba(palette.bg, 0));
+            vignette.addColorStop(1, rgba(palette.bg, 0.6));
+            ctx.fillStyle = vignette;
+            ctx.fillRect(0, 0, W, H);
 
             if (this.flash > 0) {
                 ctx.fillStyle = rgba(palette.red, this.flash * 0.22);
@@ -1865,7 +2220,7 @@
             this.askCard.hidden = true;
             this.endCard.hidden = false;
             this.renderEnd();
-            if (win) sfx.win(); else sfx.station();
+            if (win) { sfx.win(); confetti(this.screen); } else sfx.station();
             track("game_complete", { game: "quiz", score: correct });
             arcade.render();
         }
@@ -1883,6 +2238,26 @@
                 ["g_stat_wrong", total - this.correct, false]
             ]);
         }
+    }
+
+    function confetti(host) {
+        if (reduce || !host) return;
+        const colors = ["--green", "--violet", "--yellow", "--pink", "--cyan", "--orange"];
+        const layer = document.createElement("div");
+        layer.className = "confetti";
+        layer.setAttribute("aria-hidden", "true");
+        for (let i = 0; i < 46; i += 1) {
+            const piece = document.createElement("i");
+            piece.style.setProperty("--x", `${rand(0, 100)}%`);
+            piece.style.setProperty("--dx", `${rand(-80, 80)}px`);
+            piece.style.setProperty("--r", `${rand(-540, 540)}deg`);
+            piece.style.setProperty("--d", `${rand(1.6, 3.2)}s`);
+            piece.style.setProperty("--delay", `${rand(0, 0.5)}s`);
+            piece.style.background = `var(${colors[i % colors.length]})`;
+            layer.append(piece);
+        }
+        host.append(layer);
+        setTimeout(() => layer.remove(), 4200);
     }
 
     function renderStats(list, items) {
@@ -1905,12 +2280,36 @@
 
     const arcade = {
         games: {},
-        current: "flight",
+        current: "world",
+        primary: "world",
 
         init() {
-            this.games.flight = new Flight($("#panel-flight"));
+            // WebGL varsa 3D açık dünya, yoksa eski 2D uçuş oyunu.
+            const WorldClass = window.createOpenWorld?.({
+                CanvasGame, $, $$, t, content, pad, clamp, rand, persist, sfx, track, confetti, renderStats, TOOLS, STAGES,
+                get save() { return save; },
+                get arcade() { return arcade; }
+            });
+            const firstTab = $('.arcade-tab[data-game="flight"]');
+            if (WorldClass) {
+                this.games.world = new WorldClass($("#panel-world"));
+                $("#panel-flight").remove();
+                firstTab.dataset.game = "world";
+                firstTab.id = "tab-world";
+                firstTab.setAttribute("aria-controls", "panel-world");
+                $("#panel-world").setAttribute("aria-labelledby", "tab-world");
+                $(".tab-name", firstTab).dataset.i18n = "g_tab1w_name";
+                $(".tab-sub", firstTab).dataset.i18n = "g_tab1w_sub";
+                this.primary = "world";
+            } else {
+                this.games.flight = new Flight($("#panel-flight"));
+                $("#panel-world").remove();
+                this.primary = "flight";
+            }
+            this.current = this.primary;
             this.games.detect = new Detect($("#panel-detect"));
             this.games.quiz = new Quiz($("#panel-quiz"));
+            this.games.quiz.nextGame = this.primary;
 
             const tabs = $$(".arcade-tab");
             tabs.forEach((tab, index) => {
@@ -1927,17 +2326,14 @@
 
             $("[data-reset]").addEventListener("click", () => {
                 if (!window.confirm(t("g_confirm_reset"))) return;
-                const sound = save.sound;
                 save = defaults();
-                save.sound = sound;
                 persist();
                 this.render();
                 Object.values(this.games).forEach((game) => game.resetToStart());
             });
 
             document.addEventListener("languagechange", () => this.relang());
-            this.select("flight", true);
-            this.syncSound();
+            this.select(this.primary, true);
             this.render();
             this.relang();
         },
@@ -1962,10 +2358,6 @@
                     tabs.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
                 }
             }
-        },
-
-        syncSound() {
-            Object.values(this.games).forEach((game) => game.syncButtons?.());
         },
 
         relang() {
@@ -2016,7 +2408,7 @@
             const done1 = Boolean(save.badges.pilot);
             const done2 = Boolean(save.badges.scout);
             const done3 = Boolean(save.badges.expert);
-            $('.arcade-tab[data-game="flight"]').classList.toggle("is-done", done1);
+            $(`.arcade-tab[data-game="${this.primary}"]`).classList.toggle("is-done", done1);
             $('.arcade-tab[data-game="detect"]').classList.toggle("is-done", done2);
             $('.arcade-tab[data-game="quiz"]').classList.toggle("is-done", done3);
         }
