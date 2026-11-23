@@ -251,6 +251,75 @@
                             </div>
                         </div>
 
+                        <!-- 01 · Tulpar Adası (3D açık dünya; WebGL yoksa yukarıdaki 2D uçuş oyunu kullanılır) -->
+                        <div class="game" id="panel-world" role="tabpanel" aria-labelledby="tab-flight" data-panel="world" data-renderer="webgl" hidden>
+                            <div class="game-screen world-screen" data-screen>
+                                <canvas aria-hidden="true"></canvas>
+                                <div class="world-chips" aria-hidden="true" data-world-chips></div>
+                                <div class="game-hud">
+                                    <div class="hud-group">
+                                        <div class="hud-item"><small data-i18n="g_hud_score">Skor</small><b data-hud="score">0</b></div>
+                                        <div class="hud-item"><small data-i18n="g_hud_station">İstasyon</small><b data-hud="station">0/6</b></div>
+                                        <div class="hud-item"><small data-i18n="g_hud_tools">Araç</small><b data-hud="tools">0/12</b></div>
+                                    </div>
+                                    <div class="hud-buttons" data-hud-buttons></div>
+                                </div>
+                                <div class="hud-progress" aria-hidden="true"><span data-hud="bar"></span></div>
+
+                                <div class="world-map" aria-hidden="true"><canvas width="148" height="148" data-world-map></canvas><span>N</span></div>
+                                <div class="world-guide" data-world-guide hidden aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" data-world-arrow><path d="M12 3l6 14-6-3-6 3z"/></svg>
+                                    <span data-world-target></span>
+                                </div>
+                                <button class="world-boost" type="button" data-world-boost><span data-i18n="g_boost">Hızlan</span></button>
+                                <div class="world-stick" data-world-stick hidden aria-hidden="true"><i></i></div>
+
+                                <div class="overlay" data-overlay="start">
+                                    <div class="overlay-card">
+                                        <span class="overlay-kicker" data-i18n="g_world_kicker">OYUN 01 · AÇIK DÜNYA</span>
+                                        <h3 data-i18n="g_world_title">Tulpar Adası</h3>
+                                        <p data-i18n="g_world_desc">Sabit kanatlı İHA'nla adada özgürce uç. Altı istasyonu bul, havadaki araçları topla. Her yer beni biraz daha tanıtır.</p>
+                                        <p class="controls-hint"><span class="hint-desktop" data-i18n="g_ctrl_desktop_world">W S: tırman / alçal · A D: dön · Shift: hızlan · ya da fareyi sürükle</span><span class="hint-touch" data-i18n="g_ctrl_touch_world">Ekranı sürükleyerek yönlendir · Hızlan düğmesine bas</span></p>
+                                        <button class="button button-primary" type="button" data-action="start"><span data-i18n="g_start">Başlat</span><i aria-hidden="true">▶</i></button>
+                                    </div>
+                                </div>
+                                <div class="overlay overlay-light" data-overlay="station" hidden>
+                                    <div class="overlay-card">
+                                        <span class="overlay-kicker" data-station-kicker></span>
+                                        <h3 data-station-title></h3>
+                                        <p data-station-text></p>
+                                        <div class="overlay-actions">
+                                            <button class="button button-primary" type="button" data-action="continue"><span data-continue-label></span><i aria-hidden="true">→</i></button>
+                                            <button class="button button-ghost" type="button" data-action="goto"><span data-i18n="g_see_section">Bölüme git</span><i aria-hidden="true">↓</i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overlay" data-overlay="pause" hidden>
+                                    <div class="overlay-card">
+                                        <h3 data-i18n="g_paused">Duraklatıldı</h3>
+                                        <p data-i18n="g_paused_desc">Hazır olduğunda devam et.</p>
+                                        <div class="overlay-actions">
+                                            <button class="button button-primary" type="button" data-action="resume"><span data-i18n="g_resume">Devam et</span><i aria-hidden="true">▶</i></button>
+                                            <button class="button button-ghost" type="button" data-action="restart"><span data-i18n="g_restart">Baştan başla</span><i aria-hidden="true">↺</i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overlay" data-overlay="end" hidden>
+                                    <div class="overlay-card">
+                                        <span class="overlay-kicker">ISLAND EXPLORED</span>
+                                        <h3 data-i18n="g_world_finish_title">Ada keşfedildi</h3>
+                                        <p data-i18n="g_world_finish_desc">Altı istasyonu da buldun. Profil dosyam eksiksiz; istersen serbest uçuşa devam edebilirsin.</p>
+                                        <dl class="end-stats" data-end-stats></dl>
+                                        <div class="overlay-actions">
+                                            <button class="button button-primary" type="button" data-action="free"><span data-i18n="g_free_fly">Uçmaya devam et</span><i aria-hidden="true">▶</i></button>
+                                            <button class="button button-ghost" type="button" data-action="next"><span data-i18n="g_next_detect">Tespit oyununa geç</span><i aria-hidden="true">→</i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="sr-only" aria-live="polite" data-live></p>
+                            </div>
+                        </div>
+
                         <!-- 02 · Tespit -->
                         <div class="game" id="panel-detect" role="tabpanel" aria-labelledby="tab-detect" data-panel="detect" hidden>
                             <div class="game-screen" data-screen>
@@ -635,6 +704,7 @@
     <script src="audio.js"></script>
     <script src="vendor/three.min.js"></script>
     <script src="three-scenes.js"></script>
+    <script src="world.js"></script>
     <script src="game.js"></script>
 </body>
 </html>

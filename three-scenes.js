@@ -1055,6 +1055,9 @@
         $(".lab-hint")?.setAttribute("data-touch", window.matchMedia("(pointer: coarse)").matches ? "1" : "0");
     }
 
+    // Açık dünya oyunu aynı İHA modelini kullanır.
+    window.siteThree = { buildUav };
+
     function init() {
         try { initHero(); } catch (error) { root.classList.add("no-webgl"); console.warn("hero 3D", error); }
         try { initLab(); } catch (error) { root.classList.add("no-webgl"); console.warn("lab 3D", error); }

@@ -20,6 +20,13 @@
             play_title: "Beni oynayarak tanı",
             play_intro: "CV okumak yerine oynayarak tanış: üç oyun, altı istasyon, tek bir portfolyo. Her oyun bana dair bir şey anlatıyor.",
             g_tab1_name: "Tulpar Uçuşu", g_tab1_sub: "Platform · ~90 sn",
+            g_tab1w_name: "Tulpar Adası", g_tab1w_sub: "3D açık dünya",
+            g_world_kicker: "OYUN 01 · AÇIK DÜNYA", g_world_title: "Tulpar Adası",
+            g_world_desc: "Sabit kanatlı İHA'nla adada özgürce uç. Altı istasyonu bul, havadaki araçları topla. Her yer beni biraz daha tanıtır.",
+            g_ctrl_desktop_world: "W S: tırman / alçal · A D: dön · Shift: hızlan · ya da fareyi sürükle",
+            g_ctrl_touch_world: "Ekranı sürükleyerek yönlendir · Hızlan düğmesine bas",
+            g_boost: "Hızlan", g_free_fly: "Uçmaya devam et", g_world_visited: "İstasyon",
+            g_world_finish_title: "Ada keşfedildi", g_world_finish_desc: "Altı istasyonu da buldun. Profil dosyam eksiksiz; istersen serbest uçuşa devam edebilirsin.",
             g_tab2_name: "Tespit", g_tab2_sub: "Refleks · 30 sn",
             g_tab3_name: "Quiz", g_tab3_sub: "8 soru",
             g_start: "Başlat", g_resume: "Devam et", g_restart: "Baştan başla", g_replay: "Tekrar oyna",
@@ -56,9 +63,9 @@
             g_quiz_t1_d: "Çoğunu yakaladın. Bir tur daha, tam skoru yakalayabilirsin.",
             g_quiz_t2_d: "Rozeti kaptın. Artık gerçekten tanışmış sayılırız.",
             g_stat_correct: "Doğru", g_stat_wrong: "Yanlış",
-            g_dossier: "Profil dosyası", g_dossier_hint: "Tulpar Uçuşu'nda istasyonlara ulaştıkça açılır.", g_locked: "Kilitli",
+            g_dossier: "Profil dosyası", g_dossier_hint: "Oyunda istasyonları ziyaret ettikçe açılır.", g_locked: "Kilitli",
             g_badges: "Rozetler",
-            g_badge_pilot: "Pilot", g_badge_pilot_d: "Tulpar Uçuşu'nu tamamla.",
+            g_badge_pilot: "Pilot", g_badge_pilot_d: "Altı istasyonu da ziyaret et.",
             g_badge_scout: "Gözcü", g_badge_scout_d: "Tespit'te F1 ≥ %80 yap.",
             g_badge_expert: "Yakın dost", g_badge_expert_d: "Quiz'de en az 7 doğru yap.",
             g_progress: "Tanışma ilerlemesi",
@@ -74,6 +81,13 @@
             play_title: "Get to know me by playing",
             play_intro: "Skip the résumé and play instead: three games, six stations, one portfolio. Every game tells you something about me.",
             g_tab1_name: "Tulpar Flight", g_tab1_sub: "Platformer · ~90 s",
+            g_tab1w_name: "Tulpar Island", g_tab1w_sub: "3D open world",
+            g_world_kicker: "GAME 01 · OPEN WORLD", g_world_title: "Tulpar Island",
+            g_world_desc: "Fly your fixed-wing UAV freely around the island. Find six stations and collect the floating tools. Every place tells you a little more about me.",
+            g_ctrl_desktop_world: "W S: climb / descend · A D: turn · Shift: boost · or drag the mouse",
+            g_ctrl_touch_world: "Drag the screen to steer · hold the Boost button",
+            g_boost: "Boost", g_free_fly: "Keep flying", g_world_visited: "Stations",
+            g_world_finish_title: "Island explored", g_world_finish_desc: "You found all six stations. My profile file is complete; keep flying if you like.",
             g_tab2_name: "Detect", g_tab2_sub: "Reflex · 30 s",
             g_tab3_name: "Quiz", g_tab3_sub: "8 questions",
             g_start: "Start", g_resume: "Resume", g_restart: "Start over", g_replay: "Play again",
@@ -110,9 +124,9 @@
             g_quiz_t1_d: "You caught most of it. One more round and you could get a perfect score.",
             g_quiz_t2_d: "Badge earned. We can call this properly introduced.",
             g_stat_correct: "Correct", g_stat_wrong: "Wrong",
-            g_dossier: "Profile file", g_dossier_hint: "Unlocks as you reach stations in Tulpar Flight.", g_locked: "Locked",
+            g_dossier: "Profile file", g_dossier_hint: "Unlocks as you visit stations in the game.", g_locked: "Locked",
             g_badges: "Badges",
-            g_badge_pilot: "Pilot", g_badge_pilot_d: "Complete Tulpar Flight.",
+            g_badge_pilot: "Pilot", g_badge_pilot_d: "Visit all six stations.",
             g_badge_scout: "Scout", g_badge_scout_d: "Reach F1 ≥ 80% in Detect.",
             g_badge_expert: "Close friend", g_badge_expert_d: "Score 7 or more in the quiz.",
             g_progress: "Getting-to-know-me progress",
@@ -128,6 +142,13 @@
             play_title: "Lerne mich spielend kennen",
             play_intro: "Statt Lebenslauf lesen: drei Spiele, sechs Stationen, ein Portfolio. Jedes Spiel erzählt dir etwas über mich.",
             g_tab1_name: "Tulpar-Flug", g_tab1_sub: "Plattformer · ~90 s",
+            g_tab1w_name: "Tulpar-Insel", g_tab1w_sub: "3D-Open-World",
+            g_world_kicker: "SPIEL 01 · OPEN WORLD", g_world_title: "Tulpar-Insel",
+            g_world_desc: "Fliege mit deiner Starrflügel-Drohne frei über die Insel. Finde sechs Stationen und sammle die schwebenden Tools. Jeder Ort verrät dir mehr über mich.",
+            g_ctrl_desktop_world: "W S: steigen / sinken · A D: lenken · Shift: Turbo · oder Maus ziehen",
+            g_ctrl_touch_world: "Bildschirm ziehen zum Lenken · Turbo-Taste halten",
+            g_boost: "Turbo", g_free_fly: "Weiterfliegen", g_world_visited: "Stationen",
+            g_world_finish_title: "Insel erkundet", g_world_finish_desc: "Du hast alle sechs Stationen gefunden. Meine Profilakte ist vollständig; fliege gern weiter.",
             g_tab2_name: "Erkennen", g_tab2_sub: "Reflex · 30 s",
             g_tab3_name: "Quiz", g_tab3_sub: "8 Fragen",
             g_start: "Starten", g_resume: "Fortsetzen", g_restart: "Neu beginnen", g_replay: "Nochmal spielen",
@@ -164,9 +185,9 @@
             g_quiz_t1_d: "Das meiste hast du erwischt. Noch eine Runde, dann klappt die volle Punktzahl.",
             g_quiz_t2_d: "Abzeichen verdient. Jetzt sind wir wirklich miteinander bekannt.",
             g_stat_correct: "Richtig", g_stat_wrong: "Falsch",
-            g_dossier: "Profilakte", g_dossier_hint: "Wird beim Erreichen der Stationen im Tulpar-Flug freigeschaltet.", g_locked: "Gesperrt",
+            g_dossier: "Profilakte", g_dossier_hint: "Wird beim Besuchen der Stationen im Spiel freigeschaltet.", g_locked: "Gesperrt",
             g_badges: "Abzeichen",
-            g_badge_pilot: "Pilot", g_badge_pilot_d: "Schließe den Tulpar-Flug ab.",
+            g_badge_pilot: "Pilot", g_badge_pilot_d: "Besuche alle sechs Stationen.",
             g_badge_scout: "Späher", g_badge_scout_d: "Erreiche F1 ≥ 80 % bei Erkennen.",
             g_badge_expert: "Enger Vertrauter", g_badge_expert_d: "Erreiche im Quiz mindestens 7 Punkte.",
             g_progress: "Kennenlern-Fortschritt",
@@ -467,7 +488,7 @@
             this.panel = panel;
             this.screen = $("[data-screen]", panel);
             this.canvas = $("canvas", this.screen);
-            this.ctx = this.canvas.getContext("2d");
+            this.ctx = panel.dataset.renderer === "webgl" ? null : this.canvas.getContext("2d");
             this.live = $("[data-live]", panel);
             this.state = "ready";
             this.visible = false;
@@ -2259,12 +2280,36 @@
 
     const arcade = {
         games: {},
-        current: "flight",
+        current: "world",
+        primary: "world",
 
         init() {
-            this.games.flight = new Flight($("#panel-flight"));
+            // WebGL varsa 3D açık dünya, yoksa eski 2D uçuş oyunu.
+            const WorldClass = window.createOpenWorld?.({
+                CanvasGame, $, $$, t, content, pad, clamp, rand, persist, sfx, track, confetti, renderStats, TOOLS, STAGES,
+                get save() { return save; },
+                get arcade() { return arcade; }
+            });
+            const firstTab = $('.arcade-tab[data-game="flight"]');
+            if (WorldClass) {
+                this.games.world = new WorldClass($("#panel-world"));
+                $("#panel-flight").remove();
+                firstTab.dataset.game = "world";
+                firstTab.id = "tab-world";
+                firstTab.setAttribute("aria-controls", "panel-world");
+                $("#panel-world").setAttribute("aria-labelledby", "tab-world");
+                $(".tab-name", firstTab).dataset.i18n = "g_tab1w_name";
+                $(".tab-sub", firstTab).dataset.i18n = "g_tab1w_sub";
+                this.primary = "world";
+            } else {
+                this.games.flight = new Flight($("#panel-flight"));
+                $("#panel-world").remove();
+                this.primary = "flight";
+            }
+            this.current = this.primary;
             this.games.detect = new Detect($("#panel-detect"));
             this.games.quiz = new Quiz($("#panel-quiz"));
+            this.games.quiz.nextGame = this.primary;
 
             const tabs = $$(".arcade-tab");
             tabs.forEach((tab, index) => {
@@ -2288,7 +2333,7 @@
             });
 
             document.addEventListener("languagechange", () => this.relang());
-            this.select("flight", true);
+            this.select(this.primary, true);
             this.render();
             this.relang();
         },
@@ -2363,7 +2408,7 @@
             const done1 = Boolean(save.badges.pilot);
             const done2 = Boolean(save.badges.scout);
             const done3 = Boolean(save.badges.expert);
-            $('.arcade-tab[data-game="flight"]').classList.toggle("is-done", done1);
+            $(`.arcade-tab[data-game="${this.primary}"]`).classList.toggle("is-done", done1);
             $('.arcade-tab[data-game="detect"]').classList.toggle("is-done", done2);
             $('.arcade-tab[data-game="quiz"]').classList.toggle("is-done", done3);
         }
